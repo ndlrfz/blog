@@ -2,17 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Nadlir Blog</title>
-    <link>http://localhost:1313/</link>
+    <link>https://example.org/</link>
     <description>Recent content on Nadlir Blog</description>
     <generator>Hugo -- 0.143.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Feb 2025 08:53:44 +0700</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Feb 2025 17:41:12 +0700</lastBuildDate>
+    <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Neovim Multiple Configs</title>
+      <link>https://example.org/posts/neovim-multiple-configs/</link>
+      <pubDate>Tue, 04 Feb 2025 17:41:12 +0700</pubDate>
+      <guid>https://example.org/posts/neovim-multiple-configs/</guid>
+      <description>&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
+&lt;p&gt;If you&amp;rsquo;re Neovim fan, it is important to have multiple configs. You can configure like this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;~/.config/nvim&lt;/code&gt;: Your main configuration. When you&amp;rsquo;re working on your project, this is the configuration that will be loaded.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;~/.config/nvim-alt&lt;/code&gt;: Your secondary Neovim configuration where you can implement new things.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So now, let&amp;rsquo;s configure it.&lt;/p&gt;
+&lt;p&gt;Assuming that your main Neovim configured, let&amp;rsquo;s configure the alternate Neovim configuration.&lt;/p&gt;
+&lt;p&gt;This example wll be using &lt;em&gt;kickstart.nvim&lt;/em&gt; as an alternative configuration. You can choose other starterkit like &lt;em&gt;Lazy.nvim&lt;/em&gt; or distribution like &lt;em&gt;Nvchad&lt;/em&gt;, &lt;em&gt;Astro&lt;/em&gt;, etc.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Test First Post</title>
-      <link>http://localhost:1313/posts/my-first-post/</link>
+      <link>https://example.org/posts/my-first-post/</link>
       <pubDate>Tue, 04 Feb 2025 08:53:44 +0700</pubDate>
-      <guid>http://localhost:1313/posts/my-first-post/</guid>
+      <guid>https://example.org/posts/my-first-post/</guid>
       <description>&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
 &lt;p&gt;This is test post with Hugo. Let me just post this here.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo pacman -Syyu
