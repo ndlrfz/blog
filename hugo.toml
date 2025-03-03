@@ -9,3 +9,12 @@ favicon16x16 = "https://ndlrfz.github.io/blog/favicon.ico"
 favicon32x32 = "https://ndlrfz.github.io/blog/favicon.ico"
 apple_touch_icon = "https://ndlrfz.github.io/blog/favicon.ico"
 safari_pinned_tab = "https://ndlrfz.github.io/blog/favicon.ico"
+
+[params.homeInfoParams]
+Title = "Nadlir blog and notes"
+Content = """
+👋 Welcome to my blog!
+- I'm System Administrator and DevOps
+- I love reading and sharing
+- Life learner
+"""
