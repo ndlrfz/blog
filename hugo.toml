@@ -5,3 +5,7 @@ theme = 'PaperMod'
 
 [params.assets]
 favicon = "https://ndlrfz.github.io/blog/favicon.ico"
+favicon16x16 = "https://ndlrfz.github.io/blog/favicon.ico"
+favicon32x32 = "https://ndlrfz.github.io/blog/favicon.ico"
+apple_touch_icon = "https://ndlrfz.github.io/blog/favicon.ico"
+safari_pinned_tab = "https://ndlrfz.github.io/blog/favicon.ico"
