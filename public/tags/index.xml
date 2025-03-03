@@ -4,7 +4,7 @@
     <title>Tags on Nadlir Blog</title>
     <link>https://example.org/tags/</link>
     <description>Recent content in Tags on Nadlir Blog</description>
-    <generator>Hugo -- 0.143.0</generator>
+    <generator>Hugo -- 0.145.0</generator>
     <language>en-us</language>
     <atom:link href="https://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
