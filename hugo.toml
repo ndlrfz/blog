@@ -11,10 +11,10 @@ apple_touch_icon = "https://ndlrfz.github.io/blog/favicon.ico"
 safari_pinned_tab = "https://ndlrfz.github.io/blog/favicon.ico"
 
 [params.homeInfoParams]
-Title = "Nadlir blog and notes"
+Title = "System Administrator / DevOps / Open Source Enthusiasts"
 Content = """
-👋 Welcome to my blog!
-- I'm System Administrator and DevOps
-- I love reading and sharing
-- Life learner
+📒 Welcome to my blog and notes
+✅ I'm System Administrator and DevOps
+✅ I love reading and sharing
+✅ Lifelong Learner
 """
