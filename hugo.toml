@@ -4,4 +4,4 @@ title = 'Nadlir Blog'
 theme = 'PaperMod'
 
 [params.assets]
-favicon = "https://ndlrfz.github.io/blog/favicon.ico"
+favicon = "https://ndlrfz.github.io/favicon.ico"
