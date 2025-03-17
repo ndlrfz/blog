@@ -2,13 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example.org/posts/php-oci8-debian-ubuntu/</loc>
-    <lastmod>2025-03-04T05:10:43+07:00</lastmod>
+    <loc>https://example.org/posts/generate-numbers-letter-caps-python/</loc>
+    <lastmod>2025-03-16T22:38:22+07:00</lastmod>
   </url><url>
     <loc>https://example.org/</loc>
-    <lastmod>2025-03-04T05:10:43+07:00</lastmod>
+    <lastmod>2025-03-16T22:38:22+07:00</lastmod>
   </url><url>
     <loc>https://example.org/posts/</loc>
+    <lastmod>2025-03-16T22:38:22+07:00</lastmod>
+  </url><url>
+    <loc>https://example.org/posts/too-many-redirects-cloudflare/</loc>
+    <lastmod>2025-03-16T17:44:27+07:00</lastmod>
+  </url><url>
+    <loc>https://example.org/posts/php-oci8-debian-ubuntu/</loc>
     <lastmod>2025-03-04T05:10:43+07:00</lastmod>
   </url><url>
     <loc>https://example.org/posts/neovim-multiple-configs/</loc>

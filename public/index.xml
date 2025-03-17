@@ -6,8 +6,44 @@
     <description>Recent content on Nadlir Blog</description>
     <generator>Hugo -- 0.145.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Mar 2025 05:10:43 +0700</lastBuildDate>
+    <lastBuildDate>Sun, 16 Mar 2025 22:38:22 +0700</lastBuildDate>
     <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Generate Numbers and Letter Python</title>
+      <link>https://example.org/posts/generate-numbers-letter-caps-python/</link>
+      <pubDate>Sun, 16 Mar 2025 22:38:22 +0700</pubDate>
+      <guid>https://example.org/posts/generate-numbers-letter-caps-python/</guid>
+      <description>&lt;p&gt;Generating numbers:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;num_list &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; []
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; num &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;9&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   num_list&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append(num)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(num_list)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Generating letters:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; string
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;string_lowwe &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; list(string&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;ascii_lowercase)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(string_lower)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;string_upper &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; list(string&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;ascii_uppercase)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(string_upper)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>ERR_TOO_MANY_REDIRECTS on Cloudflare</title>
+      <link>https://example.org/posts/too-many-redirects-cloudflare/</link>
+      <pubDate>Sun, 16 Mar 2025 17:44:27 +0700</pubDate>
+      <guid>https://example.org/posts/too-many-redirects-cloudflare/</guid>
+      <description>&lt;p&gt;When you turn on the &lt;code&gt;proxy&lt;/code&gt; feature on Cloudflare and you get the error &lt;code&gt;ERR_TOO_MANY_REDIRECTS&lt;/code&gt;. Solve by doing this:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Go to the site configuration on Cloudflare&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;SSL &amp;gt; Overview&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;SSL Encryption&lt;/code&gt; section and &lt;code&gt;Configure&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Select &lt;code&gt;Full&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Done.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>How to Install PHP OCI8 (Oracle Instant Client) Module on Debian/Ubuntu</title>
       <link>https://example.org/posts/php-oci8-debian-ubuntu/</link>
