@@ -12,9 +12,6 @@ safari_pinned_tab = "https://ndlrfz.github.io/blog/favicon.ico"
 
 [params.homeInfoParams]
 Title = "Ndlrfz 🐧🐮 🦄"
-Content = """
-🍉 Welcome to my blog and notes
-- 🌱 I'm System Administrator and DevOps
-- 🌱 I love reading and sharing
-- 🌱 Lifelong Learner
+Content = """ You will become clever through your mistakes.
+_—German proverb_
 """
