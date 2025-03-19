@@ -2,17 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Nadlir Blog</title>
-    <link>https://example.org/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Nadlir Blog</description>
     <generator>Hugo -- 0.145.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 16 Mar 2025 22:38:22 +0700</lastBuildDate>
-    <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 19 Mar 2025 22:42:45 +0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Static Hosting with Amazon S3</title>
+      <link>http://localhost:1313/posts/aws-s3-static-hosting/</link>
+      <pubDate>Wed, 19 Mar 2025 22:42:45 +0700</pubDate>
+      <guid>http://localhost:1313/posts/aws-s3-static-hosting/</guid>
+      <description>&lt;p&gt;Here step-by-step to set up static hosting with Amazon S3:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Go to &lt;strong&gt;S3&lt;/strong&gt; and select your bucket name&lt;/li&gt;
+&lt;li&gt;Upload your HTML files&lt;/li&gt;
+&lt;li&gt;Click &lt;strong&gt;Permission&lt;/strong&gt; tab and &lt;strong&gt;turn off&lt;/strong&gt; the &lt;strong&gt;Block all public access&lt;/strong&gt;. To use S3 as static web hosting, you must turn off this&lt;/li&gt;
+&lt;li&gt;Move to the &lt;strong&gt;Bucket Policy&lt;/strong&gt; and review your current policy. Make sure only &lt;strong&gt;s3:GetObject&lt;/strong&gt; policy is enabled&lt;/li&gt;
+&lt;li&gt;Move to the &lt;strong&gt;Default encryption&lt;/strong&gt; and make sure the default &lt;strong&gt;server side encryption&lt;/strong&gt; is enabled&lt;/li&gt;
+&lt;li&gt;Scroll down to the &lt;strong&gt;Static website hosting&lt;/strong&gt; and click &lt;strong&gt;Edit&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;static web hoosting&lt;/em&gt;: &lt;strong&gt;Enable&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Hosting type&lt;/em&gt;: &lt;strong&gt;Host static website&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;index_document&lt;/em&gt;: &lt;strong&gt;index.html&lt;/strong&gt; (make sure it i uploaded)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
     <item>
       <title>How to Generate Numbers and Letter Python</title>
-      <link>https://example.org/posts/generate-numbers-letter-caps-python/</link>
+      <link>http://localhost:1313/posts/generate-numbers-letter-caps-python/</link>
       <pubDate>Sun, 16 Mar 2025 22:38:22 +0700</pubDate>
-      <guid>https://example.org/posts/generate-numbers-letter-caps-python/</guid>
+      <guid>http://localhost:1313/posts/generate-numbers-letter-caps-python/</guid>
       <description>&lt;p&gt;Generating numbers:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;num_list &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; []
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
@@ -32,9 +53,9 @@
     </item>
     <item>
       <title>ERR_TOO_MANY_REDIRECTS on Cloudflare</title>
-      <link>https://example.org/posts/too-many-redirects-cloudflare/</link>
+      <link>http://localhost:1313/posts/too-many-redirects-cloudflare/</link>
       <pubDate>Sun, 16 Mar 2025 17:44:27 +0700</pubDate>
-      <guid>https://example.org/posts/too-many-redirects-cloudflare/</guid>
+      <guid>http://localhost:1313/posts/too-many-redirects-cloudflare/</guid>
       <description>&lt;p&gt;When you turn on the &lt;code&gt;proxy&lt;/code&gt; feature on Cloudflare and you get the error &lt;code&gt;ERR_TOO_MANY_REDIRECTS&lt;/code&gt;. Solve by doing this:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Go to the site configuration on Cloudflare&lt;/li&gt;
@@ -46,9 +67,9 @@
     </item>
     <item>
       <title>How to Install PHP OCI8 (Oracle Instant Client) Module on Debian/Ubuntu</title>
-      <link>https://example.org/posts/php-oci8-debian-ubuntu/</link>
+      <link>http://localhost:1313/posts/php-oci8-debian-ubuntu/</link>
       <pubDate>Tue, 04 Mar 2025 05:10:43 +0700</pubDate>
-      <guid>https://example.org/posts/php-oci8-debian-ubuntu/</guid>
+      <guid>http://localhost:1313/posts/php-oci8-debian-ubuntu/</guid>
       <description>&lt;p&gt;In this guide, I will show you how to install PHP OCI8 (Oracle Instant Client) on Debian 12 server.&lt;/p&gt;
 &lt;p&gt;In this example, I&amp;rsquo;ve &lt;strong&gt;PHP 8.4&lt;/strong&gt; installed. Let&amp;rsquo;s begin.&lt;/p&gt;
 &lt;ul&gt;
@@ -113,9 +134,9 @@
     </item>
     <item>
       <title>Neovim Multiple Configs</title>
-      <link>https://example.org/posts/neovim-multiple-configs/</link>
+      <link>http://localhost:1313/posts/neovim-multiple-configs/</link>
       <pubDate>Tue, 04 Feb 2025 17:41:12 +0700</pubDate>
-      <guid>https://example.org/posts/neovim-multiple-configs/</guid>
+      <guid>http://localhost:1313/posts/neovim-multiple-configs/</guid>
       <description>&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
 &lt;p&gt;If you&amp;rsquo;re Neovim fan, it is important to have multiple configs. You can configure like this:&lt;/p&gt;
 &lt;ul&gt;
@@ -128,9 +149,9 @@
     </item>
     <item>
       <title>Test First Post</title>
-      <link>https://example.org/posts/my-first-post/</link>
+      <link>http://localhost:1313/posts/my-first-post/</link>
       <pubDate>Tue, 04 Feb 2025 08:53:44 +0700</pubDate>
-      <guid>https://example.org/posts/my-first-post/</guid>
+      <guid>http://localhost:1313/posts/my-first-post/</guid>
       <description>&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
 &lt;p&gt;This is test post with Hugo. Let me just post this here.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo pacman -Syyu
