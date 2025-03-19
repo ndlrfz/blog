@@ -1,6 +1,6 @@
 +++
 date = '2025-03-19T23:42:31+07:00'
-draft = true
+draft = false
 title = 'Create Amazon EC2 Instance'
 +++
 

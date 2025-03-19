@@ -6,8 +6,27 @@
     <description>Recent content in Posts on Nadlir Blog</description>
     <generator>Hugo -- 0.145.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 19 Mar 2025 22:42:45 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 19 Mar 2025 23:42:31 +0700</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Create Amazon EC2 Instance</title>
+      <link>http://localhost:1313/posts/aws-ec2-setup/</link>
+      <pubDate>Wed, 19 Mar 2025 23:42:31 +0700</pubDate>
+      <guid>http://localhost:1313/posts/aws-ec2-setup/</guid>
+      <description>&lt;p&gt;Guide to deploy Amazon EC2 instance with multiple AZ and installation script.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;EC2&lt;/code&gt; -&amp;gt; &lt;code&gt;Launch Instance&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Enter instance name, select the operating system (AMI)&lt;/li&gt;
+&lt;li&gt;Select instance type (which server specs you need)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Compare instance types&lt;/code&gt; -&amp;gt; &lt;code&gt;Get advice&lt;/code&gt; which will show you recommendation for your applications&lt;/li&gt;
+&lt;li&gt;Select key-pair SSH or generate new&lt;/li&gt;
+&lt;li&gt;Select &lt;strong&gt;VPC&lt;/strong&gt; (for testing, use default. for production, always create custom VPC)&lt;/li&gt;
+&lt;li&gt;Select the subnet (YOU MUST CHEK THE AVAILABILITY ZONE HERE)&lt;/li&gt;
+&lt;li&gt;Security group to allow inbound traffic to specific port&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Advanced details&lt;/code&gt; -&amp;gt; &lt;code&gt;User data&lt;/code&gt; (enter your deployment script. Example: installing LAMP Stack, downloading source code, etc)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Launch Instance&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
     <item>
       <title>Static Hosting with Amazon S3</title>
       <link>http://localhost:1313/posts/aws-s3-static-hosting/</link>
