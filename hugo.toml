@@ -1,7 +1,12 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://ndlrfz.web.id/'
 languageCode = 'en-us'
 title = 'Nadlir Blog'
 theme = 'PaperMod'
+
+[params]
+ShowToc = true
+ShowBreadCrumbs = true
+ShowCodeCopyButtons = true
 
 [params.assets]
 favicon = "https://ndlrfz.github.io/blog/favicon.ico"
@@ -12,6 +17,6 @@ safari_pinned_tab = "https://ndlrfz.github.io/blog/favicon.ico"
 
 [params.homeInfoParams]
 Title = "Ndlrfz 🐧🐮 🦄"
-Content = """ You will become clever through your mistakes.
+Content = """**You will become clever through your mistakes.**
 _—German proverb_
 """
