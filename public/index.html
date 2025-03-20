@@ -109,7 +109,7 @@
         <h1>Ndlrfz 🐧🐮 🦄</h1>
     </header>
     <div class="entry-content">
-        You will become clever through your mistakes.
+        <strong>You will become clever through your mistakes.</strong>
 <em>—German proverb</em>
     </div>
     <footer class="entry-footer">
@@ -117,6 +117,21 @@
 </div>
 
     </footer>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Guide to AWS VPC (Virtual Private Cloud)
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Intro VPC or Virtual Private Cloud is an isolated internal network on AWS environment. When creating Amazon EC2, the default VPC will be created and attached to the instance.
+For production, you must create custom VPC and do not use the default.
+To access VPC, you can use the AWS console. Or, you can access through the EC2 instance detail, in the Subnet ID section.
+Allow HTTP Access to EC2 Instance Select your EC2 instnace, move to details, click Subnet ID. Select your subnet and click Route Table tab (Route Table define rules of your network traffic from your subnet or gateway is directed) Click your Route Table name to get the details Selecy your routable name, and move to the Route tab, click Edit Route Click Add Route to allow internet to access your instance via gateway Destination: 0.0.0.0/0 Target: Internet Gateway Choose your internet gateway Save changes Open HTTP in Security Group Move to the EC2 instance menu and select your instance Select the Security tab and click your Security Group Select Inbound Rules and click Edit Inbound Rules &gt; Add Rule Type: HTTP Source: Anywhere IPv4 Allow Access to anywhere from EC2 via Security group On the Security group of your instance, select the Outbound Rules Click Edit outbound rules Type: All traffic Destination type: Custom Destination: 0.0.0.0/0 </p>
+  </div>
+  <footer class="entry-footer"><span title='2025-03-20 18:37:15 +0700 WIB'>March 20, 2025</span></footer>
+  <a class="entry-link" aria-label="post link to Guide to AWS VPC (Virtual Private Cloud)" href="http://localhost:1313/posts/aws-vpc-guide/"></a>
 </article>
 
 <article class="post-entry"> 

@@ -6,8 +6,54 @@
     <description>Recent content in Posts on Nadlir Blog</description>
     <generator>Hugo -- 0.145.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 20 Mar 2025 08:48:35 +0700</lastBuildDate>
+    <lastBuildDate>Thu, 20 Mar 2025 18:37:15 +0700</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Guide to AWS VPC (Virtual Private Cloud)</title>
+      <link>http://localhost:1313/posts/aws-vpc-guide/</link>
+      <pubDate>Thu, 20 Mar 2025 18:37:15 +0700</pubDate>
+      <guid>http://localhost:1313/posts/aws-vpc-guide/</guid>
+      <description>&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
+&lt;p&gt;VPC or Virtual Private Cloud is an isolated internal network on AWS environment. When creating Amazon EC2, the default VPC will be created and attached to the instance.&lt;/p&gt;
+&lt;p&gt;For production, you must create custom VPC and do not use the default.&lt;/p&gt;
+&lt;p&gt;To access VPC, you can use the AWS console. Or, you can access through the EC2 instance detail, in the &lt;code&gt;Subnet ID&lt;/code&gt; section.&lt;/p&gt;
+&lt;h2 id=&#34;allow-http-access-to-ec2-instance&#34;&gt;Allow HTTP Access to EC2 Instance&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Select your EC2 instnace, move to details, click &lt;code&gt;Subnet ID&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Select your subnet and click &lt;code&gt;Route Table&lt;/code&gt; tab (Route Table define rules of your network traffic from your subnet or gateway is directed)&lt;/li&gt;
+&lt;li&gt;Click your Route Table name to get the details&lt;/li&gt;
+&lt;li&gt;Selecy your routable name, and move to the &lt;code&gt;Route&lt;/code&gt; tab, click &lt;code&gt;Edit Route&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Click &lt;code&gt;Add Route&lt;/code&gt; to allow internet to access your instance via gateway
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Destination&lt;/em&gt;: 0.0.0.0/0&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Target&lt;/em&gt;: Internet Gateway&lt;/li&gt;
+&lt;li&gt;Choose your internet gateway&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Save changes&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;open-http-in-security-group&#34;&gt;Open HTTP in Security Group&lt;/h2&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;Move to the EC2 instance menu and select your instance&lt;/li&gt;
+&lt;li&gt;Select the &lt;code&gt;Security&lt;/code&gt; tab and click your &lt;code&gt;Security Group&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Select &lt;code&gt;Inbound Rules&lt;/code&gt; and click &lt;code&gt;Edit Inbound Rules&lt;/code&gt; &amp;gt; &lt;code&gt;Add Rule&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Type&lt;/em&gt;: HTTP&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Source&lt;/em&gt;: Anywhere IPv4&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;allow-access-to-anywhere-from-ec2-via-security-group&#34;&gt;Allow Access to anywhere from EC2 via Security group&lt;/h2&gt;
+&lt;ol start=&#34;9&#34;&gt;
+&lt;li&gt;On the &lt;code&gt;Security group&lt;/code&gt; of your instance, select the &lt;code&gt;Outbound Rules&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Click &lt;code&gt;Edit outbound rules&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Type&lt;/em&gt;: All traffic&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Destination type&lt;/em&gt;: Custom&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Destination&lt;/em&gt;: 0.0.0.0/0&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
     <item>
       <title>Guide to AWS Calculator</title>
       <link>http://localhost:1313/posts/aws-calculator/</link>
