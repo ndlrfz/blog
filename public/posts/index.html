@@ -111,6 +111,30 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Guide to AWS Calculator
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Visit https://calculator.aws and click Create Estimate In the breadcamp menu, click My Estimate Create group - You can set up price based on software stack or deployment types (prod/stag/dev) and assign each as a group Enter group name Confirm Within your group, click Add service - AWS calculator provides more than 175 AWS services Select your region and find your service, for example EC2, then Configure Enter details your estimation for EC2 usage: Description Region Tenancey: shared (default) or dedicated server (more expensive) Operatin System: Linxu Windows etc Workloads: select the usage as needed for your organization Contant usage Daily spike traffic Weekly spike traffic Monthly spike traffic Baseline: number of EC2 that will be running Peak: max number of EC2 that running during peak time Duration of peak: duration of peak (based on your monitoring to ensure hours and time) On the EC2 Instances, select the instance family, vCPUs, memory, and network performance Select the right instance as needed for your workloads (IMPORTANT) On the Payment section, choose On-demand, which means you pay for compute capacity by the hour or second with no long-term commitments Other option, you can select Saving plans options. TYhere is discounts, but you need to commit at least 1 or 3-years. Or you can choose other purchasing options Standard Reserverd Instances: higher discount, but allow modifications only within the same family. You can upgrade t2 to t3 and you cannot upgrade t3 to mx Convertible Reserved Instances: lower discount, but flexible on modifications, cross instance types, tenancy, and operating systems To check estimated workloads per hour, click on the link estimated workload hours Add the Amazon EBS (Elastic Block Storage) for your EC2 * _Storage type_: **general purpose SSD (gp3)** * _general purpose_: **IOPS** (inputs/outputs) _30_ * _Storage amout_: **10 GB** * _Snapshot frquency_: **weekly** For the Inbound Data transfer, select Internet (free) with amount 1 TB per month For the Outbound Data Transfer, select Internet with the amount 100 GB per month You can review the data transfer cost voa show calculations Save and add service or you can view summary If you need supports from Amazon supports, click Add support Click Share to create public link for your estimation </p>
+  </div>
+  <footer class="entry-footer"><span title='2025-03-20 08:48:35 +0700 WIB'>March 20, 2025</span></footer>
+  <a class="entry-link" aria-label="post link to Guide to AWS Calculator" href="http://localhost:1313/posts/aws-calculator/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Amazon EC2 Basic: Connect and Change Instance Type
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>How to connect to Amazon EC2 instance Using Session Manager via AWS console Using SSH command, key SSH is needed to secure authentication Using IAM policies that control SSH access to instances How to Increase Specs of Amazon EC2 Stop the instance first (after instance stopped, both IP and and DNS gone) Select instance &gt; Actions &gt; Instance Settings Change auto recovery behavior: changing how instance auto-recovery Change instance type: change or upgrade instance type Change CPU options: change the current CPU spec Edit user data: modify current user data Start again the instance </p>
+  </div>
+  <footer class="entry-footer"><span title='2025-03-20 08:30:32 +0700 WIB'>March 20, 2025</span></footer>
+  <a class="entry-link" aria-label="post link to Amazon EC2 Basic: Connect and Change Instance Type" href="http://localhost:1313/posts/aws-ec2-basic/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Create Amazon EC2 Instance
     </h2>
   </header>
