@@ -4,7 +4,6 @@ title = 'Nadlir Blog'
 theme = 'PaperMod'
 
 [params]
-env = production
 author = ["Nadlir"]
 ShowToc = true
 ShowBreadCrumbs = true
