@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Guide to Amazon RDS (Relational Datbase Service) | Nadlir Blog</title>
+<meta name="keywords" content="aws">
+<meta name="description" content="Intro
+In short, RDS or Relational Database Service is a datbase server managed by AWS in the cloud. RDS offers both open source (MySQL, MariaDB, PostgreSQL) and commercial database server (Oracle Datbase, SQL Server) as a service.
+By default, RDS will set up automatic backup and database snapshot.
+You can also deploy RDS in multiple AZ, which provides high-availability for your database. In multiple AZ deployment, RDS will automatically sync replicates to a standby RDS instance in different AZ.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/aws-rds-guide/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://ndlrfz.github.io/blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://ndlrfz.github.io/blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="https://ndlrfz.github.io/blog/favicon.ico">
+<link rel="apple-touch-icon" href="https://ndlrfz.github.io/blog/favicon.ico">
+<link rel="mask-icon" href="https://ndlrfz.github.io/blog/favicon.ico">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/aws-rds-guide/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Nadlir Blog (Alt + H)">Nadlir Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Guide to Amazon RDS (Relational Datbase Service)
+    </h1>
+    <div class="post-meta"><span title='2025-03-21 21:30:12 +0700 WIB'>March 21, 2025</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#intro" aria-label="Intro">Intro</a></li>
+                <li>
+                    <a href="#provision-amazon-rds" aria-label="Provision Amazon RDS">Provision Amazon RDS</a></li>
+                <li>
+                    <a href="#create-read-replicate-in-amazon-rds" aria-label="Create Read-Replicate in Amazon RDS">Create Read-Replicate in Amazon RDS</a></li>
+                <li>
+                    <a href="#migrate-with-dms-database-migration-service" aria-label="Migrate with DMS (Database Migration Service)">Migrate with DMS (Database Migration Service)</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="intro">Intro<a hidden class="anchor" aria-hidden="true" href="#intro">#</a></h2>
+<p>In short, RDS or Relational Database Service is a datbase server managed by AWS in the cloud. RDS offers both open source (MySQL, MariaDB, PostgreSQL) and commercial database server (Oracle Datbase, SQL Server) as a service.</p>
+<p>By default, RDS will set up automatic backup and database snapshot.</p>
+<p>You can also deploy RDS in multiple AZ, which provides high-availability for your database. In multiple AZ deployment, RDS will automatically sync replicates to a standby RDS instance in different AZ.</p>
+<p>You can also create <em>read-only</em> replica of RDS for ready-heavy database workloads.</p>
+<h2 id="provision-amazon-rds">Provision Amazon RDS<a hidden class="anchor" aria-hidden="true" href="#provision-amazon-rds">#</a></h2>
+<ol>
+<li>In the AWS console, type <code>database</code> and select <code>Aurora and RDS</code></li>
+<li>Select the <code>Databases</code> menu and click <code>Create database</code></li>
+<li>Select the <code>Standard create</code> method, especially for customizing your database configurations</li>
+<li>Select your database engine, for example <code>MariaDB</code></li>
+<li>Select the <code>Engine version</code> for your database</li>
+<li>Select the template that yiu want to use:
+<ul>
+<li>Production</li>
+<li>Dev/Test</li>
+<li>Free Tier</li>
+</ul>
+</li>
+<li>enter your RDS name in the <code>DB instance identifier</code></li>
+<li>For the credentials settings:
+<ul>
+<li><em>Master username</em>: enter or leave it as edefault <code>admin</code></li>
+<li><em>Credentials Management</em>: use <code>Self managed</code> for testing only</li>
+<li><em>Master password</em>: Enter your password and repeat</li>
+</ul>
+</li>
+<li>Move to the <code>Instance configurations</code>
+<ul>
+<li>Select <strong>Burstable classes</strong></li>
+<li>Select the instance type for your RDS</li>
+<li>For storage type <code>gp3</code> and allocate the storage to <code>20 GB</code></li>
+</ul>
+</li>
+<li>For the <code>VPC</code> and <code>DB Subnet</code>, you can use default or custom isolated VPC</li>
+<li><strong>Public access</strong> to <em>no</em> and <strong>VPC Security Group</strong> to <em>Choose existing</em></li>
+<li>On the <code>Additional storage configuration</code></li>
+</ol>
+<ul>
+<li><strong>Check</strong> the <em>Enable storage autoscaling</em></li>
+</ul>
+<ol start="13">
+<li>On the <code>Availability and durability</code>, select the <code>Create standby instance</code> option</li>
+<li><strong>Disable</strong> the <code>Performance Insight</code> and <code>Enhanced Monitoring</code></li>
+<li>In the <code>Additional configuration</code>, configure the following</li>
+</ol>
+<ul>
+<li><em>Initial database name</em>: You must enter the database name for your application. RDS does not create database by default</li>
+<li><em>DB parameter group</em> and <em>option group</em>: You can leave it as default</li>
+</ul>
+<ol start="16">
+<li>Check the <code>Enable automatic backup</code> and select the <code>Backup interval</code></li>
+<li>Check the <code>Enable enryption</code> to enable encryption of your database at rest</li>
+<li>In the <code>Maintenance</code> section</li>
+</ol>
+<ul>
+<li><strong>Uncheck</strong> the <code>Enable auto minor update</code></li>
+<li>Select <strong>No preference</strong> on the <code>Maintenance window</code></li>
+</ul>
+<ol start="19">
+<li>Review the cost for your database monthly and click <code>Create database</code></li>
+</ol>
+<p>The database instance will be created within <strong>5-10 minutes</strong>. Make sure to click the <code>reload</code> button to check the status until <code>Available</code>.</p>
+<h2 id="create-read-replicate-in-amazon-rds">Create Read-Replicate in Amazon RDS<a hidden class="anchor" aria-hidden="true" href="#create-read-replicate-in-amazon-rds">#</a></h2>
+<ol>
+<li>From your console, go to the <code>Aurora and RDS</code> section, then click <code>Databases</code></li>
+<li>Click your database instance to get details</li>
+<li>Within your database instance details, click <code>Action</code> and select <code>Create read replica</code></li>
+<li>Select your main RDS that you want to create as replica and configure details as on top</li>
+</ol>
+<p>The read-replica will be created within 5-10 minutes.</p>
+<h2 id="migrate-with-dms-database-migration-service">Migrate with DMS (Database Migration Service)<a hidden class="anchor" aria-hidden="true" href="#migrate-with-dms-database-migration-service">#</a></h2>
+<p>You can also migrate your database to AWS RDS via DMS or Database Migration Service.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/aws/">Aws</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Nadlir Blog</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
