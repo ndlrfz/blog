@@ -4,9 +4,12 @@ title = 'Nadlir Blog'
 theme = 'PaperMod'
 
 [params]
+env = production
+author = ["Nadlir"]
 ShowToc = true
 ShowBreadCrumbs = true
 ShowCodeCopyButtons = true
+ShowPageNums = true
 
 [params.assets]
 favicon = "https://ndlrfz.github.io/blog/favicon.ico"
@@ -20,3 +23,9 @@ Title = "Ndlrfz 🐧🐮 🦄"
 Content = """**You will become clever through your mistakes.**
 _—German proverb_
 """
+
+[[params.socialIcons]]
+name = "github"
+title = "View Source on Github"
+url = "https://github.com/ndlrfz"
+
