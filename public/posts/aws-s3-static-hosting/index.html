@@ -4,7 +4,7 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Static Hosting with Amazon S3 | Nadlir Blog</title>
 <meta name="keywords" content="aws">
 <meta name="description" content="Here step-by-step to set up static hosting with Amazon S3:
@@ -22,7 +22,7 @@ index_document: index.html (make sure it i uploaded)
 
 
 ">
-<meta name="author" content="">
+<meta name="author" content="Nadlir">
 <link rel="canonical" href="http://localhost:1313/posts/aws-s3-static-hosting/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://ndlrfz.github.io/blog/favicon.ico">
@@ -69,7 +69,89 @@ index_document: index.html (make sure it i uploaded)
         }
 
     </style>
-</noscript>
+</noscript><meta property="og:url" content="http://localhost:1313/posts/aws-s3-static-hosting/">
+  <meta property="og:site_name" content="Nadlir Blog">
+  <meta property="og:title" content="Static Hosting with Amazon S3">
+  <meta property="og:description" content="Here step-by-step to set up static hosting with Amazon S3:
+Go to S3 and select your bucket name Upload your HTML files Click Permission tab and turn off the Block all public access. To use S3 as static web hosting, you must turn off this Move to the Bucket Policy and review your current policy. Make sure only s3:GetObject policy is enabled Move to the Default encryption and make sure the default server side encryption is enabled Scroll down to the Static website hosting and click Edit static web hoosting: Enable Hosting type: Host static website index_document: index.html (make sure it i uploaded) ">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-03-19T22:42:45+07:00">
+    <meta property="article:modified_time" content="2025-03-19T22:42:45+07:00">
+    <meta property="article:tag" content="Aws">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Static Hosting with Amazon S3">
+<meta name="twitter:description" content="Here step-by-step to set up static hosting with Amazon S3:
+
+Go to S3 and select your bucket name
+Upload your HTML files
+Click Permission tab and turn off the Block all public access. To use S3 as static web hosting, you must turn off this
+Move to the Bucket Policy and review your current policy. Make sure only s3:GetObject policy is enabled
+Move to the Default encryption and make sure the default server side encryption is enabled
+Scroll down to the Static website hosting and click Edit
+
+static web hoosting: Enable
+Hosting type: Host static website
+index_document: index.html (make sure it i uploaded)
+
+
+">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Static Hosting with Amazon S3",
+      "item": "http://localhost:1313/posts/aws-s3-static-hosting/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Static Hosting with Amazon S3",
+  "name": "Static Hosting with Amazon S3",
+  "description": "Here step-by-step to set up static hosting with Amazon S3:\nGo to S3 and select your bucket name Upload your HTML files Click Permission tab and turn off the Block all public access. To use S3 as static web hosting, you must turn off this Move to the Bucket Policy and review your current policy. Make sure only s3:GetObject policy is enabled Move to the Default encryption and make sure the default server side encryption is enabled Scroll down to the Static website hosting and click Edit static web hoosting: Enable Hosting type: Host static website index_document: index.html (make sure it i uploaded) ",
+  "keywords": [
+    "aws"
+  ],
+  "articleBody": "Here step-by-step to set up static hosting with Amazon S3:\nGo to S3 and select your bucket name Upload your HTML files Click Permission tab and turn off the Block all public access. To use S3 as static web hosting, you must turn off this Move to the Bucket Policy and review your current policy. Make sure only s3:GetObject policy is enabled Move to the Default encryption and make sure the default server side encryption is enabled Scroll down to the Static website hosting and click Edit static web hoosting: Enable Hosting type: Host static website index_document: index.html (make sure it i uploaded) ",
+  "wordCount" : "103",
+  "inLanguage": "en",
+  "datePublished": "2025-03-19T22:42:45+07:00",
+  "dateModified": "2025-03-19T22:42:45+07:00",
+  "author":[{
+    "@type": "Person",
+    "name": "Nadlir"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/aws-s3-static-hosting/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Nadlir Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ndlrfz.github.io/blog/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -123,7 +205,7 @@ index_document: index.html (make sure it i uploaded)
     <h1 class="post-title entry-hint-parent">
       Static Hosting with Amazon S3
     </h1>
-    <div class="post-meta"><span title='2025-03-19 22:42:45 +0700 WIB'>March 19, 2025</span>
+    <div class="post-meta"><span title='2025-03-19 22:42:45 +0700 WIB'>March 19, 2025</span>&nbsp;·&nbsp;Nadlir
 
 </div>
   </header> 

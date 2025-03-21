@@ -4,7 +4,7 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Neovim Multiple Configs | Nadlir Blog</title>
 <meta name="keywords" content="">
 <meta name="description" content="Intro
@@ -16,7 +16,7 @@ If you&rsquo;re Neovim fan, it is important to have multiple configs. You can co
 So now, let&rsquo;s configure it.
 Assuming that your main Neovim configured, let&rsquo;s configure the alternate Neovim configuration.
 This example wll be using kickstart.nvim as an alternative configuration. You can choose other starterkit like Lazy.nvim or distribution like Nvchad, Astro, etc.">
-<meta name="author" content="">
+<meta name="author" content="Nadlir">
 <link rel="canonical" href="http://localhost:1313/posts/neovim-multiple-configs/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://ndlrfz.github.io/blog/favicon.ico">
@@ -63,7 +63,84 @@ This example wll be using kickstart.nvim as an alternative configuration. You ca
         }
 
     </style>
-</noscript>
+</noscript><meta property="og:url" content="http://localhost:1313/posts/neovim-multiple-configs/">
+  <meta property="og:site_name" content="Nadlir Blog">
+  <meta property="og:title" content="Neovim Multiple Configs">
+  <meta property="og:description" content="Intro If you’re Neovim fan, it is important to have multiple configs. You can configure like this:
+~/.config/nvim: Your main configuration. When you’re working on your project, this is the configuration that will be loaded. ~/.config/nvim-alt: Your secondary Neovim configuration where you can implement new things. So now, let’s configure it.
+Assuming that your main Neovim configured, let’s configure the alternate Neovim configuration.
+This example wll be using kickstart.nvim as an alternative configuration. You can choose other starterkit like Lazy.nvim or distribution like Nvchad, Astro, etc.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-02-04T17:41:12+07:00">
+    <meta property="article:modified_time" content="2025-02-04T17:41:12+07:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Neovim Multiple Configs">
+<meta name="twitter:description" content="Intro
+If you&rsquo;re Neovim fan, it is important to have multiple configs. You can configure like this:
+
+~/.config/nvim: Your main configuration. When you&rsquo;re working on your project, this is the configuration that will be loaded.
+~/.config/nvim-alt: Your secondary Neovim configuration where you can implement new things.
+
+So now, let&rsquo;s configure it.
+Assuming that your main Neovim configured, let&rsquo;s configure the alternate Neovim configuration.
+This example wll be using kickstart.nvim as an alternative configuration. You can choose other starterkit like Lazy.nvim or distribution like Nvchad, Astro, etc.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Neovim Multiple Configs",
+      "item": "http://localhost:1313/posts/neovim-multiple-configs/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Neovim Multiple Configs",
+  "name": "Neovim Multiple Configs",
+  "description": "Intro If you\u0026rsquo;re Neovim fan, it is important to have multiple configs. You can configure like this:\n~/.config/nvim: Your main configuration. When you\u0026rsquo;re working on your project, this is the configuration that will be loaded. ~/.config/nvim-alt: Your secondary Neovim configuration where you can implement new things. So now, let\u0026rsquo;s configure it.\nAssuming that your main Neovim configured, let\u0026rsquo;s configure the alternate Neovim configuration.\nThis example wll be using kickstart.nvim as an alternative configuration. You can choose other starterkit like Lazy.nvim or distribution like Nvchad, Astro, etc.\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "Intro If you’re Neovim fan, it is important to have multiple configs. You can configure like this:\n~/.config/nvim: Your main configuration. When you’re working on your project, this is the configuration that will be loaded. ~/.config/nvim-alt: Your secondary Neovim configuration where you can implement new things. So now, let’s configure it.\nAssuming that your main Neovim configured, let’s configure the alternate Neovim configuration.\nThis example wll be using kickstart.nvim as an alternative configuration. You can choose other starterkit like Lazy.nvim or distribution like Nvchad, Astro, etc.\ngit clone https://github.com/nvim-lua/kickstart.nvim.git \"${XDG_CONFIG_HOME:-$HOME/.config}\"/nvim-alt Now you can start start Neovim with the nvim-alt configuration using the command below.\nNVIM_APPNAME=nvim-alt nvim The efficient to do this is to create an alias through ~/.bashrc or ~/.zshrc file:\necho \"alias nvimalt='NVIM_APPNAME=nvim-alt nvim'\" \u003e\u003e ~/.bashrc # or ~/.zshrc # for Bash user source ~/.bashrc # for ZSH user source ~/.zshrc You can now run Neovim alternative with the nvimalt command.\n",
+  "wordCount" : "152",
+  "inLanguage": "en",
+  "datePublished": "2025-02-04T17:41:12+07:00",
+  "dateModified": "2025-02-04T17:41:12+07:00",
+  "author":[{
+    "@type": "Person",
+    "name": "Nadlir"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/neovim-multiple-configs/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Nadlir Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ndlrfz.github.io/blog/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -117,7 +194,7 @@ This example wll be using kickstart.nvim as an alternative configuration. You ca
     <h1 class="post-title entry-hint-parent">
       Neovim Multiple Configs
     </h1>
-    <div class="post-meta"><span title='2025-02-04 17:41:12 +0700 WIB'>February 4, 2025</span>
+    <div class="post-meta"><span title='2025-02-04 17:41:12 +0700 WIB'>February 4, 2025</span>&nbsp;·&nbsp;Nadlir
 
 </div>
   </header> <div class="toc">

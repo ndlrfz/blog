@@ -4,11 +4,11 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Posts | Nadlir Blog</title>
 <meta name="keywords" content="">
 <meta name="description" content="Posts - Nadlir Blog">
-<meta name="author" content="">
+<meta name="author" content="Nadlir">
 <link rel="canonical" href="http://localhost:1313/posts/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://ndlrfz.github.io/blog/favicon.ico">
@@ -56,7 +56,30 @@
         }
 
     </style>
-</noscript>
+</noscript><meta property="og:url" content="http://localhost:1313/posts/">
+  <meta property="og:site_name" content="Nadlir Blog">
+  <meta property="og:title" content="Posts">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Posts">
+<meta name="twitter:description" content="">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }
+  ]
+}
+</script>
 </head>
 
 <body class="list" id="top">
@@ -120,7 +143,7 @@ By default, RDS will set up automatic backup and database snapshot.
 You can also deploy RDS in multiple AZ, which provides high-availability for your database. In multiple AZ deployment, RDS will automatically sync replicates to a standby RDS instance in different AZ.
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2025-03-21 21:30:12 +0700 WIB'>March 21, 2025</span></footer>
+  <footer class="entry-footer"><span title='2025-03-21 21:30:12 +0700 WIB'>March 21, 2025</span>&nbsp;·&nbsp;Nadlir</footer>
   <a class="entry-link" aria-label="post link to Guide to Amazon RDS (Relational Database Service)" href="http://localhost:1313/posts/aws-rds-guide/"></a>
 </article>
 
@@ -136,7 +159,7 @@ Check Private IP range of an EC2 instance Make sure to check local IP address ra
 Navigate to the Developer instance, select and click on the Subnet ID In the subnet section, select your subnet name and click on the Route table In the route table section, select your route table and click Routes tab Take a notes on the private IP address range for the Developer instance Creating VPC Peering Go to the VPC menu via console, select Peering connections, then click Create peering connection button Enter your peering details such as: Name: Developer &lt;&gt; Finance VPC ID (Requester): Select the Developer VPC and check the local IP address range of the VPC VPC ID (Accepter): Select the Finance VPC and check the local IP range of the VPC Tags: Name =&gt; Developer &lt;&gt; Finance Confirm click the Create peering connection On the peering details, you can see the Status is Pending Click Actions menu and select Accept request and confirm again (The Status of peering become Active) Adding VPC Peering to Subnet Route Table This must be done on EC2 servers for both Developer and Finance.
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2025-03-21 00:22:46 +0700 WIB'>March 21, 2025</span></footer>
+  <footer class="entry-footer"><span title='2025-03-21 00:22:46 +0700 WIB'>March 21, 2025</span>&nbsp;·&nbsp;Nadlir</footer>
   <a class="entry-link" aria-label="post link to Guide to AWS VPC Peering" href="http://localhost:1313/posts/aws-vpc-peering/"></a>
 </article>
 
@@ -151,7 +174,7 @@ For production, you must create custom VPC and do not use the default.
 To access VPC, you can use the AWS console. Or, you can access through the EC2 instance detail, in the Subnet ID section.
 Allow HTTP Access to EC2 Instance Select your EC2 instnace, move to details, click Subnet ID. Select your subnet and click Route Table tab (Route Table define rules of your network traffic from your subnet or gateway is directed) Click your Route Table name to get the details Selecy your routable name, and move to the Route tab, click Edit Route Click Add Route to allow internet to access your instance via gateway Destination: 0.0.0.0/0 Target: Internet Gateway Choose your internet gateway Save changes Open HTTP in Security Group Move to the EC2 instance menu and select your instance Select the Security tab and click your Security Group Select Inbound Rules and click Edit Inbound Rules &gt; Add Rule Type: HTTP Source: Anywhere IPv4 Allow Access to anywhere from EC2 via Security group On the Security group of your instance, select the Outbound Rules Click Edit outbound rules Type: All traffic Destination type: Custom Destination: 0.0.0.0/0 </p>
   </div>
-  <footer class="entry-footer"><span title='2025-03-20 18:37:15 +0700 WIB'>March 20, 2025</span></footer>
+  <footer class="entry-footer"><span title='2025-03-20 18:37:15 +0700 WIB'>March 20, 2025</span>&nbsp;·&nbsp;Nadlir</footer>
   <a class="entry-link" aria-label="post link to Guide to AWS VPC (Virtual Private Cloud)" href="http://localhost:1313/posts/aws-vpc-guide/"></a>
 </article>
 
@@ -163,7 +186,7 @@ Allow HTTP Access to EC2 Instance Select your EC2 instnace, move to details, cli
   <div class="entry-content">
     <p> Visit https://calculator.aws and click Create Estimate In the breadcamp menu, click My Estimate Create group - You can set up price based on software stack or deployment types (prod/stag/dev) and assign each as a group Enter group name Confirm Within your group, click Add service - AWS calculator provides more than 175 AWS services Select your region and find your service, for example EC2, then Configure Enter details your estimation for EC2 usage: Description Region Tenancey: shared (default) or dedicated server (more expensive) Operatin System: Linxu Windows etc Workloads: select the usage as needed for your organization Contant usage Daily spike traffic Weekly spike traffic Monthly spike traffic Baseline: number of EC2 that will be running Peak: max number of EC2 that running during peak time Duration of peak: duration of peak (based on your monitoring to ensure hours and time) On the EC2 Instances, select the instance family, vCPUs, memory, and network performance Select the right instance as needed for your workloads (IMPORTANT) On the Payment section, choose On-demand, which means you pay for compute capacity by the hour or second with no long-term commitments Other option, you can select Saving plans options. TYhere is discounts, but you need to commit at least 1 or 3-years. Or you can choose other purchasing options Standard Reserverd Instances: higher discount, but allow modifications only within the same family. You can upgrade t2 to t3 and you cannot upgrade t3 to mx Convertible Reserved Instances: lower discount, but flexible on modifications, cross instance types, tenancy, and operating systems To check estimated workloads per hour, click on the link estimated workload hours Add the Amazon EBS (Elastic Block Storage) for your EC2 * _Storage type_: **general purpose SSD (gp3)** * _general purpose_: **IOPS** (inputs/outputs) _30_ * _Storage amout_: **10 GB** * _Snapshot frquency_: **weekly** For the Inbound Data transfer, select Internet (free) with amount 1 TB per month For the Outbound Data Transfer, select Internet with the amount 100 GB per month You can review the data transfer cost voa show calculations Save and add service or you can view summary If you need supports from Amazon supports, click Add support Click Share to create public link for your estimation </p>
   </div>
-  <footer class="entry-footer"><span title='2025-03-20 08:48:35 +0700 WIB'>March 20, 2025</span></footer>
+  <footer class="entry-footer"><span title='2025-03-20 08:48:35 +0700 WIB'>March 20, 2025</span>&nbsp;·&nbsp;Nadlir</footer>
   <a class="entry-link" aria-label="post link to Guide to AWS Calculator" href="http://localhost:1313/posts/aws-calculator/"></a>
 </article>
 
@@ -175,7 +198,7 @@ Allow HTTP Access to EC2 Instance Select your EC2 instnace, move to details, cli
   <div class="entry-content">
     <p>How to connect to Amazon EC2 instance Using Session Manager via AWS console Using SSH command, key SSH is needed to secure authentication Using IAM policies that control SSH access to instances How to Increase Specs of Amazon EC2 Stop the instance first (after instance stopped, both IP and and DNS gone) Select instance &gt; Actions &gt; Instance Settings Change auto recovery behavior: changing how instance auto-recovery Change instance type: change or upgrade instance type Change CPU options: change the current CPU spec Edit user data: modify current user data Start again the instance </p>
   </div>
-  <footer class="entry-footer"><span title='2025-03-20 08:30:32 +0700 WIB'>March 20, 2025</span></footer>
+  <footer class="entry-footer"><span title='2025-03-20 08:30:32 +0700 WIB'>March 20, 2025</span>&nbsp;·&nbsp;Nadlir</footer>
   <a class="entry-link" aria-label="post link to Amazon EC2 Basic: Connect and Change Instance Type" href="http://localhost:1313/posts/aws-ec2-basic/"></a>
 </article>
 
@@ -188,7 +211,7 @@ Allow HTTP Access to EC2 Instance Select your EC2 instnace, move to details, cli
     <p>Guide to deploy Amazon EC2 instance with multiple AZ and installation script.
 EC2 -&gt; Launch Instance Enter instance name, select the operating system (AMI) Select instance type (which server specs you need) Compare instance types -&gt; Get advice which will show you recommendation for your applications Select key-pair SSH or generate new Select VPC (for testing, use default. for production, always create custom VPC) Select the subnet (YOU MUST CHEK THE AVAILABILITY ZONE HERE) Security group to allow inbound traffic to specific port Advanced details -&gt; User data (enter your deployment script. Example: installing LAMP Stack, downloading source code, etc) Launch Instance </p>
   </div>
-  <footer class="entry-footer"><span title='2025-03-19 23:42:31 +0700 WIB'>March 19, 2025</span></footer>
+  <footer class="entry-footer"><span title='2025-03-19 23:42:31 +0700 WIB'>March 19, 2025</span>&nbsp;·&nbsp;Nadlir</footer>
   <a class="entry-link" aria-label="post link to Create Amazon EC2 Instance" href="http://localhost:1313/posts/aws-ec2-setup/"></a>
 </article>
 
@@ -201,7 +224,7 @@ EC2 -&gt; Launch Instance Enter instance name, select the operating system (AMI)
     <p>Here step-by-step to set up static hosting with Amazon S3:
 Go to S3 and select your bucket name Upload your HTML files Click Permission tab and turn off the Block all public access. To use S3 as static web hosting, you must turn off this Move to the Bucket Policy and review your current policy. Make sure only s3:GetObject policy is enabled Move to the Default encryption and make sure the default server side encryption is enabled Scroll down to the Static website hosting and click Edit static web hoosting: Enable Hosting type: Host static website index_document: index.html (make sure it i uploaded) </p>
   </div>
-  <footer class="entry-footer"><span title='2025-03-19 22:42:45 +0700 WIB'>March 19, 2025</span></footer>
+  <footer class="entry-footer"><span title='2025-03-19 22:42:45 +0700 WIB'>March 19, 2025</span>&nbsp;·&nbsp;Nadlir</footer>
   <a class="entry-link" aria-label="post link to Static Hosting with Amazon S3" href="http://localhost:1313/posts/aws-s3-static-hosting/"></a>
 </article>
 
@@ -215,7 +238,7 @@ Go to S3 and select your bucket name Upload your HTML files Click Permission tab
 num_list = [] for num in range(0, 9 &#43; 1): num_list.append(num) print(num_list) Generating letters:
 import string string_lowwe = list(string.ascii_lowercase) print(string_lower) string_upper = list(string.ascii_uppercase) print(string_upper) </p>
   </div>
-  <footer class="entry-footer"><span title='2025-03-16 22:38:22 +0700 WIB'>March 16, 2025</span></footer>
+  <footer class="entry-footer"><span title='2025-03-16 22:38:22 +0700 WIB'>March 16, 2025</span>&nbsp;·&nbsp;Nadlir</footer>
   <a class="entry-link" aria-label="post link to How to Generate Numbers and Letter Python" href="http://localhost:1313/posts/generate-numbers-letter-caps-python/"></a>
 </article>
 
@@ -229,7 +252,7 @@ import string string_lowwe = list(string.ascii_lowercase) print(string_lower) st
 Go to the site configuration on Cloudflare SSL &gt; Overview SSL Encryption section and Configure Select Full Done.
 </p>
   </div>
-  <footer class="entry-footer"><span title='2025-03-16 17:44:27 +0700 WIB'>March 16, 2025</span></footer>
+  <footer class="entry-footer"><span title='2025-03-16 17:44:27 +0700 WIB'>March 16, 2025</span>&nbsp;·&nbsp;Nadlir</footer>
   <a class="entry-link" aria-label="post link to ERR_TOO_MANY_REDIRECTS on Cloudflare" href="http://localhost:1313/posts/too-many-redirects-cloudflare/"></a>
 </article>
 
@@ -245,12 +268,12 @@ Dowload Oracle Instant Client libraries to your system. In this example, I will 
 sudo ldd --version Extract Oracle Instant Client Libraries sudo apt install unzip -y unzip instantclient-basic-linux.x64-23.7.0.25.01.zip unzip instantclient-sdk-linux.x64-23.7.0.25.01.zip Move the Oracle Instant Client libraries to the correct path. mkdir -p /usr/local/lib/oracle/ mv instantclient_23_7 /usr/local/lib/oracle/ ln -s /usr/local/lib/oracle/instantclient_23_7 /usr/local/lib/oracle/instantclient cd /usr/local/lib/oracle find instantclient_23_7 -type f -exec chmod 644 {} &#43; find instantclient_23_7 -type d -exec chmod 755 {} &#43; Download PHP OCI8 module and compile. sudo apt install php8.4-dev cd /usr/src/ wget https://pecl.php.net/get/oci8-3.4.0.tgz tar xzf oci8-3.4.0.tgz cd oci8-3.4.0 phpize8.4 ./configure --with-oci8=instantclient,/usr/local/lib/oracle/instantclient --with-php-config=/usr/bin/php-config8.4 make Install PHP OCI8 module. make install chmod 644 /usr/lib/php/20240924/oci8.so echo &#39;; priority=10&#39; &gt; /etc/php/8.4/mods-available/oci8.ini echo &#39;extension=oci8.so&#39; &gt;&gt; /etc/php/8.4/mods-available/oci8.ini chmod 644 /etc/php/8.4/mods-available/oci8.ini phpenmod -v 8.4 oci8 Adding new library path for Oracle Instant Client libraries. vim /etc/ld.so.conf.d/xx_php_oci8.conf # path to oracle instant client directory /usr/local/lib/oracle/instantclient sudo ldconfig Restart Apache and verify PHP module. sudo systemctl restart apache2 php -m | grep oci Output:
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2025-03-04 05:10:43 +0700 WIB'>March 4, 2025</span></footer>
+  <footer class="entry-footer"><span title='2025-03-04 05:10:43 +0700 WIB'>March 4, 2025</span>&nbsp;·&nbsp;Nadlir</footer>
   <a class="entry-link" aria-label="post link to How to Install PHP OCI8 (Oracle Instant Client) Module on Debian/Ubuntu" href="http://localhost:1313/posts/php-oci8-debian-ubuntu/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
-    <a class="next" href="http://localhost:1313/posts/page/2/">Next&nbsp;&nbsp;»
+    <a class="next" href="http://localhost:1313/posts/page/2/">Next&nbsp;2/2&nbsp;»
     </a>
   </nav>
 </footer>

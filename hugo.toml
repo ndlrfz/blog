@@ -4,6 +4,7 @@ title = 'Nadlir Blog'
 theme = 'PaperMod'
 
 [params]
+env = "production"
 author = ["Nadlir"]
 ShowToc = true
 ShowBreadCrumbs = true
@@ -22,9 +23,4 @@ Title = "Ndlrfz 🐧🐮 🦄"
 Content = """**You will become clever through your mistakes.**
 _—German proverb_
 """
-
-[params.socialIcons]
-name = "github"
-title = "View Source on Github"
-url = "https://github.com/ndlrfz"
 

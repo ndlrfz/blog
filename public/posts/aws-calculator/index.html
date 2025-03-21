@@ -4,7 +4,7 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Guide to AWS Calculator | Nadlir Blog</title>
 <meta name="keywords" content="aws">
 <meta name="description" content="
@@ -68,7 +68,7 @@ Save and add service or you can view summary
 If you need supports from Amazon supports, click Add support
 Click Share to create public link for your estimation
 ">
-<meta name="author" content="">
+<meta name="author" content="Nadlir">
 <link rel="canonical" href="http://localhost:1313/posts/aws-calculator/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://ndlrfz.github.io/blog/favicon.ico">
@@ -115,7 +115,134 @@ Click Share to create public link for your estimation
         }
 
     </style>
-</noscript>
+</noscript><meta property="og:url" content="http://localhost:1313/posts/aws-calculator/">
+  <meta property="og:site_name" content="Nadlir Blog">
+  <meta property="og:title" content="Guide to AWS Calculator">
+  <meta property="og:description" content=" Visit https://calculator.aws and click Create Estimate In the breadcamp menu, click My Estimate Create group - You can set up price based on software stack or deployment types (prod/stag/dev) and assign each as a group Enter group name Confirm Within your group, click Add service - AWS calculator provides more than 175 AWS services Select your region and find your service, for example EC2, then Configure Enter details your estimation for EC2 usage: Description Region Tenancey: shared (default) or dedicated server (more expensive) Operatin System: Linxu Windows etc Workloads: select the usage as needed for your organization Contant usage Daily spike traffic Weekly spike traffic Monthly spike traffic Baseline: number of EC2 that will be running Peak: max number of EC2 that running during peak time Duration of peak: duration of peak (based on your monitoring to ensure hours and time) On the EC2 Instances, select the instance family, vCPUs, memory, and network performance Select the right instance as needed for your workloads (IMPORTANT) On the Payment section, choose On-demand, which means you pay for compute capacity by the hour or second with no long-term commitments Other option, you can select Saving plans options. TYhere is discounts, but you need to commit at least 1 or 3-years. Or you can choose other purchasing options Standard Reserverd Instances: higher discount, but allow modifications only within the same family. You can upgrade t2 to t3 and you cannot upgrade t3 to mx Convertible Reserved Instances: lower discount, but flexible on modifications, cross instance types, tenancy, and operating systems To check estimated workloads per hour, click on the link estimated workload hours Add the Amazon EBS (Elastic Block Storage) for your EC2 * _Storage type_: **general purpose SSD (gp3)** * _general purpose_: **IOPS** (inputs/outputs) _30_ * _Storage amout_: **10 GB** * _Snapshot frquency_: **weekly** For the Inbound Data transfer, select Internet (free) with amount 1 TB per month For the Outbound Data Transfer, select Internet with the amount 100 GB per month You can review the data transfer cost voa show calculations Save and add service or you can view summary If you need supports from Amazon supports, click Add support Click Share to create public link for your estimation ">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-03-20T08:48:35+07:00">
+    <meta property="article:modified_time" content="2025-03-20T08:48:35+07:00">
+    <meta property="article:tag" content="Aws">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Guide to AWS Calculator">
+<meta name="twitter:description" content="
+Visit https://calculator.aws and click Create Estimate
+In the breadcamp menu, click My Estimate
+Create group - You can set up price based on software stack or deployment types (prod/stag/dev) and assign each as a group
+
+Enter group name
+Confirm
+
+
+Within your group, click Add service - AWS calculator provides more than 175 AWS services
+Select your region and find your service, for example EC2, then Configure
+Enter details your estimation for EC2 usage:
+
+Description
+Region
+Tenancey: shared (default) or dedicated server (more expensive)
+Operatin System: Linxu Windows etc
+Workloads: select the usage as needed for your organization
+
+Contant usage
+Daily spike traffic
+Weekly spike traffic
+Monthly spike traffic
+
+
+Baseline: number of EC2 that will be running
+Peak: max number of EC2 that running during peak time
+Duration of peak: duration of peak (based on your monitoring to ensure hours and time)
+
+
+On the EC2 Instances, select the instance family, vCPUs, memory, and network performance
+
+Select the right instance as needed for your workloads (IMPORTANT)
+
+
+On the Payment section, choose On-demand, which means you pay for compute capacity by the hour or second with no long-term commitments
+
+Other option, you can select Saving plans options. TYhere is discounts, but you need to commit at least 1 or 3-years.
+Or you can choose other purchasing options
+
+Standard Reserverd Instances: higher discount, but allow modifications only within the same family. You can upgrade t2 to t3 and you cannot upgrade t3 to mx
+Convertible Reserved Instances: lower discount, but flexible on modifications, cross instance types, tenancy, and operating systems
+
+
+
+
+To check estimated workloads per hour, click on the link estimated workload hours
+Add the Amazon EBS (Elastic Block Storage) for your EC2
+
+* _Storage type_: **general purpose SSD (gp3)**
+* _general purpose_: **IOPS** (inputs/outputs) _30_
+* _Storage amout_: **10 GB**
+* _Snapshot frquency_: **weekly**
+
+For the Inbound Data transfer, select Internet (free) with amount 1 TB per month
+For the Outbound Data Transfer, select Internet with the amount 100 GB per month
+You can review the data transfer cost voa show calculations
+Save and add service or you can view summary
+If you need supports from Amazon supports, click Add support
+Click Share to create public link for your estimation
+">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Guide to AWS Calculator",
+      "item": "http://localhost:1313/posts/aws-calculator/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Guide to AWS Calculator",
+  "name": "Guide to AWS Calculator",
+  "description": " Visit https://calculator.aws and click Create Estimate In the breadcamp menu, click My Estimate Create group - You can set up price based on software stack or deployment types (prod/stag/dev) and assign each as a group Enter group name Confirm Within your group, click Add service - AWS calculator provides more than 175 AWS services Select your region and find your service, for example EC2, then Configure Enter details your estimation for EC2 usage: Description Region Tenancey: shared (default) or dedicated server (more expensive) Operatin System: Linxu Windows etc Workloads: select the usage as needed for your organization Contant usage Daily spike traffic Weekly spike traffic Monthly spike traffic Baseline: number of EC2 that will be running Peak: max number of EC2 that running during peak time Duration of peak: duration of peak (based on your monitoring to ensure hours and time) On the EC2 Instances, select the instance family, vCPUs, memory, and network performance Select the right instance as needed for your workloads (IMPORTANT) On the Payment section, choose On-demand, which means you pay for compute capacity by the hour or second with no long-term commitments Other option, you can select Saving plans options. TYhere is discounts, but you need to commit at least 1 or 3-years. Or you can choose other purchasing options Standard Reserverd Instances: higher discount, but allow modifications only within the same family. You can upgrade t2 to t3 and you cannot upgrade t3 to mx Convertible Reserved Instances: lower discount, but flexible on modifications, cross instance types, tenancy, and operating systems To check estimated workloads per hour, click on the link estimated workload hours Add the Amazon EBS (Elastic Block Storage) for your EC2 * _Storage type_: **general purpose SSD (gp3)** * _general purpose_: **IOPS** (inputs/outputs) _30_ * _Storage amout_: **10 GB** * _Snapshot frquency_: **weekly** For the Inbound Data transfer, select Internet (free) with amount 1 TB per month For the Outbound Data Transfer, select Internet with the amount 100 GB per month You can review the data transfer cost voa show calculations Save and add service or you can view summary If you need supports from Amazon supports, click Add support Click Share to create public link for your estimation ",
+  "keywords": [
+    "aws"
+  ],
+  "articleBody": " Visit https://calculator.aws and click Create Estimate In the breadcamp menu, click My Estimate Create group - You can set up price based on software stack or deployment types (prod/stag/dev) and assign each as a group Enter group name Confirm Within your group, click Add service - AWS calculator provides more than 175 AWS services Select your region and find your service, for example EC2, then Configure Enter details your estimation for EC2 usage: Description Region Tenancey: shared (default) or dedicated server (more expensive) Operatin System: Linxu Windows etc Workloads: select the usage as needed for your organization Contant usage Daily spike traffic Weekly spike traffic Monthly spike traffic Baseline: number of EC2 that will be running Peak: max number of EC2 that running during peak time Duration of peak: duration of peak (based on your monitoring to ensure hours and time) On the EC2 Instances, select the instance family, vCPUs, memory, and network performance Select the right instance as needed for your workloads (IMPORTANT) On the Payment section, choose On-demand, which means you pay for compute capacity by the hour or second with no long-term commitments Other option, you can select Saving plans options. TYhere is discounts, but you need to commit at least 1 or 3-years. Or you can choose other purchasing options Standard Reserverd Instances: higher discount, but allow modifications only within the same family. You can upgrade t2 to t3 and you cannot upgrade t3 to mx Convertible Reserved Instances: lower discount, but flexible on modifications, cross instance types, tenancy, and operating systems To check estimated workloads per hour, click on the link estimated workload hours Add the Amazon EBS (Elastic Block Storage) for your EC2 * _Storage type_: **general purpose SSD (gp3)** * _general purpose_: **IOPS** (inputs/outputs) _30_ * _Storage amout_: **10 GB** * _Snapshot frquency_: **weekly** For the Inbound Data transfer, select Internet (free) with amount 1 TB per month For the Outbound Data Transfer, select Internet with the amount 100 GB per month You can review the data transfer cost voa show calculations Save and add service or you can view summary If you need supports from Amazon supports, click Add support Click Share to create public link for your estimation ",
+  "wordCount" : "367",
+  "inLanguage": "en",
+  "datePublished": "2025-03-20T08:48:35+07:00",
+  "dateModified": "2025-03-20T08:48:35+07:00",
+  "author":[{
+    "@type": "Person",
+    "name": "Nadlir"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/aws-calculator/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Nadlir Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ndlrfz.github.io/blog/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -169,7 +296,7 @@ Click Share to create public link for your estimation
     <h1 class="post-title entry-hint-parent">
       Guide to AWS Calculator
     </h1>
-    <div class="post-meta"><span title='2025-03-20 08:48:35 +0700 WIB'>March 20, 2025</span>
+    <div class="post-meta"><span title='2025-03-20 08:48:35 +0700 WIB'>March 20, 2025</span>&nbsp;·&nbsp;Nadlir
 
 </div>
   </header> 

@@ -4,7 +4,7 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Guide to AWS VPC Peering | Nadlir Blog</title>
 <meta name="keywords" content="aws">
 <meta name="description" content="Intro
@@ -35,7 +35,7 @@ Click Actions menu and select Accept request and confirm again (The Status of pe
 
 Adding VPC Peering to Subnet Route Table
 This must be done on EC2 servers for both Developer and Finance.">
-<meta name="author" content="">
+<meta name="author" content="Nadlir">
 <link rel="canonical" href="http://localhost:1313/posts/aws-vpc-peering/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://ndlrfz.github.io/blog/favicon.ico">
@@ -82,7 +82,104 @@ This must be done on EC2 servers for both Developer and Finance.">
         }
 
     </style>
-</noscript>
+</noscript><meta property="og:url" content="http://localhost:1313/posts/aws-vpc-peering/">
+  <meta property="og:site_name" content="Nadlir Blog">
+  <meta property="og:title" content="Guide to AWS VPC Peering">
+  <meta property="og:description" content="Intro VPC Peering is needed when you want to connect two different VPC each other. Mostly used for cross-department in SDLC.
+In this example, I will connect between two VPCs Developer and Finance, and each VPC attached to different EC2 intance.
+Check Private IP range of an EC2 instance Make sure to check local IP address range for both Developer and Finance instances.
+Navigate to the Developer instance, select and click on the Subnet ID In the subnet section, select your subnet name and click on the Route table In the route table section, select your route table and click Routes tab Take a notes on the private IP address range for the Developer instance Creating VPC Peering Go to the VPC menu via console, select Peering connections, then click Create peering connection button Enter your peering details such as: Name: Developer &lt;&gt; Finance VPC ID (Requester): Select the Developer VPC and check the local IP address range of the VPC VPC ID (Accepter): Select the Finance VPC and check the local IP range of the VPC Tags: Name =&gt; Developer &lt;&gt; Finance Confirm click the Create peering connection On the peering details, you can see the Status is Pending Click Actions menu and select Accept request and confirm again (The Status of peering become Active) Adding VPC Peering to Subnet Route Table This must be done on EC2 servers for both Developer and Finance.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-03-21T00:22:46+07:00">
+    <meta property="article:modified_time" content="2025-03-21T00:22:46+07:00">
+    <meta property="article:tag" content="Aws">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Guide to AWS VPC Peering">
+<meta name="twitter:description" content="Intro
+VPC Peering is needed when you want to connect two different VPC each other. Mostly used for cross-department in SDLC.
+In this example, I will connect between two VPCs Developer and Finance, and each VPC attached to different EC2 intance.
+Check Private IP range of an EC2 instance
+Make sure to check local IP address range for both Developer and Finance instances.
+
+Navigate to the Developer instance, select and click on the Subnet ID
+In the subnet section, select your subnet name and click on the Route table
+In the route table section, select your route table and click Routes tab
+Take a notes on the private IP address range for the Developer instance
+
+Creating VPC Peering
+
+Go to the VPC menu via console, select Peering connections, then click Create peering connection button
+Enter your peering details such as:
+
+Name: Developer &lt;&gt; Finance
+VPC ID (Requester): Select the Developer VPC and check the local IP address range of the VPC
+VPC ID (Accepter): Select the Finance VPC and check the local IP range of the VPC
+Tags: Name =&gt; Developer &lt;&gt; Finance
+
+
+Confirm click the Create peering connection
+On the peering details, you can see the Status is Pending
+Click Actions menu and select Accept request and confirm again (The Status of peering become Active)
+
+Adding VPC Peering to Subnet Route Table
+This must be done on EC2 servers for both Developer and Finance.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Guide to AWS VPC Peering",
+      "item": "http://localhost:1313/posts/aws-vpc-peering/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Guide to AWS VPC Peering",
+  "name": "Guide to AWS VPC Peering",
+  "description": "Intro VPC Peering is needed when you want to connect two different VPC each other. Mostly used for cross-department in SDLC.\nIn this example, I will connect between two VPCs Developer and Finance, and each VPC attached to different EC2 intance.\nCheck Private IP range of an EC2 instance Make sure to check local IP address range for both Developer and Finance instances.\nNavigate to the Developer instance, select and click on the Subnet ID In the subnet section, select your subnet name and click on the Route table In the route table section, select your route table and click Routes tab Take a notes on the private IP address range for the Developer instance Creating VPC Peering Go to the VPC menu via console, select Peering connections, then click Create peering connection button Enter your peering details such as: Name: Developer \u0026lt;\u0026gt; Finance VPC ID (Requester): Select the Developer VPC and check the local IP address range of the VPC VPC ID (Accepter): Select the Finance VPC and check the local IP range of the VPC Tags: Name =\u0026gt; Developer \u0026lt;\u0026gt; Finance Confirm click the Create peering connection On the peering details, you can see the Status is Pending Click Actions menu and select Accept request and confirm again (The Status of peering become Active) Adding VPC Peering to Subnet Route Table This must be done on EC2 servers for both Developer and Finance.\n",
+  "keywords": [
+    "aws"
+  ],
+  "articleBody": "Intro VPC Peering is needed when you want to connect two different VPC each other. Mostly used for cross-department in SDLC.\nIn this example, I will connect between two VPCs Developer and Finance, and each VPC attached to different EC2 intance.\nCheck Private IP range of an EC2 instance Make sure to check local IP address range for both Developer and Finance instances.\nNavigate to the Developer instance, select and click on the Subnet ID In the subnet section, select your subnet name and click on the Route table In the route table section, select your route table and click Routes tab Take a notes on the private IP address range for the Developer instance Creating VPC Peering Go to the VPC menu via console, select Peering connections, then click Create peering connection button Enter your peering details such as: Name: Developer \u003c\u003e Finance VPC ID (Requester): Select the Developer VPC and check the local IP address range of the VPC VPC ID (Accepter): Select the Finance VPC and check the local IP range of the VPC Tags: Name =\u003e Developer \u003c\u003e Finance Confirm click the Create peering connection On the peering details, you can see the Status is Pending Click Actions menu and select Accept request and confirm again (The Status of peering become Active) Adding VPC Peering to Subnet Route Table This must be done on EC2 servers for both Developer and Finance.\nHere I will configure the Developer instance.\nBack to the EC2 instance and select Developer instance details, then Subnet ID =\u003e Route table =\u003e Routes (like the first step)\nClick Edit routes to add new routes for VPC peering\nClick Add route with the following:\nDestination: Enter local IP address range for the Finance instance Target: Peering connection and select your VPC Peering that you’ve created Save changes Now move to the EC2 instance and select the Finance instance. Then, do the same as on top, but make sure to enter the IP address range of the Developer instance in the Destination.\nAllow ICMP/Ping between EC2 Instances In this example, I will allow ping to the Finance instance from the Developer instance.\nClick on the EC2 and select the Finance instance Click on the Security tab and then click Security groups section In the Inbound rules tab, click Edit inbound rules Now Add rule Type: Custom ICMP- IPv4 Source: Enter the range IP address of Developer instance Save rules Test VPC Peering Connect to your EC2 instance (Developer) via Session Manager or SSH You can now ping to the local IP of the Finance instance ",
+  "wordCount" : "430",
+  "inLanguage": "en",
+  "datePublished": "2025-03-21T00:22:46+07:00",
+  "dateModified": "2025-03-21T00:22:46+07:00",
+  "author":[{
+    "@type": "Person",
+    "name": "Nadlir"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/aws-vpc-peering/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Nadlir Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ndlrfz.github.io/blog/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -136,7 +233,7 @@ This must be done on EC2 servers for both Developer and Finance.">
     <h1 class="post-title entry-hint-parent">
       Guide to AWS VPC Peering
     </h1>
-    <div class="post-meta"><span title='2025-03-21 00:22:46 +0700 WIB'>March 21, 2025</span>
+    <div class="post-meta"><span title='2025-03-21 00:22:46 +0700 WIB'>March 21, 2025</span>&nbsp;·&nbsp;Nadlir
 
 </div>
   </header> <div class="toc">

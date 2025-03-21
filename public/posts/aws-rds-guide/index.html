@@ -4,14 +4,14 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Guide to Amazon RDS (Relational Database Service) | Nadlir Blog</title>
 <meta name="keywords" content="aws">
 <meta name="description" content="Intro
 In short, RDS or Relational Database Service is a datbase server managed by AWS in the cloud. RDS offers both open source (MySQL, MariaDB, PostgreSQL) and commercial database server (Oracle Datbase, SQL Server) as a service.
 By default, RDS will set up automatic backup and database snapshot.
 You can also deploy RDS in multiple AZ, which provides high-availability for your database. In multiple AZ deployment, RDS will automatically sync replicates to a standby RDS instance in different AZ.">
-<meta name="author" content="">
+<meta name="author" content="Nadlir">
 <link rel="canonical" href="http://localhost:1313/posts/aws-rds-guide/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://ndlrfz.github.io/blog/favicon.ico">
@@ -58,7 +58,79 @@ You can also deploy RDS in multiple AZ, which provides high-availability for you
         }
 
     </style>
-</noscript>
+</noscript><meta property="og:url" content="http://localhost:1313/posts/aws-rds-guide/">
+  <meta property="og:site_name" content="Nadlir Blog">
+  <meta property="og:title" content="Guide to Amazon RDS (Relational Database Service)">
+  <meta property="og:description" content="Intro In short, RDS or Relational Database Service is a datbase server managed by AWS in the cloud. RDS offers both open source (MySQL, MariaDB, PostgreSQL) and commercial database server (Oracle Datbase, SQL Server) as a service.
+By default, RDS will set up automatic backup and database snapshot.
+You can also deploy RDS in multiple AZ, which provides high-availability for your database. In multiple AZ deployment, RDS will automatically sync replicates to a standby RDS instance in different AZ.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-03-21T21:30:12+07:00">
+    <meta property="article:modified_time" content="2025-03-21T21:30:12+07:00">
+    <meta property="article:tag" content="Aws">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Guide to Amazon RDS (Relational Database Service)">
+<meta name="twitter:description" content="Intro
+In short, RDS or Relational Database Service is a datbase server managed by AWS in the cloud. RDS offers both open source (MySQL, MariaDB, PostgreSQL) and commercial database server (Oracle Datbase, SQL Server) as a service.
+By default, RDS will set up automatic backup and database snapshot.
+You can also deploy RDS in multiple AZ, which provides high-availability for your database. In multiple AZ deployment, RDS will automatically sync replicates to a standby RDS instance in different AZ.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Guide to Amazon RDS (Relational Database Service)",
+      "item": "http://localhost:1313/posts/aws-rds-guide/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Guide to Amazon RDS (Relational Database Service)",
+  "name": "Guide to Amazon RDS (Relational Database Service)",
+  "description": "Intro In short, RDS or Relational Database Service is a datbase server managed by AWS in the cloud. RDS offers both open source (MySQL, MariaDB, PostgreSQL) and commercial database server (Oracle Datbase, SQL Server) as a service.\nBy default, RDS will set up automatic backup and database snapshot.\nYou can also deploy RDS in multiple AZ, which provides high-availability for your database. In multiple AZ deployment, RDS will automatically sync replicates to a standby RDS instance in different AZ.\n",
+  "keywords": [
+    "aws"
+  ],
+  "articleBody": "Intro In short, RDS or Relational Database Service is a datbase server managed by AWS in the cloud. RDS offers both open source (MySQL, MariaDB, PostgreSQL) and commercial database server (Oracle Datbase, SQL Server) as a service.\nBy default, RDS will set up automatic backup and database snapshot.\nYou can also deploy RDS in multiple AZ, which provides high-availability for your database. In multiple AZ deployment, RDS will automatically sync replicates to a standby RDS instance in different AZ.\nYou can also create read-only replica of RDS for ready-heavy database workloads.\nProvision Amazon RDS In the AWS console, type database and select Aurora and RDS Select the Databases menu and click Create database Select the Standard create method, especially for customizing your database configurations Select your database engine, for example MariaDB Select the Engine version for your database Select the template that yiu want to use: Production Dev/Test Free Tier enter your RDS name in the DB instance identifier For the credentials settings: Master username: enter or leave it as edefault admin Credentials Management: use Self managed for testing only Master password: Enter your password and repeat Move to the Instance configurations Select Burstable classes Select the instance type for your RDS For storage type gp3 and allocate the storage to 20 GB For the VPC and DB Subnet, you can use default or custom isolated VPC Public access to no and VPC Security Group to Choose existing On the Additional storage configuration Check the Enable storage autoscaling On the Availability and durability, select the Create standby instance option Disable the Performance Insight and Enhanced Monitoring In the Additional configuration, configure the following Initial database name: You must enter the database name for your application. RDS does not create database by default DB parameter group and option group: You can leave it as default Check the Enable automatic backup and select the Backup interval Check the Enable enryption to enable encryption of your database at rest In the Maintenance section Uncheck the Enable auto minor update Select No preference on the Maintenance window Review the cost for your database monthly and click Create database The database instance will be created within 5-10 minutes. Make sure to click the reload button to check the status until Available.\nCreate Read-Replicate in Amazon RDS From your console, go to the Aurora and RDS section, then click Databases Click your database instance to get details Within your database instance details, click Action and select Create read replica Select your main RDS that you want to create as replica and configure details as on top The read-replica will be created within 5-10 minutes.\nMigrate with DMS (Database Migration Service) You can also migrate your database to AWS RDS via DMS or Database Migration Service.\n",
+  "wordCount" : "459",
+  "inLanguage": "en",
+  "datePublished": "2025-03-21T21:30:12+07:00",
+  "dateModified": "2025-03-21T21:30:12+07:00",
+  "author":[{
+    "@type": "Person",
+    "name": "Nadlir"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/aws-rds-guide/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Nadlir Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ndlrfz.github.io/blog/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -112,7 +184,7 @@ You can also deploy RDS in multiple AZ, which provides high-availability for you
     <h1 class="post-title entry-hint-parent">
       Guide to Amazon RDS (Relational Database Service)
     </h1>
-    <div class="post-meta"><span title='2025-03-21 21:30:12 +0700 WIB'>March 21, 2025</span>
+    <div class="post-meta"><span title='2025-03-21 21:30:12 +0700 WIB'>March 21, 2025</span>&nbsp;·&nbsp;Nadlir
 
 </div>
   </header> <div class="toc">

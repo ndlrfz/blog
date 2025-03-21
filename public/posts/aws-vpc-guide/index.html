@@ -4,7 +4,7 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Guide to AWS VPC (Virtual Private Cloud) | Nadlir Blog</title>
 <meta name="keywords" content="aws">
 <meta name="description" content="Intro
@@ -47,7 +47,7 @@ Type: All traffic
 Destination type: Custom
 Destination: 0.0.0.0/0
 ">
-<meta name="author" content="">
+<meta name="author" content="Nadlir">
 <link rel="canonical" href="http://localhost:1313/posts/aws-vpc-guide/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://ndlrfz.github.io/blog/favicon.ico">
@@ -94,7 +94,116 @@ Destination: 0.0.0.0/0
         }
 
     </style>
-</noscript>
+</noscript><meta property="og:url" content="http://localhost:1313/posts/aws-vpc-guide/">
+  <meta property="og:site_name" content="Nadlir Blog">
+  <meta property="og:title" content="Guide to AWS VPC (Virtual Private Cloud)">
+  <meta property="og:description" content="Intro VPC or Virtual Private Cloud is an isolated internal network on AWS environment. When creating Amazon EC2, the default VPC will be created and attached to the instance.
+For production, you must create custom VPC and do not use the default.
+To access VPC, you can use the AWS console. Or, you can access through the EC2 instance detail, in the Subnet ID section.
+Allow HTTP Access to EC2 Instance Select your EC2 instnace, move to details, click Subnet ID. Select your subnet and click Route Table tab (Route Table define rules of your network traffic from your subnet or gateway is directed) Click your Route Table name to get the details Selecy your routable name, and move to the Route tab, click Edit Route Click Add Route to allow internet to access your instance via gateway Destination: 0.0.0.0/0 Target: Internet Gateway Choose your internet gateway Save changes Open HTTP in Security Group Move to the EC2 instance menu and select your instance Select the Security tab and click your Security Group Select Inbound Rules and click Edit Inbound Rules &gt; Add Rule Type: HTTP Source: Anywhere IPv4 Allow Access to anywhere from EC2 via Security group On the Security group of your instance, select the Outbound Rules Click Edit outbound rules Type: All traffic Destination type: Custom Destination: 0.0.0.0/0 ">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-03-20T18:37:15+07:00">
+    <meta property="article:modified_time" content="2025-03-20T18:37:15+07:00">
+    <meta property="article:tag" content="Aws">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Guide to AWS VPC (Virtual Private Cloud)">
+<meta name="twitter:description" content="Intro
+VPC or Virtual Private Cloud is an isolated internal network on AWS environment. When creating Amazon EC2, the default VPC will be created and attached to the instance.
+For production, you must create custom VPC and do not use the default.
+To access VPC, you can use the AWS console. Or, you can access through the EC2 instance detail, in the Subnet ID section.
+Allow HTTP Access to EC2 Instance
+
+Select your EC2 instnace, move to details, click Subnet ID.
+Select your subnet and click Route Table tab (Route Table define rules of your network traffic from your subnet or gateway is directed)
+Click your Route Table name to get the details
+Selecy your routable name, and move to the Route tab, click Edit Route
+Click Add Route to allow internet to access your instance via gateway
+
+Destination: 0.0.0.0/0
+Target: Internet Gateway
+Choose your internet gateway
+Save changes
+
+
+
+Open HTTP in Security Group
+
+Move to the EC2 instance menu and select your instance
+Select the Security tab and click your Security Group
+Select Inbound Rules and click Edit Inbound Rules &gt; Add Rule
+
+Type: HTTP
+Source: Anywhere IPv4
+
+
+
+Allow Access to anywhere from EC2 via Security group
+
+On the Security group of your instance, select the Outbound Rules
+Click Edit outbound rules
+
+
+Type: All traffic
+Destination type: Custom
+Destination: 0.0.0.0/0
+">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Guide to AWS VPC (Virtual Private Cloud)",
+      "item": "http://localhost:1313/posts/aws-vpc-guide/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Guide to AWS VPC (Virtual Private Cloud)",
+  "name": "Guide to AWS VPC (Virtual Private Cloud)",
+  "description": "Intro VPC or Virtual Private Cloud is an isolated internal network on AWS environment. When creating Amazon EC2, the default VPC will be created and attached to the instance.\nFor production, you must create custom VPC and do not use the default.\nTo access VPC, you can use the AWS console. Or, you can access through the EC2 instance detail, in the Subnet ID section.\nAllow HTTP Access to EC2 Instance Select your EC2 instnace, move to details, click Subnet ID. Select your subnet and click Route Table tab (Route Table define rules of your network traffic from your subnet or gateway is directed) Click your Route Table name to get the details Selecy your routable name, and move to the Route tab, click Edit Route Click Add Route to allow internet to access your instance via gateway Destination: 0.0.0.0/0 Target: Internet Gateway Choose your internet gateway Save changes Open HTTP in Security Group Move to the EC2 instance menu and select your instance Select the Security tab and click your Security Group Select Inbound Rules and click Edit Inbound Rules \u0026gt; Add Rule Type: HTTP Source: Anywhere IPv4 Allow Access to anywhere from EC2 via Security group On the Security group of your instance, select the Outbound Rules Click Edit outbound rules Type: All traffic Destination type: Custom Destination: 0.0.0.0/0 ",
+  "keywords": [
+    "aws"
+  ],
+  "articleBody": "Intro VPC or Virtual Private Cloud is an isolated internal network on AWS environment. When creating Amazon EC2, the default VPC will be created and attached to the instance.\nFor production, you must create custom VPC and do not use the default.\nTo access VPC, you can use the AWS console. Or, you can access through the EC2 instance detail, in the Subnet ID section.\nAllow HTTP Access to EC2 Instance Select your EC2 instnace, move to details, click Subnet ID. Select your subnet and click Route Table tab (Route Table define rules of your network traffic from your subnet or gateway is directed) Click your Route Table name to get the details Selecy your routable name, and move to the Route tab, click Edit Route Click Add Route to allow internet to access your instance via gateway Destination: 0.0.0.0/0 Target: Internet Gateway Choose your internet gateway Save changes Open HTTP in Security Group Move to the EC2 instance menu and select your instance Select the Security tab and click your Security Group Select Inbound Rules and click Edit Inbound Rules \u003e Add Rule Type: HTTP Source: Anywhere IPv4 Allow Access to anywhere from EC2 via Security group On the Security group of your instance, select the Outbound Rules Click Edit outbound rules Type: All traffic Destination type: Custom Destination: 0.0.0.0/0 ",
+  "wordCount" : "221",
+  "inLanguage": "en",
+  "datePublished": "2025-03-20T18:37:15+07:00",
+  "dateModified": "2025-03-20T18:37:15+07:00",
+  "author":[{
+    "@type": "Person",
+    "name": "Nadlir"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/aws-vpc-guide/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Nadlir Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ndlrfz.github.io/blog/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -148,7 +257,7 @@ Destination: 0.0.0.0/0
     <h1 class="post-title entry-hint-parent">
       Guide to AWS VPC (Virtual Private Cloud)
     </h1>
-    <div class="post-meta"><span title='2025-03-20 18:37:15 +0700 WIB'>March 20, 2025</span>
+    <div class="post-meta"><span title='2025-03-20 18:37:15 +0700 WIB'>March 20, 2025</span>&nbsp;·&nbsp;Nadlir
 
 </div>
   </header> <div class="toc">
