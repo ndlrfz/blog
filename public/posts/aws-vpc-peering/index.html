@@ -5,50 +5,38 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Guide to AWS VPC (Virtual Private Cloud) | Nadlir Blog</title>
+<title>Guide to AWS VPC Peering | Nadlir Blog</title>
 <meta name="keywords" content="aws">
 <meta name="description" content="Intro
-VPC or Virtual Private Cloud is an isolated internal network on AWS environment. When creating Amazon EC2, the default VPC will be created and attached to the instance.
-For production, you must create custom VPC and do not use the default.
-To access VPC, you can use the AWS console. Or, you can access through the EC2 instance detail, in the Subnet ID section.
-Allow HTTP Access to EC2 Instance
+VPC Peering is needed when you want to connect two different VPC each other. Mostly used for cross-department in SDLC.
+In this example, I will connect between two VPCs Developer and Finance, and each VPC attached to different EC2 intance.
+Check Private IP range of an EC2 instance
+Make sure to check local IP address range for both Developer and Finance instances.
 
-Select your EC2 instnace, move to details, click Subnet ID.
-Select your subnet and click Route Table tab (Route Table define rules of your network traffic from your subnet or gateway is directed)
-Click your Route Table name to get the details
-Selecy your routable name, and move to the Route tab, click Edit Route
-Click Add Route to allow internet to access your instance via gateway
+Navigate to the Developer instance, select and click on the Subnet ID
+In the subnet section, select your subnet name and click on the Route table
+In the route table section, select your route table and click Routes tab
+Take a notes on the private IP address range for the Developer instance
 
-Destination: 0.0.0.0/0
-Target: Internet Gateway
-Choose your internet gateway
-Save changes
+Creating VPC Peering
 
+Go to the VPC menu via console, select Peering connections, then click Create peering connection button
+Enter your peering details such as:
 
-
-Open HTTP in Security Group
-
-Move to the EC2 instance menu and select your instance
-Select the Security tab and click your Security Group
-Select Inbound Rules and click Edit Inbound Rules &gt; Add Rule
-
-Type: HTTP
-Source: Anywhere IPv4
+Name: Developer &lt;&gt; Finance
+VPC ID (Requester): Select the Developer VPC and check the local IP address range of the VPC
+VPC ID (Accepter): Select the Finance VPC and check the local IP range of the VPC
+Tags: Name =&gt; Developer &lt;&gt; Finance
 
 
+Confirm click the Create peering connection
+On the peering details, you can see the Status is Pending
+Click Actions menu and select Accept request and confirm again (The Status of peering become Active)
 
-Allow Access to anywhere from EC2 via Security group
-
-On the Security group of your instance, select the Outbound Rules
-Click Edit outbound rules
-
-
-Type: All traffic
-Destination type: Custom
-Destination: 0.0.0.0/0
-">
+Adding VPC Peering to Subnet Route Table
+This must be done on EC2 servers for both Developer and Finance.">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/posts/aws-vpc-guide/">
+<link rel="canonical" href="http://localhost:1313/posts/aws-vpc-peering/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://ndlrfz.github.io/blog/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://ndlrfz.github.io/blog/favicon.ico">
@@ -57,7 +45,7 @@ Destination: 0.0.0.0/0
 <link rel="mask-icon" href="https://ndlrfz.github.io/blog/favicon.ico">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/aws-vpc-guide/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/aws-vpc-peering/">
 <noscript>
     <style>
         #theme-toggle,
@@ -146,9 +134,9 @@ Destination: 0.0.0.0/0
   <header class="post-header">
     <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
     <h1 class="post-title entry-hint-parent">
-      Guide to AWS VPC (Virtual Private Cloud)
+      Guide to AWS VPC Peering
     </h1>
-    <div class="post-meta"><span title='2025-03-20 18:37:15 +0700 WIB'>March 20, 2025</span>
+    <div class="post-meta"><span title='2025-03-21 00:22:46 +0700 WIB'>March 21, 2025</span>
 
 </div>
   </header> <div class="toc">
@@ -161,11 +149,15 @@ Destination: 0.0.0.0/0
                 <li>
                     <a href="#intro" aria-label="Intro">Intro</a></li>
                 <li>
-                    <a href="#allow-http-access-to-ec2-instance" aria-label="Allow HTTP Access to EC2 Instance">Allow HTTP Access to EC2 Instance</a></li>
+                    <a href="#check-private-ip-range-of-an-ec2-instance" aria-label="Check Private IP range of an EC2 instance">Check Private IP range of an EC2 instance</a></li>
                 <li>
-                    <a href="#open-http-in-security-group" aria-label="Open HTTP in Security Group">Open HTTP in Security Group</a></li>
+                    <a href="#creating-vpc-peering" aria-label="Creating VPC Peering">Creating VPC Peering</a></li>
                 <li>
-                    <a href="#allow-access-to-anywhere-from-ec2-via-security-group" aria-label="Allow Access to anywhere from EC2 via Security group">Allow Access to anywhere from EC2 via Security group</a>
+                    <a href="#adding-vpc-peering-to-subnet-route-table" aria-label="Adding VPC Peering to Subnet Route Table">Adding VPC Peering to Subnet Route Table</a></li>
+                <li>
+                    <a href="#allow-icmpping-between-ec2-instances" aria-label="Allow ICMP/Ping between EC2 Instances">Allow ICMP/Ping between EC2 Instances</a></li>
+                <li>
+                    <a href="#test-vpc-peering" aria-label="Test VPC Peering">Test VPC Peering</a>
                 </li>
             </ul>
         </div>
@@ -173,45 +165,72 @@ Destination: 0.0.0.0/0
 </div>
 
   <div class="post-content"><h2 id="intro">Intro<a hidden class="anchor" aria-hidden="true" href="#intro">#</a></h2>
-<p>VPC or Virtual Private Cloud is an isolated internal network on AWS environment. When creating Amazon EC2, the default VPC will be created and attached to the instance.</p>
-<p>For production, you must create custom VPC and do not use the default.</p>
-<p>To access VPC, you can use the AWS console. Or, you can access through the EC2 instance detail, in the <code>Subnet ID</code> section.</p>
-<h2 id="allow-http-access-to-ec2-instance">Allow HTTP Access to EC2 Instance<a hidden class="anchor" aria-hidden="true" href="#allow-http-access-to-ec2-instance">#</a></h2>
+<p>VPC Peering is needed when you want to connect <strong>two</strong> different VPC each other. Mostly used for cross-department in SDLC.</p>
+<p>In this example, I will connect between two VPCs <em>Developer</em> and <em>Finance</em>, and each VPC attached to different EC2 intance.</p>
+<h2 id="check-private-ip-range-of-an-ec2-instance">Check Private IP range of an EC2 instance<a hidden class="anchor" aria-hidden="true" href="#check-private-ip-range-of-an-ec2-instance">#</a></h2>
+<p><strong>Make sure to check local IP address range for both <em>Developer</em> and <em>Finance</em> instances.</strong></p>
 <ol>
-<li>Select your EC2 instnace, move to details, click <code>Subnet ID</code>.</li>
-<li>Select your subnet and click <code>Route Table</code> tab (Route Table define rules of your network traffic from your subnet or gateway is directed)</li>
-<li>Click your Route Table name to get the details</li>
-<li>Selecy your routable name, and move to the <code>Route</code> tab, click <code>Edit Route</code></li>
-<li>Click <code>Add Route</code> to allow internet to access your instance via gateway
+<li>Navigate to the <em>Developer</em> instance, select and click on the <code>Subnet ID</code></li>
+<li>In the subnet section, select your subnet name and click on the <code>Route table</code></li>
+<li>In the route table section, select your route table and click <code>Routes</code> tab</li>
+<li>Take a notes on the private IP address range for the <em>Developer</em> instance</li>
+</ol>
+<h2 id="creating-vpc-peering">Creating VPC Peering<a hidden class="anchor" aria-hidden="true" href="#creating-vpc-peering">#</a></h2>
+<ol>
+<li>Go to the <code>VPC</code> menu via console, select <code>Peering connections</code>, then click <code>Create peering connection</code> button</li>
+<li>Enter your peering details such as:
 <ul>
-<li><em>Destination</em>: 0.0.0.0/0</li>
-<li><em>Target</em>: Internet Gateway</li>
-<li>Choose your internet gateway</li>
+<li><em>Name</em>: Developer &lt;&gt; Finance</li>
+<li><em>VPC ID (Requester)</em>: Select the <strong>Developer</strong> VPC and check the local IP address range of the VPC</li>
+<li><em>VPC ID (Accepter)</em>: Select the <strong>Finance</strong> VPC and check the local IP range of the VPC</li>
+<li><em>Tags</em>: Name =&gt; Developer &lt;&gt; Finance</li>
+</ul>
+</li>
+<li>Confirm click the <code>Create peering connection</code></li>
+<li>On the peering details, you can see the <strong>Status</strong> is <em>Pending</em></li>
+<li>Click <code>Actions</code> menu and select <code>Accept request</code> and confirm again (The <strong>Status</strong> of peering become <em>Active</em>)</li>
+</ol>
+<h2 id="adding-vpc-peering-to-subnet-route-table">Adding VPC Peering to Subnet Route Table<a hidden class="anchor" aria-hidden="true" href="#adding-vpc-peering-to-subnet-route-table">#</a></h2>
+<p><strong>This must be done on EC2 servers for both <em>Developer</em> and <em>Finance</em>.</strong></p>
+<p><strong>Here I will configure the <em>Developer</em> instance.</strong></p>
+<ol>
+<li>
+<p>Back to the EC2 instance and select <em>Developer</em> instance details, then <code>Subnet ID =&gt; Route table =&gt; Routes</code> (like the first step)</p>
+</li>
+<li>
+<p>Click <code>Edit routes</code> to add new routes for VPC peering</p>
+</li>
+<li>
+<p>Click <code>Add route</code> with the following:</p>
+<ul>
+<li><em>Destination</em>: Enter local IP address range for the <em>Finance</em> instance</li>
+<li><em>Target</em>: <strong>Peering connection</strong> and select your <em>VPC Peering</em> that you&rsquo;ve created</li>
 <li><strong>Save changes</strong></li>
 </ul>
 </li>
+<li>
+<p>Now move to the EC2 instance and select the <em>Finance</em> instance. Then, do the same as on top, but make sure to enter the <em>IP address range</em> of the <em>Developer</em> instance in the <em>Destination</em>.</p>
+</li>
 </ol>
-<h2 id="open-http-in-security-group">Open HTTP in Security Group<a hidden class="anchor" aria-hidden="true" href="#open-http-in-security-group">#</a></h2>
-<ol start="6">
-<li>Move to the EC2 instance menu and select your instance</li>
-<li>Select the <code>Security</code> tab and click your <code>Security Group</code></li>
-<li>Select <code>Inbound Rules</code> and click <code>Edit Inbound Rules</code> &gt; <code>Add Rule</code>
+<h2 id="allow-icmpping-between-ec2-instances">Allow ICMP/Ping between EC2 Instances<a hidden class="anchor" aria-hidden="true" href="#allow-icmpping-between-ec2-instances">#</a></h2>
+<p>In this example, I will allow ping to the <em>Finance</em> instance from the <em>Developer</em> instance.</p>
+<ol>
+<li>Click on the EC2 and select the <em>Finance</em> instance</li>
+<li>Click on the <code>Security</code> tab and then click <code>Security groups</code> section</li>
+<li>In the <code>Inbound rules</code> tab, click <code>Edit inbound rules</code></li>
+<li>Now <code>Add rule</code>
 <ul>
-<li><em>Type</em>: HTTP</li>
-<li><em>Source</em>: Anywhere IPv4</li>
+<li><em>Type</em>: Custom ICMP- IPv4</li>
+<li><em>Source</em>: Enter the range IP address of <em>Developer</em> instance</li>
+<li><strong>Save rules</strong></li>
 </ul>
 </li>
 </ol>
-<h2 id="allow-access-to-anywhere-from-ec2-via-security-group">Allow Access to anywhere from EC2 via Security group<a hidden class="anchor" aria-hidden="true" href="#allow-access-to-anywhere-from-ec2-via-security-group">#</a></h2>
-<ol start="9">
-<li>On the <code>Security group</code> of your instance, select the <code>Outbound Rules</code></li>
-<li>Click <code>Edit outbound rules</code></li>
+<h2 id="test-vpc-peering">Test VPC Peering<a hidden class="anchor" aria-hidden="true" href="#test-vpc-peering">#</a></h2>
+<ol>
+<li>Connect to your EC2 instance (<em>Developer</em>) via <em>Session Manager</em> or <em>SSH</em></li>
+<li>You can now ping to the local IP of the <em>Finance</em> instance</li>
 </ol>
-<ul>
-<li><em>Type</em>: All traffic</li>
-<li><em>Destination type</em>: Custom</li>
-<li><em>Destination</em>: 0.0.0.0/0</li>
-</ul>
 
 
   </div>

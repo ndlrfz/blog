@@ -1,6 +1,7 @@
 +++
 date = '2025-03-20T18:37:15+07:00'
 draft = false
+tags = ["aws"]
 title = 'Guide to AWS VPC (Virtual Private Cloud)'
 +++
 

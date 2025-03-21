@@ -1,6 +1,7 @@
 +++
 date = '2025-03-20T08:48:35+07:00'
 draft = false
+tags = ["aws"]
 title = 'Guide to AWS Calculator'
 +++
 

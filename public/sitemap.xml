@@ -2,13 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/posts/aws-vpc-guide/</loc>
-    <lastmod>2025-03-20T18:37:15+07:00</lastmod>
+    <loc>http://localhost:1313/tags/aws/</loc>
+    <lastmod>2025-03-21T00:22:46+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/aws-vpc-peering/</loc>
+    <lastmod>2025-03-21T00:22:46+07:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-03-20T18:37:15+07:00</lastmod>
+    <lastmod>2025-03-21T00:22:46+07:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-03-21T00:22:46+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-03-21T00:22:46+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/aws-vpc-guide/</loc>
     <lastmod>2025-03-20T18:37:15+07:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/aws-calculator/</loc>
@@ -39,7 +48,5 @@
     <lastmod>2025-02-04T08:53:44+07:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
   </url>
 </urlset>

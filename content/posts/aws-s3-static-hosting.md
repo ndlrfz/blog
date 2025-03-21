@@ -1,6 +1,7 @@
 +++
 date = '2025-03-19T22:42:45+07:00'
 draft = false
+tags = ["aws"]
 title = 'Static Hosting with Amazon S3'
 +++
 

@@ -6,8 +6,42 @@
     <description>Recent content on Nadlir Blog</description>
     <generator>Hugo -- 0.145.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 20 Mar 2025 18:37:15 +0700</lastBuildDate>
+    <lastBuildDate>Fri, 21 Mar 2025 00:22:46 +0700</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Guide to AWS VPC Peering</title>
+      <link>http://localhost:1313/posts/aws-vpc-peering/</link>
+      <pubDate>Fri, 21 Mar 2025 00:22:46 +0700</pubDate>
+      <guid>http://localhost:1313/posts/aws-vpc-peering/</guid>
+      <description>&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
+&lt;p&gt;VPC Peering is needed when you want to connect &lt;strong&gt;two&lt;/strong&gt; different VPC each other. Mostly used for cross-department in SDLC.&lt;/p&gt;
+&lt;p&gt;In this example, I will connect between two VPCs &lt;em&gt;Developer&lt;/em&gt; and &lt;em&gt;Finance&lt;/em&gt;, and each VPC attached to different EC2 intance.&lt;/p&gt;
+&lt;h2 id=&#34;check-private-ip-range-of-an-ec2-instance&#34;&gt;Check Private IP range of an EC2 instance&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Make sure to check local IP address range for both &lt;em&gt;Developer&lt;/em&gt; and &lt;em&gt;Finance&lt;/em&gt; instances.&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Navigate to the &lt;em&gt;Developer&lt;/em&gt; instance, select and click on the &lt;code&gt;Subnet ID&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;In the subnet section, select your subnet name and click on the &lt;code&gt;Route table&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;In the route table section, select your route table and click &lt;code&gt;Routes&lt;/code&gt; tab&lt;/li&gt;
+&lt;li&gt;Take a notes on the private IP address range for the &lt;em&gt;Developer&lt;/em&gt; instance&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;creating-vpc-peering&#34;&gt;Creating VPC Peering&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Go to the &lt;code&gt;VPC&lt;/code&gt; menu via console, select &lt;code&gt;Peering connections&lt;/code&gt;, then click &lt;code&gt;Create peering connection&lt;/code&gt; button&lt;/li&gt;
+&lt;li&gt;Enter your peering details such as:
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Name&lt;/em&gt;: Developer &amp;lt;&amp;gt; Finance&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;VPC ID (Requester)&lt;/em&gt;: Select the &lt;strong&gt;Developer&lt;/strong&gt; VPC and check the local IP address range of the VPC&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;VPC ID (Accepter)&lt;/em&gt;: Select the &lt;strong&gt;Finance&lt;/strong&gt; VPC and check the local IP range of the VPC&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Tags&lt;/em&gt;: Name =&amp;gt; Developer &amp;lt;&amp;gt; Finance&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Confirm click the &lt;code&gt;Create peering connection&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;On the peering details, you can see the &lt;strong&gt;Status&lt;/strong&gt; is &lt;em&gt;Pending&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Click &lt;code&gt;Actions&lt;/code&gt; menu and select &lt;code&gt;Accept request&lt;/code&gt; and confirm again (The &lt;strong&gt;Status&lt;/strong&gt; of peering become &lt;em&gt;Active&lt;/em&gt;)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;adding-vpc-peering-to-subnet-route-table&#34;&gt;Adding VPC Peering to Subnet Route Table&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;This must be done on EC2 servers for both &lt;em&gt;Developer&lt;/em&gt; and &lt;em&gt;Finance&lt;/em&gt;.&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Guide to AWS VPC (Virtual Private Cloud)</title>
       <link>http://localhost:1313/posts/aws-vpc-guide/</link>

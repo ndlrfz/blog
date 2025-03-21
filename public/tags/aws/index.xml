@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Aws on Nadlir Blog</title>
+    <link>http://localhost:1313/tags/aws/</link>
+    <description>Recent content in Aws on Nadlir Blog</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 21 Mar 2025 00:22:46 +0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Guide to AWS VPC Peering</title>
+      <link>http://localhost:1313/posts/aws-vpc-peering/</link>
+      <pubDate>Fri, 21 Mar 2025 00:22:46 +0700</pubDate>
+      <guid>http://localhost:1313/posts/aws-vpc-peering/</guid>
+      <description>&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
+&lt;p&gt;VPC Peering is needed when you want to connect &lt;strong&gt;two&lt;/strong&gt; different VPC each other. Mostly used for cross-department in SDLC.&lt;/p&gt;
+&lt;p&gt;In this example, I will connect between two VPCs &lt;em&gt;Developer&lt;/em&gt; and &lt;em&gt;Finance&lt;/em&gt;, and each VPC attached to different EC2 intance.&lt;/p&gt;
+&lt;h2 id=&#34;check-private-ip-range-of-an-ec2-instance&#34;&gt;Check Private IP range of an EC2 instance&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Make sure to check local IP address range for both &lt;em&gt;Developer&lt;/em&gt; and &lt;em&gt;Finance&lt;/em&gt; instances.&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Navigate to the &lt;em&gt;Developer&lt;/em&gt; instance, select and click on the &lt;code&gt;Subnet ID&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;In the subnet section, select your subnet name and click on the &lt;code&gt;Route table&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;In the route table section, select your route table and click &lt;code&gt;Routes&lt;/code&gt; tab&lt;/li&gt;
+&lt;li&gt;Take a notes on the private IP address range for the &lt;em&gt;Developer&lt;/em&gt; instance&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;creating-vpc-peering&#34;&gt;Creating VPC Peering&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Go to the &lt;code&gt;VPC&lt;/code&gt; menu via console, select &lt;code&gt;Peering connections&lt;/code&gt;, then click &lt;code&gt;Create peering connection&lt;/code&gt; button&lt;/li&gt;
+&lt;li&gt;Enter your peering details such as:
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Name&lt;/em&gt;: Developer &amp;lt;&amp;gt; Finance&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;VPC ID (Requester)&lt;/em&gt;: Select the &lt;strong&gt;Developer&lt;/strong&gt; VPC and check the local IP address range of the VPC&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;VPC ID (Accepter)&lt;/em&gt;: Select the &lt;strong&gt;Finance&lt;/strong&gt; VPC and check the local IP range of the VPC&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Tags&lt;/em&gt;: Name =&amp;gt; Developer &amp;lt;&amp;gt; Finance&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Confirm click the &lt;code&gt;Create peering connection&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;On the peering details, you can see the &lt;strong&gt;Status&lt;/strong&gt; is &lt;em&gt;Pending&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Click &lt;code&gt;Actions&lt;/code&gt; menu and select &lt;code&gt;Accept request&lt;/code&gt; and confirm again (The &lt;strong&gt;Status&lt;/strong&gt; of peering become &lt;em&gt;Active&lt;/em&gt;)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;adding-vpc-peering-to-subnet-route-table&#34;&gt;Adding VPC Peering to Subnet Route Table&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;This must be done on EC2 servers for both &lt;em&gt;Developer&lt;/em&gt; and &lt;em&gt;Finance&lt;/em&gt;.&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Guide to AWS VPC (Virtual Private Cloud)</title>
+      <link>http://localhost:1313/posts/aws-vpc-guide/</link>
+      <pubDate>Thu, 20 Mar 2025 18:37:15 +0700</pubDate>
+      <guid>http://localhost:1313/posts/aws-vpc-guide/</guid>
+      <description>&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
+&lt;p&gt;VPC or Virtual Private Cloud is an isolated internal network on AWS environment. When creating Amazon EC2, the default VPC will be created and attached to the instance.&lt;/p&gt;
+&lt;p&gt;For production, you must create custom VPC and do not use the default.&lt;/p&gt;
+&lt;p&gt;To access VPC, you can use the AWS console. Or, you can access through the EC2 instance detail, in the &lt;code&gt;Subnet ID&lt;/code&gt; section.&lt;/p&gt;
+&lt;h2 id=&#34;allow-http-access-to-ec2-instance&#34;&gt;Allow HTTP Access to EC2 Instance&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Select your EC2 instnace, move to details, click &lt;code&gt;Subnet ID&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Select your subnet and click &lt;code&gt;Route Table&lt;/code&gt; tab (Route Table define rules of your network traffic from your subnet or gateway is directed)&lt;/li&gt;
+&lt;li&gt;Click your Route Table name to get the details&lt;/li&gt;
+&lt;li&gt;Selecy your routable name, and move to the &lt;code&gt;Route&lt;/code&gt; tab, click &lt;code&gt;Edit Route&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Click &lt;code&gt;Add Route&lt;/code&gt; to allow internet to access your instance via gateway
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Destination&lt;/em&gt;: 0.0.0.0/0&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Target&lt;/em&gt;: Internet Gateway&lt;/li&gt;
+&lt;li&gt;Choose your internet gateway&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Save changes&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;open-http-in-security-group&#34;&gt;Open HTTP in Security Group&lt;/h2&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;Move to the EC2 instance menu and select your instance&lt;/li&gt;
+&lt;li&gt;Select the &lt;code&gt;Security&lt;/code&gt; tab and click your &lt;code&gt;Security Group&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Select &lt;code&gt;Inbound Rules&lt;/code&gt; and click &lt;code&gt;Edit Inbound Rules&lt;/code&gt; &amp;gt; &lt;code&gt;Add Rule&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Type&lt;/em&gt;: HTTP&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Source&lt;/em&gt;: Anywhere IPv4&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;allow-access-to-anywhere-from-ec2-via-security-group&#34;&gt;Allow Access to anywhere from EC2 via Security group&lt;/h2&gt;
+&lt;ol start=&#34;9&#34;&gt;
+&lt;li&gt;On the &lt;code&gt;Security group&lt;/code&gt; of your instance, select the &lt;code&gt;Outbound Rules&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Click &lt;code&gt;Edit outbound rules&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Type&lt;/em&gt;: All traffic&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Destination type&lt;/em&gt;: Custom&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Destination&lt;/em&gt;: 0.0.0.0/0&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Guide to AWS Calculator</title>
+      <link>http://localhost:1313/posts/aws-calculator/</link>
+      <pubDate>Thu, 20 Mar 2025 08:48:35 +0700</pubDate>
+      <guid>http://localhost:1313/posts/aws-calculator/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;Visit &lt;a href=&#34;https://calculator.aws&#34;&gt;https://calculator.aws&lt;/a&gt; and click &lt;code&gt;Create Estimate&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;In the breadcamp menu, click &lt;code&gt;My Estimate&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Create group&lt;/code&gt; - You can set up price based on software stack or deployment types (prod/stag/dev) and assign each as a group
+&lt;ul&gt;
+&lt;li&gt;Enter group name&lt;/li&gt;
+&lt;li&gt;Confirm&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Within your group, click &lt;code&gt;Add service&lt;/code&gt; - AWS calculator provides more than 175 AWS services&lt;/li&gt;
+&lt;li&gt;Select your region and &lt;em&gt;find your service&lt;/em&gt;, for example &lt;strong&gt;EC2&lt;/strong&gt;, then &lt;code&gt;Configure&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Enter details your estimation for EC2 usage:
+&lt;ul&gt;
+&lt;li&gt;Description&lt;/li&gt;
+&lt;li&gt;Region&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Tenancey&lt;/em&gt;: shared (default) or dedicated server (more expensive)&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Operatin System&lt;/em&gt;: Linxu Windows etc&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Workloads&lt;/em&gt;: select the usage as needed for your organization
+&lt;ul&gt;
+&lt;li&gt;Contant usage&lt;/li&gt;
+&lt;li&gt;Daily spike traffic&lt;/li&gt;
+&lt;li&gt;Weekly spike traffic&lt;/li&gt;
+&lt;li&gt;Monthly spike traffic&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Baseline&lt;/em&gt;: number of EC2 that will be running&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Peak&lt;/em&gt;: max number of EC2 that running during &lt;strong&gt;peak&lt;/strong&gt; time&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Duration of peak&lt;/em&gt;: duration of peak (based on your monitoring to ensure hours and time)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;On the &lt;code&gt;EC2 Instances&lt;/code&gt;, select the instance family, vCPUs, memory, and network performance
+&lt;ul&gt;
+&lt;li&gt;Select the right instance as needed for your workloads (IMPORTANT)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;On the &lt;code&gt;Payment&lt;/code&gt; section, choose &lt;strong&gt;On-demand&lt;/strong&gt;, which means you pay for compute capacity by the hour or second with &lt;em&gt;no long-term commitments&lt;/em&gt;
+&lt;ul&gt;
+&lt;li&gt;Other option, you can select &lt;em&gt;Saving plans&lt;/em&gt; options. TYhere is &lt;em&gt;discounts&lt;/em&gt;, but you need to commit at least &lt;em&gt;1 or 3-years&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Or you can choose &lt;em&gt;other purchasing options&lt;/em&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Standard Reserverd Instances&lt;/em&gt;: higher discount, but allow modifications only within the same family. You can upgrade &lt;em&gt;t2&lt;/em&gt; to &lt;em&gt;t3&lt;/em&gt; and you cannot upgrade &lt;em&gt;t3&lt;/em&gt; to &lt;em&gt;mx&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Convertible Reserved Instances&lt;/em&gt;: lower discount, but flexible on modifications, cross instance types, tenancy, and operating systems&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;To check estimated workloads per hour, click on the link &lt;em&gt;estimated workload hours&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Add the Amazon EBS (Elastic Block Storage) for your EC2&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;* _Storage type_: **general purpose SSD (gp3)**
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;* _general purpose_: **IOPS** (inputs/outputs) _30_
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;* _Storage amout_: **10 GB**
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;* _Snapshot frquency_: **weekly**
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;11&#34;&gt;
+&lt;li&gt;For the &lt;code&gt;Inbound Data transfer&lt;/code&gt;, select &lt;code&gt;Internet (free)&lt;/code&gt; with amount &lt;code&gt;1&lt;/code&gt; &lt;code&gt;TB per month&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;For the &lt;code&gt;Outbound Data Transfer&lt;/code&gt;, select &lt;code&gt;Internet&lt;/code&gt; with the amount &lt;code&gt;100&lt;/code&gt; &lt;code&gt;GB per month&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;You can review the data transfer cost voa &lt;em&gt;show calculations&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Save and add service&lt;/strong&gt; or you can &lt;em&gt;view summary&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;If you need supports from Amazon supports, click &lt;strong&gt;Add support&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Click &lt;strong&gt;Share&lt;/strong&gt; to create public link for your estimation&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Amazon EC2 Basic: Connect and Change Instance Type</title>
+      <link>http://localhost:1313/posts/aws-ec2-basic/</link>
+      <pubDate>Thu, 20 Mar 2025 08:30:32 +0700</pubDate>
+      <guid>http://localhost:1313/posts/aws-ec2-basic/</guid>
+      <description>&lt;h2 id=&#34;how-to-connect-to-amazon-ec2-instance&#34;&gt;How to connect to Amazon EC2 instance&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Using &lt;code&gt;Session Manager&lt;/code&gt; via AWS console&lt;/li&gt;
+&lt;li&gt;Using &lt;code&gt;SSH&lt;/code&gt; command, key SSH is needed to secure authentication&lt;/li&gt;
+&lt;li&gt;Using IAM policies that control SSH access to instances&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;how-to-increase-specs-of-amazon-ec2&#34;&gt;How to Increase Specs of Amazon EC2&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Stop the instance first (after instance stopped, both IP and and DNS gone)&lt;/li&gt;
+&lt;li&gt;Select instance &amp;gt; &lt;code&gt;Actions&lt;/code&gt; &amp;gt; &lt;code&gt;Instance Settings&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Change auto recovery behavior&lt;/em&gt;: changing how instance auto-recovery&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Change instance type&lt;/em&gt;: change or upgrade instance type&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Change CPU options&lt;/em&gt;: change the current CPU spec&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Edit user data&lt;/em&gt;: modify current user data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Start again the instance&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Create Amazon EC2 Instance</title>
+      <link>http://localhost:1313/posts/aws-ec2-setup/</link>
+      <pubDate>Wed, 19 Mar 2025 23:42:31 +0700</pubDate>
+      <guid>http://localhost:1313/posts/aws-ec2-setup/</guid>
+      <description>&lt;p&gt;Guide to deploy Amazon EC2 instance with multiple AZ and installation script.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;EC2&lt;/code&gt; -&amp;gt; &lt;code&gt;Launch Instance&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Enter instance name, select the operating system (AMI)&lt;/li&gt;
+&lt;li&gt;Select instance type (which server specs you need)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Compare instance types&lt;/code&gt; -&amp;gt; &lt;code&gt;Get advice&lt;/code&gt; which will show you recommendation for your applications&lt;/li&gt;
+&lt;li&gt;Select key-pair SSH or generate new&lt;/li&gt;
+&lt;li&gt;Select &lt;strong&gt;VPC&lt;/strong&gt; (for testing, use default. for production, always create custom VPC)&lt;/li&gt;
+&lt;li&gt;Select the subnet (YOU MUST CHEK THE AVAILABILITY ZONE HERE)&lt;/li&gt;
+&lt;li&gt;Security group to allow inbound traffic to specific port&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Advanced details&lt;/code&gt; -&amp;gt; &lt;code&gt;User data&lt;/code&gt; (enter your deployment script. Example: installing LAMP Stack, downloading source code, etc)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Launch Instance&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Static Hosting with Amazon S3</title>
+      <link>http://localhost:1313/posts/aws-s3-static-hosting/</link>
+      <pubDate>Wed, 19 Mar 2025 22:42:45 +0700</pubDate>
+      <guid>http://localhost:1313/posts/aws-s3-static-hosting/</guid>
+      <description>&lt;p&gt;Here step-by-step to set up static hosting with Amazon S3:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Go to &lt;strong&gt;S3&lt;/strong&gt; and select your bucket name&lt;/li&gt;
+&lt;li&gt;Upload your HTML files&lt;/li&gt;
+&lt;li&gt;Click &lt;strong&gt;Permission&lt;/strong&gt; tab and &lt;strong&gt;turn off&lt;/strong&gt; the &lt;strong&gt;Block all public access&lt;/strong&gt;. To use S3 as static web hosting, you must turn off this&lt;/li&gt;
+&lt;li&gt;Move to the &lt;strong&gt;Bucket Policy&lt;/strong&gt; and review your current policy. Make sure only &lt;strong&gt;s3:GetObject&lt;/strong&gt; policy is enabled&lt;/li&gt;
+&lt;li&gt;Move to the &lt;strong&gt;Default encryption&lt;/strong&gt; and make sure the default &lt;strong&gt;server side encryption&lt;/strong&gt; is enabled&lt;/li&gt;
+&lt;li&gt;Scroll down to the &lt;strong&gt;Static website hosting&lt;/strong&gt; and click &lt;strong&gt;Edit&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;static web hoosting&lt;/em&gt;: &lt;strong&gt;Enable&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Hosting type&lt;/em&gt;: &lt;strong&gt;Host static website&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;index_document&lt;/em&gt;: &lt;strong&gt;index.html&lt;/strong&gt; (make sure it i uploaded)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+  </channel>
+</rss>

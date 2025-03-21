@@ -121,6 +121,22 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Guide to AWS VPC Peering
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Intro VPC Peering is needed when you want to connect two different VPC each other. Mostly used for cross-department in SDLC.
+In this example, I will connect between two VPCs Developer and Finance, and each VPC attached to different EC2 intance.
+Check Private IP range of an EC2 instance Make sure to check local IP address range for both Developer and Finance instances.
+Navigate to the Developer instance, select and click on the Subnet ID In the subnet section, select your subnet name and click on the Route table In the route table section, select your route table and click Routes tab Take a notes on the private IP address range for the Developer instance Creating VPC Peering Go to the VPC menu via console, select Peering connections, then click Create peering connection button Enter your peering details such as: Name: Developer &lt;&gt; Finance VPC ID (Requester): Select the Developer VPC and check the local IP address range of the VPC VPC ID (Accepter): Select the Finance VPC and check the local IP range of the VPC Tags: Name =&gt; Developer &lt;&gt; Finance Confirm click the Create peering connection On the peering details, you can see the Status is Pending Click Actions menu and select Accept request and confirm again (The Status of peering become Active) Adding VPC Peering to Subnet Route Table This must be done on EC2 servers for both Developer and Finance.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-03-21 00:22:46 +0700 WIB'>March 21, 2025</span></footer>
+  <a class="entry-link" aria-label="post link to Guide to AWS VPC Peering" href="http://localhost:1313/posts/aws-vpc-peering/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Guide to AWS VPC (Virtual Private Cloud)
     </h2>
   </header>
@@ -243,22 +259,12 @@ This example wll be using kickstart.nvim as an alternative configuration. You ca
   <footer class="entry-footer"><span title='2025-02-04 17:41:12 +0700 WIB'>February 4, 2025</span></footer>
   <a class="entry-link" aria-label="post link to Neovim Multiple Configs" href="http://localhost:1313/posts/neovim-multiple-configs/"></a>
 </article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Test First Post
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Intro This is test post with Hugo. Let me just post this here.
-sudo pacman -Syyu This is Python.
-for x in range(1, 100): print(x) This is JavaScript.
-function SayHello() { console.log(&#34;Hello Test&#34;); } sayHello() This is table test:
-Hostname IP Address Used as postgres1 192.168.10.15 PostgreSQL server postgres2 192.168.10.16 PostgreSQL server </p>
-  </div>
-  <footer class="entry-footer"><span title='2025-02-04 08:53:44 +0700 WIB'>February 4, 2025</span></footer>
-  <a class="entry-link" aria-label="post link to Test First Post" href="http://localhost:1313/posts/my-first-post/"></a>
-</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="next" href="http://localhost:1313/page/2/">Next&nbsp;&nbsp;»
+    </a>
+  </nav>
+</footer>
     </main>
     
 <footer class="footer">

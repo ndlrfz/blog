@@ -1,6 +1,7 @@
 +++
 date = '2025-03-20T08:30:32+07:00'
 draft = false
+tags = ["aws"]
 title = 'Amazon EC2 Basic: Connect and Change Instance Type'
 +++
 
