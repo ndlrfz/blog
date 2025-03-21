@@ -2,7 +2,7 @@
 date = '2025-03-21T21:30:12+07:00'
 draft = false
 tags = ["aws"]
-title = 'Guide to Amazon RDS (Relational Datbase Service)'
+title = 'Guide to Amazon RDS (Relational Database Service)'
 +++
 
 ## Intro
