@@ -24,7 +24,7 @@ Content = """**You will become clever through your mistakes.**
 _—German proverb_
 """
 
-[[params.socialIcons]]
+[params.socialIcons]
 name = "github"
 title = "View Source on Github"
 url = "https://github.com/ndlrfz"
