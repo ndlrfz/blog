@@ -6,68 +6,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>How to Install PHP OCI8 (Oracle Instant Client) Module on Debian/Ubuntu | Nadlir Blog</title>
-<meta name="keywords" content="">
-<meta name="description" content="In this guide, I will show you how to install PHP OCI8 (Oracle Instant Client) on Debian 12 server.
+<meta name="keywords" content="php, sysadmin">
+<meta name="description" content="Intro
+In this guide, I will show you how to install PHP OCI8 (Oracle Instant Client) on Debian 12 server.
+Installing Oracle Instant Client Library
 In this example, I&rsquo;ve PHP 8.4 installed. Let&rsquo;s begin.
 
 Dowload Oracle Instant Client libraries to your system. In this example, I will use instantclient-basic-linux.x64-23.7.0.25.01.zip and instantclient-sdk-linux.x64-23.7.0.25.01.zip.
 
-Make sure to use the correct version based on your GLIBC version. Check the glibc version with the ldd command.
-sudo ldd --version
-
-Extract Oracle Instant Client Libraries
-
-sudo apt install unzip -y
-unzip instantclient-basic-linux.x64-23.7.0.25.01.zip
-unzip instantclient-sdk-linux.x64-23.7.0.25.01.zip
-
-Move the Oracle Instant Client libraries to the correct path.
-
-mkdir -p /usr/local/lib/oracle/
-mv instantclient_23_7 /usr/local/lib/oracle/
-ln -s /usr/local/lib/oracle/instantclient_23_7 /usr/local/lib/oracle/instantclient
-
-cd /usr/local/lib/oracle
-find instantclient_23_7 -type f -exec chmod 644 {} &#43;
-find instantclient_23_7 -type d -exec chmod 755 {} &#43;
-
-Download PHP OCI8 module and compile.
-
-sudo apt install php8.4-dev
-
-cd /usr/src/
-wget https://pecl.php.net/get/oci8-3.4.0.tgz
-tar xzf oci8-3.4.0.tgz
-
-cd oci8-3.4.0
-
-phpize8.4
-./configure --with-oci8=instantclient,/usr/local/lib/oracle/instantclient --with-php-config=/usr/bin/php-config8.4
-make
-
-Install PHP OCI8 module.
-
-make install
-chmod 644 /usr/lib/php/20240924/oci8.so
-
-echo &#39;; priority=10&#39; &gt; /etc/php/8.4/mods-available/oci8.ini
-echo &#39;extension=oci8.so&#39; &gt;&gt; /etc/php/8.4/mods-available/oci8.ini
-
-chmod 644 /etc/php/8.4/mods-available/oci8.ini
-phpenmod -v 8.4 oci8
-
-Adding new library path for Oracle Instant Client libraries.
-
-vim /etc/ld.so.conf.d/xx_php_oci8.conf
-# path to oracle instant client directory
-/usr/local/lib/oracle/instantclient
-sudo ldconfig
-
-Restart Apache and verify PHP module.
-
-sudo systemctl restart apache2
-php -m | grep oci
-Output:">
+Make sure to use the correct version based on your GLIBC version. Check the glibc version with the ldd command.">
 <meta name="author" content="Nadlir">
 <link rel="canonical" href="http://localhost:1313/posts/php-oci8-debian-ubuntu/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
@@ -118,78 +65,26 @@ Output:">
 </noscript><meta property="og:url" content="http://localhost:1313/posts/php-oci8-debian-ubuntu/">
   <meta property="og:site_name" content="Nadlir Blog">
   <meta property="og:title" content="How to Install PHP OCI8 (Oracle Instant Client) Module on Debian/Ubuntu">
-  <meta property="og:description" content="In this guide, I will show you how to install PHP OCI8 (Oracle Instant Client) on Debian 12 server.
-In this example, I’ve PHP 8.4 installed. Let’s begin.
-Dowload Oracle Instant Client libraries to your system. In this example, I will use instantclient-basic-linux.x64-23.7.0.25.01.zip and instantclient-sdk-linux.x64-23.7.0.25.01.zip. Make sure to use the correct version based on your GLIBC version. Check the glibc version with the ldd command.
-sudo ldd --version Extract Oracle Instant Client Libraries sudo apt install unzip -y unzip instantclient-basic-linux.x64-23.7.0.25.01.zip unzip instantclient-sdk-linux.x64-23.7.0.25.01.zip Move the Oracle Instant Client libraries to the correct path. mkdir -p /usr/local/lib/oracle/ mv instantclient_23_7 /usr/local/lib/oracle/ ln -s /usr/local/lib/oracle/instantclient_23_7 /usr/local/lib/oracle/instantclient cd /usr/local/lib/oracle find instantclient_23_7 -type f -exec chmod 644 {} &#43; find instantclient_23_7 -type d -exec chmod 755 {} &#43; Download PHP OCI8 module and compile. sudo apt install php8.4-dev cd /usr/src/ wget https://pecl.php.net/get/oci8-3.4.0.tgz tar xzf oci8-3.4.0.tgz cd oci8-3.4.0 phpize8.4 ./configure --with-oci8=instantclient,/usr/local/lib/oracle/instantclient --with-php-config=/usr/bin/php-config8.4 make Install PHP OCI8 module. make install chmod 644 /usr/lib/php/20240924/oci8.so echo &#39;; priority=10&#39; &gt; /etc/php/8.4/mods-available/oci8.ini echo &#39;extension=oci8.so&#39; &gt;&gt; /etc/php/8.4/mods-available/oci8.ini chmod 644 /etc/php/8.4/mods-available/oci8.ini phpenmod -v 8.4 oci8 Adding new library path for Oracle Instant Client libraries. vim /etc/ld.so.conf.d/xx_php_oci8.conf # path to oracle instant client directory /usr/local/lib/oracle/instantclient sudo ldconfig Restart Apache and verify PHP module. sudo systemctl restart apache2 php -m | grep oci Output:">
+  <meta property="og:description" content="Intro In this guide, I will show you how to install PHP OCI8 (Oracle Instant Client) on Debian 12 server.
+Installing Oracle Instant Client Library In this example, I’ve PHP 8.4 installed. Let’s begin.
+Dowload Oracle Instant Client libraries to your system. In this example, I will use instantclient-basic-linux.x64-23.7.0.25.01.zip and instantclient-sdk-linux.x64-23.7.0.25.01.zip. Make sure to use the correct version based on your GLIBC version. Check the glibc version with the ldd command.">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2025-03-04T05:10:43+07:00">
     <meta property="article:modified_time" content="2025-03-04T05:10:43+07:00">
+    <meta property="article:tag" content="Php">
+    <meta property="article:tag" content="Sysadmin">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="How to Install PHP OCI8 (Oracle Instant Client) Module on Debian/Ubuntu">
-<meta name="twitter:description" content="In this guide, I will show you how to install PHP OCI8 (Oracle Instant Client) on Debian 12 server.
+<meta name="twitter:description" content="Intro
+In this guide, I will show you how to install PHP OCI8 (Oracle Instant Client) on Debian 12 server.
+Installing Oracle Instant Client Library
 In this example, I&rsquo;ve PHP 8.4 installed. Let&rsquo;s begin.
 
 Dowload Oracle Instant Client libraries to your system. In this example, I will use instantclient-basic-linux.x64-23.7.0.25.01.zip and instantclient-sdk-linux.x64-23.7.0.25.01.zip.
 
-Make sure to use the correct version based on your GLIBC version. Check the glibc version with the ldd command.
-sudo ldd --version
-
-Extract Oracle Instant Client Libraries
-
-sudo apt install unzip -y
-unzip instantclient-basic-linux.x64-23.7.0.25.01.zip
-unzip instantclient-sdk-linux.x64-23.7.0.25.01.zip
-
-Move the Oracle Instant Client libraries to the correct path.
-
-mkdir -p /usr/local/lib/oracle/
-mv instantclient_23_7 /usr/local/lib/oracle/
-ln -s /usr/local/lib/oracle/instantclient_23_7 /usr/local/lib/oracle/instantclient
-
-cd /usr/local/lib/oracle
-find instantclient_23_7 -type f -exec chmod 644 {} &#43;
-find instantclient_23_7 -type d -exec chmod 755 {} &#43;
-
-Download PHP OCI8 module and compile.
-
-sudo apt install php8.4-dev
-
-cd /usr/src/
-wget https://pecl.php.net/get/oci8-3.4.0.tgz
-tar xzf oci8-3.4.0.tgz
-
-cd oci8-3.4.0
-
-phpize8.4
-./configure --with-oci8=instantclient,/usr/local/lib/oracle/instantclient --with-php-config=/usr/bin/php-config8.4
-make
-
-Install PHP OCI8 module.
-
-make install
-chmod 644 /usr/lib/php/20240924/oci8.so
-
-echo &#39;; priority=10&#39; &gt; /etc/php/8.4/mods-available/oci8.ini
-echo &#39;extension=oci8.so&#39; &gt;&gt; /etc/php/8.4/mods-available/oci8.ini
-
-chmod 644 /etc/php/8.4/mods-available/oci8.ini
-phpenmod -v 8.4 oci8
-
-Adding new library path for Oracle Instant Client libraries.
-
-vim /etc/ld.so.conf.d/xx_php_oci8.conf
-# path to oracle instant client directory
-/usr/local/lib/oracle/instantclient
-sudo ldconfig
-
-Restart Apache and verify PHP module.
-
-sudo systemctl restart apache2
-php -m | grep oci
-Output:">
+Make sure to use the correct version based on your GLIBC version. Check the glibc version with the ldd command.">
 
 
 <script type="application/ld+json">
@@ -218,12 +113,12 @@ Output:">
   "@type": "BlogPosting",
   "headline": "How to Install PHP OCI8 (Oracle Instant Client) Module on Debian/Ubuntu",
   "name": "How to Install PHP OCI8 (Oracle Instant Client) Module on Debian\/Ubuntu",
-  "description": "In this guide, I will show you how to install PHP OCI8 (Oracle Instant Client) on Debian 12 server.\nIn this example, I\u0026rsquo;ve PHP 8.4 installed. Let\u0026rsquo;s begin.\nDowload Oracle Instant Client libraries to your system. In this example, I will use instantclient-basic-linux.x64-23.7.0.25.01.zip and instantclient-sdk-linux.x64-23.7.0.25.01.zip. Make sure to use the correct version based on your GLIBC version. Check the glibc version with the ldd command.\nsudo ldd --version Extract Oracle Instant Client Libraries sudo apt install unzip -y unzip instantclient-basic-linux.x64-23.7.0.25.01.zip unzip instantclient-sdk-linux.x64-23.7.0.25.01.zip Move the Oracle Instant Client libraries to the correct path. mkdir -p /usr/local/lib/oracle/ mv instantclient_23_7 /usr/local/lib/oracle/ ln -s /usr/local/lib/oracle/instantclient_23_7 /usr/local/lib/oracle/instantclient cd /usr/local/lib/oracle find instantclient_23_7 -type f -exec chmod 644 {} + find instantclient_23_7 -type d -exec chmod 755 {} + Download PHP OCI8 module and compile. sudo apt install php8.4-dev cd /usr/src/ wget https://pecl.php.net/get/oci8-3.4.0.tgz tar xzf oci8-3.4.0.tgz cd oci8-3.4.0 phpize8.4 ./configure --with-oci8=instantclient,/usr/local/lib/oracle/instantclient --with-php-config=/usr/bin/php-config8.4 make Install PHP OCI8 module. make install chmod 644 /usr/lib/php/20240924/oci8.so echo \u0026#39;; priority=10\u0026#39; \u0026gt; /etc/php/8.4/mods-available/oci8.ini echo \u0026#39;extension=oci8.so\u0026#39; \u0026gt;\u0026gt; /etc/php/8.4/mods-available/oci8.ini chmod 644 /etc/php/8.4/mods-available/oci8.ini phpenmod -v 8.4 oci8 Adding new library path for Oracle Instant Client libraries. vim /etc/ld.so.conf.d/xx_php_oci8.conf # path to oracle instant client directory /usr/local/lib/oracle/instantclient sudo ldconfig Restart Apache and verify PHP module. sudo systemctl restart apache2 php -m | grep oci Output:\n",
+  "description": "Intro In this guide, I will show you how to install PHP OCI8 (Oracle Instant Client) on Debian 12 server.\nInstalling Oracle Instant Client Library In this example, I\u0026rsquo;ve PHP 8.4 installed. Let\u0026rsquo;s begin.\nDowload Oracle Instant Client libraries to your system. In this example, I will use instantclient-basic-linux.x64-23.7.0.25.01.zip and instantclient-sdk-linux.x64-23.7.0.25.01.zip. Make sure to use the correct version based on your GLIBC version. Check the glibc version with the ldd command.\n",
   "keywords": [
-    
+    "php", "sysadmin"
   ],
-  "articleBody": "In this guide, I will show you how to install PHP OCI8 (Oracle Instant Client) on Debian 12 server.\nIn this example, I’ve PHP 8.4 installed. Let’s begin.\nDowload Oracle Instant Client libraries to your system. In this example, I will use instantclient-basic-linux.x64-23.7.0.25.01.zip and instantclient-sdk-linux.x64-23.7.0.25.01.zip. Make sure to use the correct version based on your GLIBC version. Check the glibc version with the ldd command.\nsudo ldd --version Extract Oracle Instant Client Libraries sudo apt install unzip -y unzip instantclient-basic-linux.x64-23.7.0.25.01.zip unzip instantclient-sdk-linux.x64-23.7.0.25.01.zip Move the Oracle Instant Client libraries to the correct path. mkdir -p /usr/local/lib/oracle/ mv instantclient_23_7 /usr/local/lib/oracle/ ln -s /usr/local/lib/oracle/instantclient_23_7 /usr/local/lib/oracle/instantclient cd /usr/local/lib/oracle find instantclient_23_7 -type f -exec chmod 644 {} + find instantclient_23_7 -type d -exec chmod 755 {} + Download PHP OCI8 module and compile. sudo apt install php8.4-dev cd /usr/src/ wget https://pecl.php.net/get/oci8-3.4.0.tgz tar xzf oci8-3.4.0.tgz cd oci8-3.4.0 phpize8.4 ./configure --with-oci8=instantclient,/usr/local/lib/oracle/instantclient --with-php-config=/usr/bin/php-config8.4 make Install PHP OCI8 module. make install chmod 644 /usr/lib/php/20240924/oci8.so echo '; priority=10' \u003e /etc/php/8.4/mods-available/oci8.ini echo 'extension=oci8.so' \u003e\u003e /etc/php/8.4/mods-available/oci8.ini chmod 644 /etc/php/8.4/mods-available/oci8.ini phpenmod -v 8.4 oci8 Adding new library path for Oracle Instant Client libraries. vim /etc/ld.so.conf.d/xx_php_oci8.conf # path to oracle instant client directory /usr/local/lib/oracle/instantclient sudo ldconfig Restart Apache and verify PHP module. sudo systemctl restart apache2 php -m | grep oci Output:\noci8 Thanks.\n",
-  "wordCount" : "210",
+  "articleBody": "Intro In this guide, I will show you how to install PHP OCI8 (Oracle Instant Client) on Debian 12 server.\nInstalling Oracle Instant Client Library In this example, I’ve PHP 8.4 installed. Let’s begin.\nDowload Oracle Instant Client libraries to your system. In this example, I will use instantclient-basic-linux.x64-23.7.0.25.01.zip and instantclient-sdk-linux.x64-23.7.0.25.01.zip. Make sure to use the correct version based on your GLIBC version. Check the glibc version with the ldd command.\nsudo ldd --version Extract Oracle Instant Client Libraries sudo apt install unzip -y unzip instantclient-basic-linux.x64-23.7.0.25.01.zip unzip instantclient-sdk-linux.x64-23.7.0.25.01.zip Move the Oracle Instant Client libraries to the correct path. mkdir -p /usr/local/lib/oracle/ mv instantclient_23_7 /usr/local/lib/oracle/ ln -s /usr/local/lib/oracle/instantclient_23_7 /usr/local/lib/oracle/instantclient cd /usr/local/lib/oracle find instantclient_23_7 -type f -exec chmod 644 {} + find instantclient_23_7 -type d -exec chmod 755 {} + Installing PHP OCI8 Extension Download PHP OCI8 module and compile. sudo apt install php8.4-dev cd /usr/src/ wget https://pecl.php.net/get/oci8-3.4.0.tgz tar xzf oci8-3.4.0.tgz cd oci8-3.4.0 phpize8.4 ./configure --with-oci8=instantclient,/usr/local/lib/oracle/instantclient --with-php-config=/usr/bin/php-config8.4 make Install PHP OCI8 module. make install chmod 644 /usr/lib/php/20240924/oci8.so echo '; priority=10' \u003e /etc/php/8.4/mods-available/oci8.ini echo 'extension=oci8.so' \u003e\u003e /etc/php/8.4/mods-available/oci8.ini chmod 644 /etc/php/8.4/mods-available/oci8.ini phpenmod -v 8.4 oci8 Adding new library path for Oracle Instant Client libraries. vim /etc/ld.so.conf.d/xx_php_oci8.conf # path to oracle instant client directory /usr/local/lib/oracle/instantclient sudo ldconfig Restart Apache Web Server Restart Apache and verify PHP module. sudo systemctl restart apache2 php -m | grep oci Output:\noci8 Thanks.\n",
+  "wordCount" : "224",
   "inLanguage": "en",
   "datePublished": "2025-03-04T05:10:43+07:00",
   "dateModified": "2025-03-04T05:10:43+07:00",
@@ -301,9 +196,30 @@ Output:">
     <div class="post-meta"><span title='2025-03-04 05:10:43 +0700 WIB'>March 4, 2025</span>&nbsp;·&nbsp;Nadlir
 
 </div>
-  </header> 
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
 
-  <div class="post-content"><p>In this guide, I will show you how to install PHP OCI8 (Oracle Instant Client) on Debian 12 server.</p>
+        <div class="inner"><ul>
+                <li>
+                    <a href="#intro" aria-label="Intro">Intro</a></li>
+                <li>
+                    <a href="#installing-oracle-instant-client-library" aria-label="Installing Oracle Instant Client Library">Installing Oracle Instant Client Library</a></li>
+                <li>
+                    <a href="#installing-php-oci8-extension" aria-label="Installing PHP OCI8 Extension">Installing PHP OCI8 Extension</a></li>
+                <li>
+                    <a href="#restart-apache-web-server" aria-label="Restart Apache Web Server">Restart Apache Web Server</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="intro">Intro<a hidden class="anchor" aria-hidden="true" href="#intro">#</a></h2>
+<p>In this guide, I will show you how to install PHP OCI8 (Oracle Instant Client) on Debian 12 server.</p>
+<h2 id="installing-oracle-instant-client-library">Installing Oracle Instant Client Library<a hidden class="anchor" aria-hidden="true" href="#installing-oracle-instant-client-library">#</a></h2>
 <p>In this example, I&rsquo;ve <strong>PHP 8.4</strong> installed. Let&rsquo;s begin.</p>
 <ul>
 <li>Dowload <a href="https://www.oracle.com/database/technologies/instant-client/downloads.html">Oracle Instant Client libraries</a> to your system. In this example, I will use <code>instantclient-basic-linux.x64-23.7.0.25.01.zip</code> and <code>instantclient-sdk-linux.x64-23.7.0.25.01.zip</code>.</li>
@@ -326,7 +242,8 @@ Output:">
 </span></span><span style="display:flex;"><span>cd /usr/local/lib/oracle
 </span></span><span style="display:flex;"><span>find instantclient_23_7 -type f -exec chmod <span style="color:#ae81ff">644</span> <span style="color:#f92672">{}</span> +
 </span></span><span style="display:flex;"><span>find instantclient_23_7 -type d -exec chmod <span style="color:#ae81ff">755</span> <span style="color:#f92672">{}</span> +
-</span></span></code></pre></div><ul>
+</span></span></code></pre></div><h2 id="installing-php-oci8-extension">Installing PHP OCI8 Extension<a hidden class="anchor" aria-hidden="true" href="#installing-php-oci8-extension">#</a></h2>
+<ul>
 <li>Download PHP OCI8 module and compile.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install php8.4-dev
@@ -358,7 +275,8 @@ Output:">
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#75715e"># path to oracle instant client directory</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">/usr/local/lib/oracle/instantclient</span>
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ldconfig
-</span></span></code></pre></div><ul>
+</span></span></code></pre></div><h2 id="restart-apache-web-server">Restart Apache Web Server<a hidden class="anchor" aria-hidden="true" href="#restart-apache-web-server">#</a></h2>
+<ul>
 <li>Restart Apache and verify PHP module.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl restart apache2
@@ -372,6 +290,8 @@ Output:">
 
   <footer class="post-footer">
     <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/php/">Php</a></li>
+      <li><a href="http://localhost:1313/tags/sysadmin/">Sysadmin</a></li>
     </ul>
   </footer>
 </article>

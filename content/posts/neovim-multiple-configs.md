@@ -1,6 +1,7 @@
 +++
 date = '2025-02-04T17:41:12+07:00'
 draft = false
+tags = ["neovim"]
 title = 'Neovim Multiple Configs'
 +++
 
@@ -12,6 +13,8 @@ If you're Neovim fan, it is important to have multiple configs. You can configur
 * `~/.config/nvim-alt`: Your secondary Neovim configuration where you can implement new things.
 
 So now, let's configure it.
+
+## Setup Neovim Playground
 
 Assuming that your main Neovim configured, let's configure the alternate Neovim configuration.
 
@@ -26,6 +29,8 @@ Now you can start start Neovim with the `nvim-alt` configuration using the comma
 ```bash
 NVIM_APPNAME=nvim-alt nvim
 ```
+
+## Adding Neovim Playground to bashrc/zshrc
 
 The efficient to do this is to create an alias through `~/.bashrc` or `~/.zshrc` file:
 

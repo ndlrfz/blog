@@ -44,6 +44,15 @@
     <loc>http://localhost:1313/posts/php-oci8-debian-ubuntu/</loc>
     <lastmod>2025-03-04T05:10:43+07:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/php/</loc>
+    <lastmod>2025-03-04T05:10:43+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/sysadmin/</loc>
+    <lastmod>2025-03-04T05:10:43+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/neovim/</loc>
+    <lastmod>2025-02-04T17:41:12+07:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/posts/neovim-multiple-configs/</loc>
     <lastmod>2025-02-04T17:41:12+07:00</lastmod>
   </url><url>

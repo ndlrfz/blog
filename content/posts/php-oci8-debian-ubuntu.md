@@ -1,10 +1,15 @@
 +++
 date = '2025-03-04T05:10:43+07:00'
 draft = false
+tags = ["php", "sysadmin"]
 title = 'How to Install PHP OCI8 (Oracle Instant Client) Module on Debian/Ubuntu'
 +++
 
+## Intro
+
 In this guide, I will show you how to install PHP OCI8 (Oracle Instant Client) on Debian 12 server.
+
+## Installing Oracle Instant Client Library
 
 In this example, I've **PHP 8.4** installed. Let's begin.
 
@@ -35,6 +40,8 @@ cd /usr/local/lib/oracle
 find instantclient_23_7 -type f -exec chmod 644 {} +
 find instantclient_23_7 -type d -exec chmod 755 {} +
 ```
+
+## Installing PHP OCI8 Extension
 
 - Download PHP OCI8 module and compile.
 
@@ -79,6 +86,8 @@ vim /etc/ld.so.conf.d/xx_php_oci8.conf
 ```bash
 sudo ldconfig
 ```
+
+## Restart Apache Web Server
 
 - Restart Apache and verify PHP module.
 

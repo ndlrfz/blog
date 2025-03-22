@@ -271,67 +271,14 @@
       <link>http://localhost:1313/posts/php-oci8-debian-ubuntu/</link>
       <pubDate>Tue, 04 Mar 2025 05:10:43 +0700</pubDate>
       <guid>http://localhost:1313/posts/php-oci8-debian-ubuntu/</guid>
-      <description>&lt;p&gt;In this guide, I will show you how to install PHP OCI8 (Oracle Instant Client) on Debian 12 server.&lt;/p&gt;
+      <description>&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
+&lt;p&gt;In this guide, I will show you how to install PHP OCI8 (Oracle Instant Client) on Debian 12 server.&lt;/p&gt;
+&lt;h2 id=&#34;installing-oracle-instant-client-library&#34;&gt;Installing Oracle Instant Client Library&lt;/h2&gt;
 &lt;p&gt;In this example, I&amp;rsquo;ve &lt;strong&gt;PHP 8.4&lt;/strong&gt; installed. Let&amp;rsquo;s begin.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Dowload &lt;a href=&#34;https://www.oracle.com/database/technologies/instant-client/downloads.html&#34;&gt;Oracle Instant Client libraries&lt;/a&gt; to your system. In this example, I will use &lt;code&gt;instantclient-basic-linux.x64-23.7.0.25.01.zip&lt;/code&gt; and &lt;code&gt;instantclient-sdk-linux.x64-23.7.0.25.01.zip&lt;/code&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Make sure to use the correct version based on your &lt;em&gt;GLIBC&lt;/em&gt; version. Check the &lt;em&gt;glibc&lt;/em&gt; version with the &lt;code&gt;ldd&lt;/code&gt; command.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo ldd --version
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;Extract Oracle Instant Client Libraries&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt install unzip -y
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;unzip instantclient-basic-linux.x64-23.7.0.25.01.zip
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;unzip instantclient-sdk-linux.x64-23.7.0.25.01.zip
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;Move the Oracle Instant Client libraries to the correct path.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mkdir -p /usr/local/lib/oracle/
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mv instantclient_23_7 /usr/local/lib/oracle/
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ln -s /usr/local/lib/oracle/instantclient_23_7 /usr/local/lib/oracle/instantclient
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd /usr/local/lib/oracle
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;find instantclient_23_7 -type f -exec chmod &lt;span style=&#34;color:#ae81ff&#34;&gt;644&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;{}&lt;/span&gt; +
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;find instantclient_23_7 -type d -exec chmod &lt;span style=&#34;color:#ae81ff&#34;&gt;755&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;{}&lt;/span&gt; +
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;Download PHP OCI8 module and compile.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt install php8.4-dev
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd /usr/src/
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wget https://pecl.php.net/get/oci8-3.4.0.tgz
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tar xzf oci8-3.4.0.tgz
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd oci8-3.4.0
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;phpize8.4
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;./configure --with-oci8&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;instantclient,/usr/local/lib/oracle/instantclient --with-php-config&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;/usr/bin/php-config8.4
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;make
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;Install PHP OCI8 module.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;make install
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;chmod &lt;span style=&#34;color:#ae81ff&#34;&gt;644&lt;/span&gt; /usr/lib/php/20240924/oci8.so
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;; priority=10&amp;#39;&lt;/span&gt; &amp;gt; /etc/php/8.4/mods-available/oci8.ini
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;extension=oci8.so&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; /etc/php/8.4/mods-available/oci8.ini
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;chmod &lt;span style=&#34;color:#ae81ff&#34;&gt;644&lt;/span&gt; /etc/php/8.4/mods-available/oci8.ini
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;phpenmod -v 8.4 oci8
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;Adding new library path for Oracle Instant Client libraries.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vim /etc/ld.so.conf.d/xx_php_oci8.conf
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-ini&#34; data-lang=&#34;ini&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# path to oracle instant client directory&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;/usr/local/lib/oracle/instantclient&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo ldconfig
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;Restart Apache and verify PHP module.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo systemctl restart apache2
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;php -m | grep oci
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Output:&lt;/p&gt;</description>
+&lt;p&gt;Make sure to use the correct version based on your &lt;em&gt;GLIBC&lt;/em&gt; version. Check the &lt;em&gt;glibc&lt;/em&gt; version with the &lt;code&gt;ldd&lt;/code&gt; command.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Neovim Multiple Configs</title>
@@ -345,6 +292,7 @@
 &lt;li&gt;&lt;code&gt;~/.config/nvim-alt&lt;/code&gt;: Your secondary Neovim configuration where you can implement new things.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;So now, let&amp;rsquo;s configure it.&lt;/p&gt;
+&lt;h2 id=&#34;setup-neovim-playground&#34;&gt;Setup Neovim Playground&lt;/h2&gt;
 &lt;p&gt;Assuming that your main Neovim configured, let&amp;rsquo;s configure the alternate Neovim configuration.&lt;/p&gt;
 &lt;p&gt;This example wll be using &lt;em&gt;kickstart.nvim&lt;/em&gt; as an alternative configuration. You can choose other starterkit like &lt;em&gt;Lazy.nvim&lt;/em&gt; or distribution like &lt;em&gt;Nvchad&lt;/em&gt;, &lt;em&gt;Astro&lt;/em&gt;, etc.&lt;/p&gt;</description>
     </item>
