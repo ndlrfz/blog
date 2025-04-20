@@ -4,10 +4,71 @@
     <title>Nadlir Blog</title>
     <link>http://localhost:1313/</link>
     <description>Recent content on Nadlir Blog</description>
-    <generator>Hugo -- 0.145.0</generator>
+    <generator>Hugo -- 0.146.5</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 21 Mar 2025 21:30:12 +0700</lastBuildDate>
+    <lastBuildDate>Sun, 20 Apr 2025 17:09:46 +0700</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vim Motions Tips</title>
+      <link>http://localhost:1313/posts/vim-motions/</link>
+      <pubDate>Sun, 20 Apr 2025 17:09:46 +0700</pubDate>
+      <guid>http://localhost:1313/posts/vim-motions/</guid>
+      <description>&lt;h2 id=&#34;exit-like-a-pro&#34;&gt;Exit like a pro&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Save and exit =&amp;gt; &lt;code&gt;ZZ&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Save without saving =&amp;gt; &lt;code&gt;ZQ&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;select-inside--bracket-and--curly-bracket&#34;&gt;Select inside () (Bracket) and {} (Curly Bracket)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Select within &lt;code&gt;()&lt;/code&gt; =&amp;gt; &lt;code&gt;vib&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Select within &lt;code&gt;{}&lt;/code&gt; =&amp;gt; &lt;code&gt;viB&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;edit-multiple-lines-at-once&#34;&gt;Edit multiple lines at once&lt;/h2&gt;
+&lt;p&gt;Step by step to insert at the beginning of the line:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;Ctrl+v&lt;/code&gt; to get visual mode.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;I&lt;/code&gt; to insert mode.&lt;/li&gt;
+&lt;li&gt;Enter your HTML tag &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ESC&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Step by step to insert at the end of the line:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Django Fundamentals</title>
+      <link>http://localhost:1313/posts/django-fundamentals/</link>
+      <pubDate>Tue, 15 Apr 2025 11:11:12 +0700</pubDate>
+      <guid>http://localhost:1313/posts/django-fundamentals/</guid>
+      <description>&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Django is a Python web framework for building web applications.&lt;/li&gt;
+&lt;li&gt;MVT (Model, View, Template)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;install-django&#34;&gt;Install Django&lt;/h2&gt;
+&lt;p&gt;In this example, I will use &lt;code&gt;uv&lt;/code&gt; (you should try &lt;code&gt;uv&lt;/code&gt; / 100x faster than &lt;code&gt;pip&lt;/code&gt;).&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Setup project directory and virtual env.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mkdir -p ~/project; cd ~/project
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;uv init
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;uv venv
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;source .venv/bin/activate
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Install Django&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;uv add django
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;django-admin --help
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;create-django-project&#34;&gt;Create Django Project&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Add project.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;django-admin startproject main .
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Check the project tree.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Guide to Amazon RDS (Relational Database Service)</title>
       <link>http://localhost:1313/posts/aws-rds-guide/</link>

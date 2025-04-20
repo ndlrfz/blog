@@ -10,7 +10,7 @@
 <meta name="description" content="Posts - Nadlir Blog">
 <meta name="author" content="Nadlir">
 <link rel="canonical" href="http://localhost:1313/posts/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f49d66caae9ea0fd43f21f29e71a8d3e284517ed770f2aa86fa012953ad3c9ef.css" integrity="sha256-9J1myq6eoP1D8h8p5xqNPihFF&#43;13Dyqob6ASlTrTye8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://ndlrfz.github.io/blog/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://ndlrfz.github.io/blog/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://ndlrfz.github.io/blog/favicon.ico">
@@ -99,7 +99,7 @@
         <div class="logo">
             <a href="http://localhost:1313/" accesskey="h" title="Nadlir Blog (Alt + H)">Nadlir Blog</a>
             <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
@@ -131,6 +131,37 @@
     Posts
   </h1>
 </header>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Vim Motions Tips
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Exit like a pro Save and exit =&gt; ZZ. Save without saving =&gt; ZQ. Select inside () (Bracket) and {} (Curly Bracket) Select within () =&gt; vib. Select within {} =&gt; viB. Edit multiple lines at once Step by step to insert at the beginning of the line:
+Ctrl&#43;v to get visual mode. I to insert mode. Enter your HTML tag &lt;p&gt;. ESC. Step by step to insert at the end of the line:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-04-20 17:09:46 +0700 WIB'>April 20, 2025</span>&nbsp;·&nbsp;Nadlir</footer>
+  <a class="entry-link" aria-label="post link to Vim Motions Tips" href="http://localhost:1313/posts/vim-motions/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Django Fundamentals
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Intro Django is a Python web framework for building web applications. MVT (Model, View, Template) Install Django In this example, I will use uv (you should try uv / 100x faster than pip).
+Setup project directory and virtual env.
+mkdir -p ~/project; cd ~/project uv init uv venv source .venv/bin/activate Install Django
+uv add django django-admin --help Create Django Project Add project.
+django-admin startproject main . Check the project tree.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-04-15 11:11:12 +0700 WIB'>April 15, 2025</span>&nbsp;·&nbsp;Nadlir</footer>
+  <a class="entry-link" aria-label="post link to Django Fundamentals" href="http://localhost:1313/posts/django-fundamentals/"></a>
+</article>
 
 <article class="post-entry"> 
   <header class="entry-header">
@@ -240,35 +271,6 @@ import string string_lowwe = list(string.ascii_lowercase) print(string_lower) st
   </div>
   <footer class="entry-footer"><span title='2025-03-16 22:38:22 +0700 WIB'>March 16, 2025</span>&nbsp;·&nbsp;Nadlir</footer>
   <a class="entry-link" aria-label="post link to How to Generate Numbers and Letter Python" href="http://localhost:1313/posts/generate-numbers-letter-caps-python/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">ERR_TOO_MANY_REDIRECTS on Cloudflare
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>When you turn on the proxy feature on Cloudflare and you get the error ERR_TOO_MANY_REDIRECTS. Solve by doing this:
-Go to the site configuration on Cloudflare SSL &gt; Overview SSL Encryption section and Configure Select Full Done.
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-03-16 17:44:27 +0700 WIB'>March 16, 2025</span>&nbsp;·&nbsp;Nadlir</footer>
-  <a class="entry-link" aria-label="post link to ERR_TOO_MANY_REDIRECTS on Cloudflare" href="http://localhost:1313/posts/too-many-redirects-cloudflare/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">How to Install PHP OCI8 (Oracle Instant Client) Module on Debian/Ubuntu
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Intro In this guide, I will show you how to install PHP OCI8 (Oracle Instant Client) on Debian 12 server.
-Installing Oracle Instant Client Library In this example, I’ve PHP 8.4 installed. Let’s begin.
-Dowload Oracle Instant Client libraries to your system. In this example, I will use instantclient-basic-linux.x64-23.7.0.25.01.zip and instantclient-sdk-linux.x64-23.7.0.25.01.zip. Make sure to use the correct version based on your GLIBC version. Check the glibc version with the ldd command.
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-03-04 05:10:43 +0700 WIB'>March 4, 2025</span>&nbsp;·&nbsp;Nadlir</footer>
-  <a class="entry-link" aria-label="post link to How to Install PHP OCI8 (Oracle Instant Client) Module on Debian/Ubuntu" href="http://localhost:1313/posts/php-oci8-debian-ubuntu/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

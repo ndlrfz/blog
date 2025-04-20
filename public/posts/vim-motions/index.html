@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Vim Motions Tips | Nadlir Blog</title>
+<meta name="keywords" content="">
+<meta name="description" content="Exit like a pro
+
+Save and exit =&gt; ZZ.
+Save without saving =&gt; ZQ.
+
+Select inside () (Bracket) and {} (Curly Bracket)
+
+Select within () =&gt; vib.
+Select within {} =&gt; viB.
+
+Edit multiple lines at once
+Step by step to insert at the beginning of the line:
+
+Ctrl&#43;v to get visual mode.
+I to insert mode.
+Enter your HTML tag &lt;p&gt;.
+ESC.
+
+Step by step to insert at the end of the line:">
+<meta name="author" content="Nadlir">
+<link rel="canonical" href="http://localhost:1313/posts/vim-motions/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f49d66caae9ea0fd43f21f29e71a8d3e284517ed770f2aa86fa012953ad3c9ef.css" integrity="sha256-9J1myq6eoP1D8h8p5xqNPihFF&#43;13Dyqob6ASlTrTye8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://ndlrfz.github.io/blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://ndlrfz.github.io/blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="https://ndlrfz.github.io/blog/favicon.ico">
+<link rel="apple-touch-icon" href="https://ndlrfz.github.io/blog/favicon.ico">
+<link rel="mask-icon" href="https://ndlrfz.github.io/blog/favicon.ico">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/vim-motions/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:url" content="http://localhost:1313/posts/vim-motions/">
+  <meta property="og:site_name" content="Nadlir Blog">
+  <meta property="og:title" content="Vim Motions Tips">
+  <meta property="og:description" content="Exit like a pro Save and exit =&gt; ZZ. Save without saving =&gt; ZQ. Select inside () (Bracket) and {} (Curly Bracket) Select within () =&gt; vib. Select within {} =&gt; viB. Edit multiple lines at once Step by step to insert at the beginning of the line:
+Ctrl&#43;v to get visual mode. I to insert mode. Enter your HTML tag &lt;p&gt;. ESC. Step by step to insert at the end of the line:">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-04-20T17:09:46+07:00">
+    <meta property="article:modified_time" content="2025-04-20T17:09:46+07:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vim Motions Tips">
+<meta name="twitter:description" content="Exit like a pro
+
+Save and exit =&gt; ZZ.
+Save without saving =&gt; ZQ.
+
+Select inside () (Bracket) and {} (Curly Bracket)
+
+Select within () =&gt; vib.
+Select within {} =&gt; viB.
+
+Edit multiple lines at once
+Step by step to insert at the beginning of the line:
+
+Ctrl&#43;v to get visual mode.
+I to insert mode.
+Enter your HTML tag &lt;p&gt;.
+ESC.
+
+Step by step to insert at the end of the line:">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Vim Motions Tips",
+      "item": "http://localhost:1313/posts/vim-motions/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Vim Motions Tips",
+  "name": "Vim Motions Tips",
+  "description": "Exit like a pro Save and exit =\u0026gt; ZZ. Save without saving =\u0026gt; ZQ. Select inside () (Bracket) and {} (Curly Bracket) Select within () =\u0026gt; vib. Select within {} =\u0026gt; viB. Edit multiple lines at once Step by step to insert at the beginning of the line:\nCtrl+v to get visual mode. I to insert mode. Enter your HTML tag \u0026lt;p\u0026gt;. ESC. Step by step to insert at the end of the line:\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "Exit like a pro Save and exit =\u003e ZZ. Save without saving =\u003e ZQ. Select inside () (Bracket) and {} (Curly Bracket) Select within () =\u003e vib. Select within {} =\u003e viB. Edit multiple lines at once Step by step to insert at the beginning of the line:\nCtrl+v to get visual mode. I to insert mode. Enter your HTML tag . ESC. Step by step to insert at the end of the line:\nCtrl+v to get the visual mode and select each line. $ sign to select to the end of paragraph. A to append the closing tag . ESC. # AFTER \u003cp\u003eparagraph one\u003c/p\u003e \u003cp\u003eparagraph two\u003c/p\u003e \u003cp\u003eparagraph three\u003c/p\u003e \u003cp\u003eparagraph four\u003c/p\u003e \u003cp\u003eparagraph five\u003c/p\u003e \u003cp\u003eparagraph six\u003c/p\u003e \u003cp\u003eparagraph seven\u003c/p\u003e # BEFORE paragraph one paragraph two paragraph three paragraph four paragraph five paragraph six paragraph seven Toggle between uppercase and lowercase Use ~ to toggle the beginning character of the word. Use g + ~ + $ to toggle to the end of paragraph. Reindent the whole file Press gg to go to the top, then = and G to the bottom of the file.\nJump between (), [], {}, etc Use the % sign to jump between those braces.\nSuspend and restore vim Press Ctrl+z to suspend vim in the background. Type command fg to access vim. Open URL or file under the cursor Move your cursor under the URL and press gx to open in the default browser. For file, do the same and replace with the gf. Using vim mark and return to it Step by step to mark location:\nType m to mark the current line. Type a as the identifier. You can change a with any identidier. Step by step to return to marked line:\nPress ' or single quote. Press the identifier, for example a. If you want to mark and jump of different file, use A as identifier. So:\nm and A. ' and A. Jump to specific line number Enter the line number, such as 12, then G.\nJoin lines Use J to join two lines into single line.\n",
+  "wordCount" : "344",
+  "inLanguage": "en",
+  "datePublished": "2025-04-20T17:09:46+07:00",
+  "dateModified": "2025-04-20T17:09:46+07:00",
+  "author":[{
+    "@type": "Person",
+    "name": "Nadlir"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/vim-motions/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Nadlir Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ndlrfz.github.io/blog/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Nadlir Blog (Alt + H)">Nadlir Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Vim Motions Tips
+    </h1>
+    <div class="post-meta"><span title='2025-04-20 17:09:46 +0700 WIB'>April 20, 2025</span>&nbsp;·&nbsp;Nadlir
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#exit-like-a-pro" aria-label="Exit like a pro">Exit like a pro</a></li>
+                <li>
+                    <a href="#select-inside--bracket-and--curly-bracket" aria-label="Select inside () (Bracket) and {} (Curly Bracket)">Select inside () (Bracket) and {} (Curly Bracket)</a></li>
+                <li>
+                    <a href="#edit-multiple-lines-at-once" aria-label="Edit multiple lines at once">Edit multiple lines at once</a></li>
+                <li>
+                    <a href="#toggle-between-uppercase-and-lowercase" aria-label="Toggle between uppercase and lowercase">Toggle between uppercase and lowercase</a></li>
+                <li>
+                    <a href="#reindent-the-whole-file" aria-label="Reindent the whole file">Reindent the whole file</a></li>
+                <li>
+                    <a href="#jump-between----etc" aria-label="Jump between (), [], {}, etc">Jump between (), [], {}, etc</a></li>
+                <li>
+                    <a href="#suspend-and-restore-vim" aria-label="Suspend and restore vim">Suspend and restore vim</a></li>
+                <li>
+                    <a href="#open-url-or-file-under-the-cursor" aria-label="Open URL or file under the cursor">Open URL or file under the cursor</a></li>
+                <li>
+                    <a href="#using-vim-mark-and-return-to-it" aria-label="Using vim mark and return to it">Using vim mark and return to it</a></li>
+                <li>
+                    <a href="#jump-to-specific-line-number" aria-label="Jump to specific line number">Jump to specific line number</a></li>
+                <li>
+                    <a href="#join-lines" aria-label="Join lines">Join lines</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="exit-like-a-pro">Exit like a pro<a hidden class="anchor" aria-hidden="true" href="#exit-like-a-pro">#</a></h2>
+<ul>
+<li>Save and exit =&gt; <code>ZZ</code>.</li>
+<li>Save without saving =&gt; <code>ZQ</code>.</li>
+</ul>
+<h2 id="select-inside--bracket-and--curly-bracket">Select inside () (Bracket) and {} (Curly Bracket)<a hidden class="anchor" aria-hidden="true" href="#select-inside--bracket-and--curly-bracket">#</a></h2>
+<ul>
+<li>Select within <code>()</code> =&gt; <code>vib</code>.</li>
+<li>Select within <code>{}</code> =&gt; <code>viB</code>.</li>
+</ul>
+<h2 id="edit-multiple-lines-at-once">Edit multiple lines at once<a hidden class="anchor" aria-hidden="true" href="#edit-multiple-lines-at-once">#</a></h2>
+<p>Step by step to insert at the beginning of the line:</p>
+<ol>
+<li><code>Ctrl+v</code> to get visual mode.</li>
+<li><code>I</code> to insert mode.</li>
+<li>Enter your HTML tag <code>&lt;p&gt;</code>.</li>
+<li><code>ESC</code>.</li>
+</ol>
+<p>Step by step to insert at the end of the line:</p>
+<ol>
+<li><code>Ctrl+v</code> to get the visual mode and select each line.</li>
+<li><code>$</code> sign to select to the end of paragraph.</li>
+<li><code>A</code> to append the closing tag <code>&lt;/p&gt;</code>.</li>
+<li><code>ESC</code>.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span># AFTER
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;paragraph one&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;paragraph two&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;paragraph three&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;paragraph four&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;paragraph five&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;paragraph six&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;paragraph seven&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># BEFORE
+</span></span><span style="display:flex;"><span>paragraph one
+</span></span><span style="display:flex;"><span>paragraph two
+</span></span><span style="display:flex;"><span>paragraph three
+</span></span><span style="display:flex;"><span>paragraph four
+</span></span><span style="display:flex;"><span>paragraph five
+</span></span><span style="display:flex;"><span>paragraph six
+</span></span><span style="display:flex;"><span>paragraph seven
+</span></span></code></pre></div><h2 id="toggle-between-uppercase-and-lowercase">Toggle between uppercase and lowercase<a hidden class="anchor" aria-hidden="true" href="#toggle-between-uppercase-and-lowercase">#</a></h2>
+<ul>
+<li>Use <code>~</code> to toggle the beginning character of the word.</li>
+<li>Use <code>g + ~ + $</code> to toggle to the end of paragraph.</li>
+</ul>
+<h2 id="reindent-the-whole-file">Reindent the whole file<a hidden class="anchor" aria-hidden="true" href="#reindent-the-whole-file">#</a></h2>
+<p>Press <code>gg</code> to go to the top, then <code>=</code> and <code>G</code> to the bottom of the file.</p>
+<h2 id="jump-between----etc">Jump between (), [], {}, etc<a hidden class="anchor" aria-hidden="true" href="#jump-between----etc">#</a></h2>
+<p>Use the <code>%</code> sign to jump between those braces.</p>
+<h2 id="suspend-and-restore-vim">Suspend and restore vim<a hidden class="anchor" aria-hidden="true" href="#suspend-and-restore-vim">#</a></h2>
+<ul>
+<li>Press <code>Ctrl+z</code> to suspend vim in the background.</li>
+<li>Type command <code>fg</code> to access vim.</li>
+</ul>
+<h2 id="open-url-or-file-under-the-cursor">Open URL or file under the cursor<a hidden class="anchor" aria-hidden="true" href="#open-url-or-file-under-the-cursor">#</a></h2>
+<ul>
+<li>Move your cursor under the URL and press <code>gx</code> to open in the default browser.</li>
+<li>For file, do the same and replace with the <code>gf</code>.</li>
+</ul>
+<h2 id="using-vim-mark-and-return-to-it">Using vim mark and return to it<a hidden class="anchor" aria-hidden="true" href="#using-vim-mark-and-return-to-it">#</a></h2>
+<p>Step by step to mark location:</p>
+<ol>
+<li>Type <code>m</code> to mark the current line.</li>
+<li>Type <code>a</code> as the identifier. You can change <code>a</code> with any identidier.</li>
+</ol>
+<p>Step by step to return to marked line:</p>
+<ol>
+<li>Press <code>'</code> or single quote.</li>
+<li>Press the identifier, for example <code>a</code>.</li>
+</ol>
+<p>If you want to mark and jump of different file, use <code>A</code> as identifier. So:</p>
+<ul>
+<li><code>m</code> and <code>A</code>.</li>
+<li><code>'</code> and <code>A</code>.</li>
+</ul>
+<h2 id="jump-to-specific-line-number">Jump to specific line number<a hidden class="anchor" aria-hidden="true" href="#jump-to-specific-line-number">#</a></h2>
+<p>Enter the line number, such as <code>12</code>, then <code>G</code>.</p>
+<h2 id="join-lines">Join lines<a hidden class="anchor" aria-hidden="true" href="#join-lines">#</a></h2>
+<p>Use <code>J</code> to join two lines into single line.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Nadlir Blog</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
