@@ -1,6 +1,7 @@
 +++
 date = '2025-04-20T17:09:46+07:00'
 draft = false
+tldr = 'Up your productivity with these vim motions and tips.'
 title = 'Vim Motions Tips'
 +++
 

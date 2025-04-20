@@ -2,8 +2,13 @@ baseURL = 'https://ndlrfz.web.id/'
 languageCode = 'en-us'
 title = 'Nadlir Blog'
 theme = 'archie'
+pygmentsstyle = "monokai"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+enableEmoji = true
 
 [params]
+mode="dark"
 env = "production"
 author = ["Nadlir"]
 ShowToc = true
