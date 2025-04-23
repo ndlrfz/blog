@@ -36,6 +36,7 @@ homeCollection = 'posts'
 paginationSize = 100
 listSummaries = false
 listDateFormat = '2 Jan 2006'
+faviconPath = 'https://ndlrfz.web.id/favicon.ico'
 
 # Breadcrumbs
 [params.breadcrumbs]
