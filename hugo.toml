@@ -1,31 +1,86 @@
 baseURL = 'https://ndlrfz.web.id/'
 languageCode = 'en-us'
-title = 'Nadlir Blog'
-theme = 'archie'
-pygmentsstyle = "monokai"
-pygmentscodefences = true
-pygmentscodefencesguesssyntax = true
-enableEmoji = true
+title = 'ndlr/fz/96 🦄'
+theme = 'typo'
+
+
+[taxonomies]
+tag = 'tags'
 
 [params]
-mode="dark"
-env = "production"
-author = ["Nadlir"]
-ShowToc = true
-ShowBreadCrumbs = true
-ShowCodeCopyButtons = true
-ShowPageNums = true
+# Meta description
+description = "Nadlir's Blog"
 
-[params.assets]
-favicon = "https://ndlrfz.github.io/blog/favicon.ico"
-favicon16x16 = "https://ndlrfz.github.io/blog/favicon.ico"
-favicon32x32 = "https://ndlrfz.github.io/blog/favicon.ico"
-apple_touch_icon = "https://ndlrfz.github.io/blog/favicon.ico"
-safari_pinned_tab = "https://ndlrfz.github.io/blog/favicon.ico"
+# Appearance settings
+theme = 'dark'
+colorPalette = 'default'
+hideHeader = false
 
-[params.homeInfoParams]
-Title = "Ndlrfz 🐧🐮 🦄"
-Content = """**You will become clever through your mistakes.**
+showFooter = true
+footerContent = """
+All content licensed under CC BY-SA 4.0 license unless otherwise stated. Copyright © 2025 Nadlir.
+"""
+
+# Intro on main page, content is markdown
+homeIntroTitle = 'Hi! 🐧🐮 🦄'
+homeIntroContent = """
+**You will become clever through your mistakes.**
 _—German proverb_
 """
+
+# Collection to display on home
+homeCollectionTitle = 'Posts'
+homeCollection = 'posts'
+
+# Lists parameters
+paginationSize = 100
+listSummaries = false
+listDateFormat = '2 Jan 2006'
+
+# Breadcrumbs
+[params.breadcrumbs]
+enabled = false
+showCurrentPage = true
+home = "Home"
+
+# Social icons
+[[params.social]]
+name = "linkedin"
+url = "https://www.linkedin.com/in/nadlir-na-12620934a/"
+
+[[params.social]]
+name = "github"
+url = "https://github.com/ndlrfz"
+
+# Main menu pages
+[[params.menu]]
+name = "home"
+url = "/"
+
+[[params.menu]]
+name = "posts"
+url = "/posts"
+
+[[params.menu]]
+name = "tags"
+url = "/tags"
+
+[[params.menu]]
+name = "contact-me"
+url = "/contact-me"
+
+# Syntax highlight on code blocks
+[markup]
+[markup.highlight]
+style = 'doom-one'
+
+# Giscus comments
+# [params.giscus]
+# enable = false
+# repo = "user/repo"
+# repoid = "repoId"
+# category = "General"
+# categoryid = "categoryId"
+# mapping = "pathname"
+# theme = "preferred_color_scheme"
 

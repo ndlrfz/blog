@@ -1,25 +1,49 @@
 <!DOCTYPE html>
-<html><head lang="en"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Neovim Multiple Configs - Nadlir Blog</title><meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Intro
-If you&rsquo;re Neovim fan, it is important to have multiple configs. You can configure like this:
+<html lang="en-us"
+  dir="ltr">
 
-~/.config/nvim: Your main configuration. When you&rsquo;re working on your project, this is the configuration that will be loaded.
-~/.config/nvim-alt: Your secondary Neovim configuration where you can implement new things.
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
 
-So now, let&rsquo;s configure it.
-Setup Neovim Playground
-Assuming that your main Neovim configured, let&rsquo;s configure the alternate Neovim configuration.
-This example wll be using kickstart.nvim as an alternative configuration. You can choose other starterkit like Lazy.nvim or distribution like Nvchad, Astro, etc." />
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content="http://localhost:1313/posts/neovim-multiple-configs/">
-  <meta property="og:site_name" content="Nadlir Blog">
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+<link rel="icon" type="image/ico" href="http://localhost:1313//favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313//favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313//favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="http://localhost:1313//android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313//apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+
+
+<title>
+    
+    Neovim Multiple Configs | ndlr/fz/96 🦄
+    
+</title>
+
+<link rel="canonical" href="http://localhost:1313/posts/neovim-multiple-configs/"/>
+
+<meta property="og:url" content="http://localhost:1313/posts/neovim-multiple-configs/">
+  <meta property="og:site_name" content="ndlr/fz/96 🦄">
   <meta property="og:title" content="Neovim Multiple Configs">
-  <meta property="og:description" content="Intro If you’re Neovim fan, it is important to have multiple configs. You can configure like this:
+  <meta property="og:description" content="Intro # If you’re Neovim fan, it is important to have multiple configs. You can configure like this:
 ~/.config/nvim: Your main configuration. When you’re working on your project, this is the configuration that will be loaded. ~/.config/nvim-alt: Your secondary Neovim configuration where you can implement new things. So now, let’s configure it.
-Setup Neovim Playground Assuming that your main Neovim configured, let’s configure the alternate Neovim configuration.
-This example wll be using kickstart.nvim as an alternative configuration. You can choose other starterkit like Lazy.nvim or distribution like Nvchad, Astro, etc.">
+Setup Neovim Playground # Assuming that your main Neovim configured, let’s configure the alternate Neovim configuration.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -27,96 +51,278 @@ This example wll be using kickstart.nvim as an alternative configuration. You ca
     <meta property="article:modified_time" content="2025-02-04T17:41:12+07:00">
     <meta property="article:tag" content="Neovim">
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Neovim Multiple Configs">
-  <meta name="twitter:description" content="Intro If you’re Neovim fan, it is important to have multiple configs. You can configure like this:
-~/.config/nvim: Your main configuration. When you’re working on your project, this is the configuration that will be loaded. ~/.config/nvim-alt: Your secondary Neovim configuration where you can implement new things. So now, let’s configure it.
-Setup Neovim Playground Assuming that your main Neovim configured, let’s configure the alternate Neovim configuration.
-This example wll be using kickstart.nvim as an alternative configuration. You can choose other starterkit like Lazy.nvim or distribution like Nvchad, Astro, etc.">
 
-        <link href="http://localhost:1313/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css" rel="stylesheet">
-	
 
-	
-	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.6a0f23ea50fd34b46fee262a5a68e17d458c51a2bc99ba1ba018065de6b180c3.css" />
-		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.50b57e12d401420df23965fed157368aba37b76df0ecefd0b1ecd4da664f01a0.css"   />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.0f4f5c64ee7100cff28e7c7366d922b5499829f72c91a53b9b17f236d85ad7e7.css" media="all">
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
 </head>
-<body>
-        <div class="content"><header>
-	<div class="main">
-		<a href="http://localhost:1313/">Nadlir Blog</a>
-	</div>
-	<nav>
-		
-		
-	</nav>
-</header>
 
-<main>
-  <article>
-    <div class="post-container">
+
+
+
+
+
+
+<body class="dark">
+
+  <div class="content">
+    <header>
       
-      <div class="post-content">
-        <div class="title">
-          <h1 class="title">Neovim Multiple Configs</h1>
-          <div class="meta">Posted on Feb 4, 2025</div>
-        </div>
+
+<div class="header">
+
+    
+
+    <h1 class="header-title">
+        <a href="http://localhost:1313/">ndlr/fz/96 🦄</a>
+    </h1>
+
+    <div class="flex">
         
-        <section class="body">
-          <h2 id="intro">Intro</h2>
+
+        
+        
+      
+        <p class="small ">
+            <a href="/" >
+                /home
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/posts" >
+                /posts
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/tags" >
+                /tags
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/contact-me" >
+                /contact-me
+            </a>
+        </p>
+        
+        
+    </div>
+
+    
+
+</div>
+
+    </header>
+
+    <main class="main">
+      
+
+
+
+
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title">Neovim Multiple Configs</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2025-02-04T17:41:12&#43;07:00">February 4, 2025</time>
+      
+
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  <div class="single-content">
+    <h2 class="heading" id="intro">
+  Intro
+  <a class="anchor" href="#intro">#</a>
+</h2>
 <p>If you&rsquo;re Neovim fan, it is important to have multiple configs. You can configure like this:</p>
 <ul>
 <li><code>~/.config/nvim</code>: Your main configuration. When you&rsquo;re working on your project, this is the configuration that will be loaded.</li>
 <li><code>~/.config/nvim-alt</code>: Your secondary Neovim configuration where you can implement new things.</li>
 </ul>
 <p>So now, let&rsquo;s configure it.</p>
-<h2 id="setup-neovim-playground">Setup Neovim Playground</h2>
+<h2 class="heading" id="setup-neovim-playground">
+  Setup Neovim Playground
+  <a class="anchor" href="#setup-neovim-playground">#</a>
+</h2>
 <p>Assuming that your main Neovim configured, let&rsquo;s configure the alternate Neovim configuration.</p>
 <p>This example wll be using <em>kickstart.nvim</em> as an alternative configuration. You can choose other starterkit like <em>Lazy.nvim</em> or distribution like <em>Nvchad</em>, <em>Astro</em>, etc.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/nvim-lua/kickstart.nvim.git <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>XDG_CONFIG_HOME<span style="color:#66d9ef">:-</span>$HOME/.config<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>/nvim-alt
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/nvim-lua/kickstart.nvim.git <span style="color:#63c381">&#34;</span><span style="color:#98c379">${</span><span style="color:#dcaeea">XDG_CONFIG_HOME</span><span style="color:#c678dd">:-</span><span style="color:#dcaeea">$HOME</span>/.config<span style="color:#98c379">}</span><span style="color:#63c381">&#34;</span>/nvim-alt
 </span></span></code></pre></div><p>Now you can start start Neovim with the <code>nvim-alt</code> configuration using the command below.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>NVIM_APPNAME<span style="color:#f92672">=</span>nvim-alt nvim
-</span></span></code></pre></div><h2 id="adding-neovim-playground-to-bashrczshrc">Adding Neovim Playground to bashrc/zshrc</h2>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#dcaeea">NVIM_APPNAME</span><span style="color:#c7bf54">=</span>nvim-alt nvim
+</span></span></code></pre></div><h2 class="heading" id="adding-neovim-playground-to-bashrczshrc">
+  Adding Neovim Playground to bashrc/zshrc
+  <a class="anchor" href="#adding-neovim-playground-to-bashrczshrc">#</a>
+</h2>
 <p>The efficient to do this is to create an alias through <code>~/.bashrc</code> or <code>~/.zshrc</code> file:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;alias nvimalt=&#39;NVIM_APPNAME=nvim-alt nvim&#39;&#34;</span> &gt;&gt; ~/.bashrc <span style="color:#75715e"># or ~/.zshrc</span>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ef8383">echo</span> <span style="color:#63c381">&#34;alias nvimalt=&#39;NVIM_APPNAME=nvim-alt nvim&#39;&#34;</span> &gt;&gt; ~/.bashrc <span style="color:#8a93a5;font-style:italic"># or ~/.zshrc</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># for Bash user</span>
-</span></span><span style="display:flex;"><span>source ~/.bashrc
+</span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"># for Bash user</span>
+</span></span><span style="display:flex;"><span><span style="color:#ef8383">source</span> ~/.bashrc
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># for ZSH user</span>
-</span></span><span style="display:flex;"><span>source ~/.zshrc
+</span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"># for ZSH user</span>
+</span></span><span style="display:flex;"><span><span style="color:#ef8383">source</span> ~/.zshrc
 </span></span></code></pre></div><p>You can now run Neovim alternative with the <code>nvimalt</code> command.</p>
 
-        </section>
-        <div class="post-tags">
-          
-          
-          <nav class="nav tags">
-            <ul class="tags">
-              
-              <li><a href="/tags/neovim">neovim</a></li>
-              
-            </ul>
-          </nav>
-          
-          
-        </div>
-      </div>
+    
+  </div>
 
-      
-      
+  
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flexnowrap">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/my-first-post/">
+                        Test First Post
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/posts/php-oci8-debian-ubuntu/">
+                        How to Install PHP OCI8 (Oracle Instant Client) Module on Debian/Ubuntu
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
+            
+        </div>
+
     </div>
 
-    </article>
-</main>
-<footer>
-  <div style="display:flex"></div>
-  <div class="footer-info">
-    2025  <a
-      href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
   </div>
-</footer>
+  
 
 </div>
-    </body>
+
+
+    </main>
+  </div>
+
+  
+  
+
+
+
+
+
+    
+
+
+
+
+  <footer>
+    
+
+    
+    
+
+
+
+
+
+    
+
+
+
+
+    
+    
+    
+    <p>All content licensed under CC BY-SA 4.0 license unless otherwise stated. Copyright © 2025 Nadlir.</p>
+    
+
+
+  </footer>
+
+  
+</body>
+
+<script src="/js/theme-switch.js"></script>
+<script defer src="/js/copy-code.js"></script>
 </html>

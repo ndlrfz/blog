@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Php on Nadlir Blog</title>
+    <title>Php on ndlr/fz/96 🦄</title>
     <link>http://localhost:1313/tags/php/</link>
-    <description>Recent content in Php on Nadlir Blog</description>
+    <description>Recent content in Php on ndlr/fz/96 🦄</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 04 Mar 2025 05:10:43 +0700</lastBuildDate>
@@ -13,7 +13,7 @@
       <link>http://localhost:1313/posts/php-oci8-debian-ubuntu/</link>
       <pubDate>Tue, 04 Mar 2025 05:10:43 +0700</pubDate>
       <guid>http://localhost:1313/posts/php-oci8-debian-ubuntu/</guid>
-      <description>&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;&#xA;&lt;p&gt;In this guide, I will show you how to install PHP OCI8 (Oracle Instant Client) on Debian 12 server.&lt;/p&gt;&#xA;&lt;h2 id=&#34;installing-oracle-instant-client-library&#34;&gt;Installing Oracle Instant Client Library&lt;/h2&gt;&#xA;&lt;p&gt;In this example, I&amp;rsquo;ve &lt;strong&gt;PHP 8.4&lt;/strong&gt; installed. Let&amp;rsquo;s begin.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Dowload &lt;a href=&#34;https://www.oracle.com/database/technologies/instant-client/downloads.html&#34;&gt;Oracle Instant Client libraries&lt;/a&gt; to your system. In this example, I will use &lt;code&gt;instantclient-basic-linux.x64-23.7.0.25.01.zip&lt;/code&gt; and &lt;code&gt;instantclient-sdk-linux.x64-23.7.0.25.01.zip&lt;/code&gt;.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Make sure to use the correct version based on your &lt;em&gt;GLIBC&lt;/em&gt; version. Check the &lt;em&gt;glibc&lt;/em&gt; version with the &lt;code&gt;ldd&lt;/code&gt; command.&lt;/p&gt;</description>
+      <description>&lt;h2 class=&#34;heading&#34; id=&#34;intro&#34;&gt;&#xA;  Intro&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#intro&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;In this guide, I will show you how to install PHP OCI8 (Oracle Instant Client) on Debian 12 server.&lt;/p&gt;&#xA;&lt;h2 class=&#34;heading&#34; id=&#34;installing-oracle-instant-client-library&#34;&gt;&#xA;  Installing Oracle Instant Client Library&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#installing-oracle-instant-client-library&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;In this example, I&amp;rsquo;ve &lt;strong&gt;PHP 8.4&lt;/strong&gt; installed. Let&amp;rsquo;s begin.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Dowload &lt;a href=&#34;https://www.oracle.com/database/technologies/instant-client/downloads.html&#34;&gt;Oracle Instant Client libraries&lt;/a&gt; to your system. In this example, I will use &lt;code&gt;instantclient-basic-linux.x64-23.7.0.25.01.zip&lt;/code&gt; and &lt;code&gt;instantclient-sdk-linux.x64-23.7.0.25.01.zip&lt;/code&gt;.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Make sure to use the correct version based on your &lt;em&gt;GLIBC&lt;/em&gt; version. Check the &lt;em&gt;glibc&lt;/em&gt; version with the &lt;code&gt;ldd&lt;/code&gt; command.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

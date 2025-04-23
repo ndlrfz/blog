@@ -1,171 +1,467 @@
 <!DOCTYPE html>
-<html>
-	<head lang="en"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Nadlir Blog | Home </title><meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="" />
-	<meta property="og:image" content=""/>
-	<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/index.xml" title="Nadlir Blog" />
-	<meta property="og:url" content="http://localhost:1313/">
+<html lang="en-us"
+  x-data
+  :class="$store.darkMode.class()"
+  :data-theme="$store.darkMode.theme()">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Nadlir Blog</title>
+
+    
+
+<link rel="canonical" href="http://localhost:1313/" />
+
+
+
+<meta name="author" content="[Nadlir]" />
+<meta name="description" content="" />
+
+
+
+<meta name="generator" content="Hugo 0.146.7">
+
+
+<meta property="og:url" content="http://localhost:1313/">
   <meta property="og:site_name" content="Nadlir Blog">
   <meta property="og:title" content="Nadlir Blog">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="website">
 
+
+
+
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Nadlir Blog">
 
-        <link href="http://localhost:1313/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css" rel="stylesheet">
-	
-
-	
-	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.6a0f23ea50fd34b46fee262a5a68e17d458c51a2bc99ba1ba018065de6b180c3.css" />
-		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.50b57e12d401420df23965fed157368aba37b76df0ecefd0b1ecd4da664f01a0.css"   />
-</head>
-
-	<body>
-		<div class="content">
-			<header>
-	<div class="main">
-		<a href="http://localhost:1313/">Nadlir Blog</a>
-	</div>
-	<nav>
-		
-		
-	</nav>
-</header>
-
-			
-			<main class="list">
-				<div class="site-description"></div>
-				
-				
-				
-				<section class="list-item">
-					<h1 class="title"><a href="/posts/too-many-redirects-cloudflare/">ERR_TOO_MANY_REDIRECTS on Cloudflare</a></h1>
-					<time>Mar 16, 2025</time>
-					<br><div class="description">
-	
-	<p>When you turn on the <code>proxy</code> feature on Cloudflare and you get the error <code>ERR_TOO_MANY_REDIRECTS</code>. Solve by doing this:</p>
-<ol>
-<li>Go to the site configuration on Cloudflare</li>
-<li><code>SSL &gt; Overview</code></li>
-<li><code>SSL Encryption</code> section and <code>Configure</code></li>
-<li>Select <code>Full</code></li>
-</ol>
-<p>Done.</p>&hellip;
-	
-</div>
-					<a class="readmore" href="/posts/too-many-redirects-cloudflare/">Read more ⟶</a>
-				</section>
-				
-				<section class="list-item">
-					<h1 class="title"><a href="/posts/php-oci8-debian-ubuntu/">How to Install PHP OCI8 (Oracle Instant Client) Module on Debian/Ubuntu</a></h1>
-					<time>Mar 4, 2025</time>
-					<br><div class="description">
-	
-	<h2 id="intro">Intro</h2>
-<p>In this guide, I will show you how to install PHP OCI8 (Oracle Instant Client) on Debian 12 server.</p>
-<h2 id="installing-oracle-instant-client-library">Installing Oracle Instant Client Library</h2>
-<p>In this example, I&rsquo;ve <strong>PHP 8.4</strong> installed. Let&rsquo;s begin.</p>
-<ul>
-<li>Dowload <a href="https://www.oracle.com/database/technologies/instant-client/downloads.html">Oracle Instant Client libraries</a> to your system. In this example, I will use <code>instantclient-basic-linux.x64-23.7.0.25.01.zip</code> and <code>instantclient-sdk-linux.x64-23.7.0.25.01.zip</code>.</li>
-</ul>
-<p>Make sure to use the correct version based on your <em>GLIBC</em> version. Check the <em>glibc</em> version with the <code>ldd</code> command.</p>&hellip;
-	
-</div>
-					<a class="readmore" href="/posts/php-oci8-debian-ubuntu/">Read more ⟶</a>
-				</section>
-				
-				<section class="list-item">
-					<h1 class="title"><a href="/posts/neovim-multiple-configs/">Neovim Multiple Configs</a></h1>
-					<time>Feb 4, 2025</time>
-					<br><div class="description">
-	
-	<h2 id="intro">Intro</h2>
-<p>If you&rsquo;re Neovim fan, it is important to have multiple configs. You can configure like this:</p>
-<ul>
-<li><code>~/.config/nvim</code>: Your main configuration. When you&rsquo;re working on your project, this is the configuration that will be loaded.</li>
-<li><code>~/.config/nvim-alt</code>: Your secondary Neovim configuration where you can implement new things.</li>
-</ul>
-<p>So now, let&rsquo;s configure it.</p>
-<h2 id="setup-neovim-playground">Setup Neovim Playground</h2>
-<p>Assuming that your main Neovim configured, let&rsquo;s configure the alternate Neovim configuration.</p>
-<p>This example wll be using <em>kickstart.nvim</em> as an alternative configuration. You can choose other starterkit like <em>Lazy.nvim</em> or distribution like <em>Nvchad</em>, <em>Astro</em>, etc.</p>&hellip;
-	
-</div>
-					<a class="readmore" href="/posts/neovim-multiple-configs/">Read more ⟶</a>
-				</section>
-				
-				<section class="list-item">
-					<h1 class="title"><a href="/posts/my-first-post/">Test First Post</a></h1>
-					<time>Feb 4, 2025</time>
-					<br><div class="description">
-	
-	<h2 id="intro">Intro</h2>
-<p>This is test post with Hugo. Let me just post this here.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo pacman -Syyu
-</span></span></code></pre></div><p>This is <em>Python</em>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">100</span>):
-</span></span><span style="display:flex;"><span>    print(x)
-</span></span></code></pre></div><p>This is <strong>JavaScript</strong>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">SayHello</span>() {
-</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Hello Test&#34;</span>);
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">sayHello</span>()
-</span></span></code></pre></div><p>This is table test:</p>
-<table>
-  <thead>
-      <tr>
-          <th>Hostname</th>
-          <th>IP Address</th>
-          <th>Used as</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>postgres1</td>
-          <td>192.168.10.15</td>
-          <td>PostgreSQL server</td>
-      </tr>
-      <tr>
-          <td>postgres2</td>
-          <td>192.168.10.16</td>
-          <td>PostgreSQL server</td>
-      </tr>
-  </tbody>
-</table>&hellip;
-	
-</div>
-					<a class="readmore" href="/posts/my-first-post/">Read more ⟶</a>
-				</section>
-				
-				
-
-<ul class="pagination">
-	<span class="page-item page-prev">
-	
-    <a href="/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev</span></a>
-	
-	</span>
-	<span class="page-item page-next">
-	
-	</span>
-</ul>
 
 
-			</main>
-			<footer>
-  <div style="display:flex"></div>
-  <div class="footer-info">
-    2025  <a
-      href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+
+<link rel="stylesheet" href="/css/output.css" />
+
+
+
+
+     
+
+    
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3/dist/cdn.min.js" integrity="sha256-PtHu0lJIiSHfZeNj1nFd6wTX+Squ255SGZ/fc8seCtM=" crossorigin="anonymous"></script>
+  </head>
+
+  <body x-data="{
+    flip: false,
+  }">
+    
+    <div id="dream-global-bg"></div>
+
+    
+<nav class="mt-4 lg:mt-8 py-4">
+
+  
+  <div class="container flex justify-between max-w-[65ch] mx-auto px-4 md:px-0">
+  
+    <section class="flex items-center gap-4">
+      <div class="avatar cursor-pointer hover:avatar-online" @click="flip = !flip" title="Flip it!">
+        <div class="h-10 rounded-full">
+          <img src="/" alt="" />
+        </div>
+      </div>
+
+      
+    </section>
+
+    
+    
+
+    <div class="dropdown dropdown-end sm:hidden">
+      <div tabindex="0" role="button" class="btn btn-ghost btn-square" aria-label="Select an option">
+        <ion-icon name="menu" class="text-2xl"></ion-icon>
+      </div>
+      <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-1 shadow-md">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/posts" title="Archives">
+    <ion-icon name="archive"></ion-icon>
+    Archives
+  </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/tags" title="All Tags">
+    <ion-icon name="pricetags"></ion-icon>
+    All Tags
+  </a>
+</li>
+
+
+
+
+
+
+      </ul>
+    </div>
+    <section class="hidden sm:flex sm:items-center sm:gap-2 md:gap-4">
+      
+
+      
+      
+
+
+
+
+
+      
+      
+
+
+
+
+
+      
+      
+
+
+
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/posts" title="Archives">
+  <ion-icon class="group-hover:text-primary-content" name="archive"></ion-icon>
+</a>
+
+
+      
+      
+
+
+
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/tags" title="All Tags">
+  <ion-icon class="group-hover:text-primary-content" name="pricetags"></ion-icon>
+</a>
+
+
+      
+
+      
+
+      
+    </section>
   </div>
+</nav>
+
+
+    <div class="flip-container" :class="{ 'flip-it': flip }">
+      <div class="flipper">
+        <div class="front">
+          <div class="container">
+            
+
+
+
+
+<div class="dream-zen-posts max-w-[65ch] mt-8 mx-auto px-4 space-y-8">
+
+  <a class="flex justify-between items-center gap-4" href="/posts/too-many-redirects-cloudflare/">
+  <div>
+    <h2 class="text-lg font-medium underline">ERR_TOO_MANY_REDIRECTS on Cloudflare</h2>
+    <span class="date text-base-content/60 text-sm">
+    
+      Sunday, Mar 16, 2025
+    
+    </span>
+  </div>
+
+  
+  <figure>
+    
+    
+    <picture>
+      <source srcset="/images/default1_hu_33478ca164b4fce4.webp" type="image/webp" />
+      <img src="/images/default1.jpg" alt="/images/default1.jpg" />
+    </picture>
+    
+  </figure>
+  
+</a>
+
+
+  <a class="flex justify-between items-center gap-4" href="/posts/php-oci8-debian-ubuntu/">
+  <div>
+    <h2 class="text-lg font-medium underline">How to Install PHP OCI8 (Oracle Instant Client) Module on Debian/Ubuntu</h2>
+    <span class="date text-base-content/60 text-sm">
+    
+      Tuesday, Mar 4, 2025
+    
+    </span>
+  </div>
+
+  
+  <figure>
+    
+    
+    <picture>
+      <source srcset="/images/default4_hu_ae815e0f1649c253.webp" type="image/webp" />
+      <img src="/images/default4.jpg" alt="/images/default4.jpg" />
+    </picture>
+    
+  </figure>
+  
+</a>
+
+
+  <a class="flex justify-between items-center gap-4" href="/posts/neovim-multiple-configs/">
+  <div>
+    <h2 class="text-lg font-medium underline">Neovim Multiple Configs</h2>
+    <span class="date text-base-content/60 text-sm">
+    
+      Tuesday, Feb 4, 2025
+    
+    </span>
+  </div>
+
+  
+  <figure>
+    
+    
+    <picture>
+      <source srcset="/images/default2_hu_c96b8a8cc3f55f81.webp" type="image/webp" />
+      <img src="/images/default2.jpg" alt="/images/default2.jpg" />
+    </picture>
+    
+  </figure>
+  
+</a>
+
+
+  <a class="flex justify-between items-center gap-4" href="/posts/my-first-post/">
+  <div>
+    <h2 class="text-lg font-medium underline">Test First Post</h2>
+    <span class="date text-base-content/60 text-sm">
+    
+      Tuesday, Feb 4, 2025
+    
+    </span>
+  </div>
+
+  
+  <figure>
+    
+    
+    <picture>
+      <source srcset="/images/default2_hu_c96b8a8cc3f55f81.webp" type="image/webp" />
+      <img src="/images/default2.jpg" alt="/images/default2.jpg" />
+    </picture>
+    
+  </figure>
+  
+</a>
+
+
+</div>
+
+
+
+<div class="flex justify-center mt-8">
+  <div class="join grid grid-cols-2">
+  
+  <a href="/" title=Previous&#32;page class="join-item btn btn-outline btn-sm">
+    Previous page
+  </a>
+  
+  
+  <button class="join-item btn btn-outline btn-sm" disabled>
+    Next page
+  </button>
+  
+</div>
+
+</div>
+
+
+
+
+            
+<footer class="flex justify-between items-center gap-2 max-w-[65ch] mx-auto px-4 md:px-0 py-12">
+
+  <div>
+  
+  <p>© 2025 Nadlir Blog</p>
+  
+
+  
+  <p class="text-sm">
+    🌱
+    <span class="text-base-content/60">
+      Powered by <a class="hover:underline" href="https://gohugo.io/" target="_blank">Hugo</a> with theme
+      <a class="hover:underline" href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</span
+    >
+  </p>
+  
+</div>
+
+  <div
+  x-data="{ icons: [
+    { name: 'sunny', status: 'n' },
+    { name: 'moon', status: 'y' },
+    { name: 'desktop', status: 'auto' }
+  ] }"
+  class="flex items-center gap-2 h-[32px] px-2 bg-base-100 border border-base-content/30 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      role="button"
+      tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
+      @click="$store.darkMode.toggle(icon.status)"
+    >
+      <ion-icon
+        :name="`${icon.name}-outline`"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>
+
 </footer>
 
+          </div>
+        </div>
+        <div class="back">
+          <div class="container">
+            
+            <div class="max-w-[65ch] mt-8 mx-auto px-4">
+  
 
-		</div>
-		
-	</body>
+  
+
+  
+</div>
+
+            
+
+            
+<footer class="flex justify-between items-center gap-2 max-w-[65ch] mx-auto px-4 md:px-0 py-12">
+
+  <div>
+  
+  <p>© 2025 Nadlir Blog</p>
+  
+
+  
+  <p class="text-sm">
+    🌱
+    <span class="text-base-content/60">
+      Powered by <a class="hover:underline" href="https://gohugo.io/" target="_blank">Hugo</a> with theme
+      <a class="hover:underline" href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</span
+    >
+  </p>
+  
+</div>
+
+  <div
+  x-data="{ icons: [
+    { name: 'sunny', status: 'n' },
+    { name: 'moon', status: 'y' },
+    { name: 'desktop', status: 'auto' }
+  ] }"
+  class="flex items-center gap-2 h-[32px] px-2 bg-base-100 border border-base-content/30 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      role="button"
+      tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
+      @click="$store.darkMode.toggle(icon.status)"
+    >
+      <ion-icon
+        :name="`${icon.name}-outline`"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>
+
+</footer>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+  window.lightTheme =  null 
+  window.darkTheme =  null 
+</script>
+
+
+
+
+
+<script src="/js/main.js"></script>
+
+    
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.esm.js" integrity="sha256-/IFmi82bIhdYWctu0UddSlJqpnzWm7Vh2C4CM32wF/k=" crossorigin="anonymous"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.js" integrity="sha256-mr7eJMX3VC3F7G32mk4oWp1C6a2tlMYxUdptfT7uKI8=" crossorigin="anonymous"></script>
+  </body>
 </html>

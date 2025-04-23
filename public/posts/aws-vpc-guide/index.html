@@ -1,55 +1,50 @@
 <!DOCTYPE html>
-<html><head lang="en"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Guide to AWS VPC (Virtual Private Cloud) - Nadlir Blog</title><meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Intro
-VPC or Virtual Private Cloud is an isolated internal network on AWS environment. When creating Amazon EC2, the default VPC will be created and attached to the instance.
-For production, you must create custom VPC and do not use the default.
-To access VPC, you can use the AWS console. Or, you can access through the EC2 instance detail, in the Subnet ID section.
-Allow HTTP Access to EC2 Instance
+<html lang="en-us"
+  dir="ltr">
 
-Select your EC2 instnace, move to details, click Subnet ID.
-Select your subnet and click Route Table tab (Route Table define rules of your network traffic from your subnet or gateway is directed)
-Click your Route Table name to get the details
-Selecy your routable name, and move to the Route tab, click Edit Route
-Click Add Route to allow internet to access your instance via gateway
-
-Destination: 0.0.0.0/0
-Target: Internet Gateway
-Choose your internet gateway
-Save changes
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
 
 
 
-Open HTTP in Security Group
-
-Move to the EC2 instance menu and select your instance
-Select the Security tab and click your Security Group
-Select Inbound Rules and click Edit Inbound Rules &gt; Add Rule
-
-Type: HTTP
-Source: Anywhere IPv4
 
 
 
-Allow Access to anywhere from EC2 via Security group
-
-On the Security group of your instance, select the Outbound Rules
-Click Edit outbound rules
 
 
-Type: All traffic
-Destination type: Custom
-Destination: 0.0.0.0/0
-" />
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content="http://localhost:1313/posts/aws-vpc-guide/">
-  <meta property="og:site_name" content="Nadlir Blog">
+    
+
+
+
+
+
+
+<link rel="icon" type="image/ico" href="http://localhost:1313//favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313//favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313//favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="http://localhost:1313//android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313//apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+
+
+<title>
+    
+    Guide to AWS VPC (Virtual Private Cloud) | ndlr/fz/96 🦄
+    
+</title>
+
+<link rel="canonical" href="http://localhost:1313/posts/aws-vpc-guide/"/>
+
+<meta property="og:url" content="http://localhost:1313/posts/aws-vpc-guide/">
+  <meta property="og:site_name" content="ndlr/fz/96 🦄">
   <meta property="og:title" content="Guide to AWS VPC (Virtual Private Cloud)">
-  <meta property="og:description" content="Intro VPC or Virtual Private Cloud is an isolated internal network on AWS environment. When creating Amazon EC2, the default VPC will be created and attached to the instance.
+  <meta property="og:description" content="Intro # VPC or Virtual Private Cloud is an isolated internal network on AWS environment. When creating Amazon EC2, the default VPC will be created and attached to the instance.
 For production, you must create custom VPC and do not use the default.
 To access VPC, you can use the AWS console. Or, you can access through the EC2 instance detail, in the Subnet ID section.
-Allow HTTP Access to EC2 Instance Select your EC2 instnace, move to details, click Subnet ID. Select your subnet and click Route Table tab (Route Table define rules of your network traffic from your subnet or gateway is directed) Click your Route Table name to get the details Selecy your routable name, and move to the Route tab, click Edit Route Click Add Route to allow internet to access your instance via gateway Destination: 0.0.0.0/0 Target: Internet Gateway Choose your internet gateway Save changes Open HTTP in Security Group Move to the EC2 instance menu and select your instance Select the Security tab and click your Security Group Select Inbound Rules and click Edit Inbound Rules &gt; Add Rule Type: HTTP Source: Anywhere IPv4 Allow Access to anywhere from EC2 via Security group On the Security group of your instance, select the Outbound Rules Click Edit outbound rules Type: All traffic Destination type: Custom Destination: 0.0.0.0/0">
+Allow HTTP Access to EC2 Instance # Select your EC2 instnace, move to details, click Subnet ID. Select your subnet and click Route Table tab (Route Table define rules of your network traffic from your subnet or gateway is directed) Click your Route Table name to get the details Selecy your routable name, and move to the Route tab, click Edit Route Click Add Route to allow internet to access your instance via gateway Destination: 0.0.0.0/0 Target: Internet Gateway Choose your internet gateway Save changes Open HTTP in Security Group # Move to the EC2 instance menu and select your instance Select the Security tab and click your Security Group Select Inbound Rules and click Edit Inbound Rules &gt; Add Rule Type: HTTP Source: Anywhere IPv4 Allow Access to anywhere from EC2 via Security group # On the Security group of your instance, select the Outbound Rules Click Edit outbound rules Type: All traffic Destination type: Custom Destination: 0.0.0.0/0">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -57,47 +52,151 @@ Allow HTTP Access to EC2 Instance Select your EC2 instnace, move to details, cli
     <meta property="article:modified_time" content="2025-03-20T18:37:15+07:00">
     <meta property="article:tag" content="Aws">
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Guide to AWS VPC (Virtual Private Cloud)">
-  <meta name="twitter:description" content="Intro VPC or Virtual Private Cloud is an isolated internal network on AWS environment. When creating Amazon EC2, the default VPC will be created and attached to the instance.
-For production, you must create custom VPC and do not use the default.
-To access VPC, you can use the AWS console. Or, you can access through the EC2 instance detail, in the Subnet ID section.
-Allow HTTP Access to EC2 Instance Select your EC2 instnace, move to details, click Subnet ID. Select your subnet and click Route Table tab (Route Table define rules of your network traffic from your subnet or gateway is directed) Click your Route Table name to get the details Selecy your routable name, and move to the Route tab, click Edit Route Click Add Route to allow internet to access your instance via gateway Destination: 0.0.0.0/0 Target: Internet Gateway Choose your internet gateway Save changes Open HTTP in Security Group Move to the EC2 instance menu and select your instance Select the Security tab and click your Security Group Select Inbound Rules and click Edit Inbound Rules &gt; Add Rule Type: HTTP Source: Anywhere IPv4 Allow Access to anywhere from EC2 via Security group On the Security group of your instance, select the Outbound Rules Click Edit outbound rules Type: All traffic Destination type: Custom Destination: 0.0.0.0/0">
 
-        <link href="http://localhost:1313/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css" rel="stylesheet">
-	
 
-	
-	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.6a0f23ea50fd34b46fee262a5a68e17d458c51a2bc99ba1ba018065de6b180c3.css" />
-		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.50b57e12d401420df23965fed157368aba37b76df0ecefd0b1ecd4da664f01a0.css"   />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.0f4f5c64ee7100cff28e7c7366d922b5499829f72c91a53b9b17f236d85ad7e7.css" media="all">
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
 </head>
-<body>
-        <div class="content"><header>
-	<div class="main">
-		<a href="http://localhost:1313/">Nadlir Blog</a>
-	</div>
-	<nav>
-		
-		
-	</nav>
-</header>
 
-<main>
-  <article>
-    <div class="post-container">
+
+
+
+
+
+
+<body class="dark">
+
+  <div class="content">
+    <header>
       
-      <div class="post-content">
-        <div class="title">
-          <h1 class="title">Guide to AWS VPC (Virtual Private Cloud)</h1>
-          <div class="meta">Posted on Mar 20, 2025</div>
-        </div>
+
+<div class="header">
+
+    
+
+    <h1 class="header-title">
+        <a href="http://localhost:1313/">ndlr/fz/96 🦄</a>
+    </h1>
+
+    <div class="flex">
         
-        <section class="body">
-          <h2 id="intro">Intro</h2>
+
+        
+        
+      
+        <p class="small ">
+            <a href="/" >
+                /home
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/posts" >
+                /posts
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/tags" >
+                /tags
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/contact-me" >
+                /contact-me
+            </a>
+        </p>
+        
+        
+    </div>
+
+    
+
+</div>
+
+    </header>
+
+    <main class="main">
+      
+
+
+
+
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title">Guide to AWS VPC (Virtual Private Cloud)</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2025-03-20T18:37:15&#43;07:00">March 20, 2025</time>
+      
+
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  <div class="single-content">
+    <h2 class="heading" id="intro">
+  Intro
+  <a class="anchor" href="#intro">#</a>
+</h2>
 <p>VPC or Virtual Private Cloud is an isolated internal network on AWS environment. When creating Amazon EC2, the default VPC will be created and attached to the instance.</p>
 <p>For production, you must create custom VPC and do not use the default.</p>
 <p>To access VPC, you can use the AWS console. Or, you can access through the EC2 instance detail, in the <code>Subnet ID</code> section.</p>
-<h2 id="allow-http-access-to-ec2-instance">Allow HTTP Access to EC2 Instance</h2>
+<h2 class="heading" id="allow-http-access-to-ec2-instance">
+  Allow HTTP Access to EC2 Instance
+  <a class="anchor" href="#allow-http-access-to-ec2-instance">#</a>
+</h2>
 <ol>
 <li>Select your EC2 instnace, move to details, click <code>Subnet ID</code>.</li>
 <li>Select your subnet and click <code>Route Table</code> tab (Route Table define rules of your network traffic from your subnet or gateway is directed)</li>
@@ -112,7 +211,10 @@ Allow HTTP Access to EC2 Instance Select your EC2 instnace, move to details, cli
 </ul>
 </li>
 </ol>
-<h2 id="open-http-in-security-group">Open HTTP in Security Group</h2>
+<h2 class="heading" id="open-http-in-security-group">
+  Open HTTP in Security Group
+  <a class="anchor" href="#open-http-in-security-group">#</a>
+</h2>
 <ol start="6">
 <li>Move to the EC2 instance menu and select your instance</li>
 <li>Select the <code>Security</code> tab and click your <code>Security Group</code></li>
@@ -123,7 +225,10 @@ Allow HTTP Access to EC2 Instance Select your EC2 instnace, move to details, cli
 </ul>
 </li>
 </ol>
-<h2 id="allow-access-to-anywhere-from-ec2-via-security-group">Allow Access to anywhere from EC2 via Security group</h2>
+<h2 class="heading" id="allow-access-to-anywhere-from-ec2-via-security-group">
+  Allow Access to anywhere from EC2 via Security group
+  <a class="anchor" href="#allow-access-to-anywhere-from-ec2-via-security-group">#</a>
+</h2>
 <ol start="9">
 <li>On the <code>Security group</code> of your instance, select the <code>Outbound Rules</code></li>
 <li>Click <code>Edit outbound rules</code></li>
@@ -134,36 +239,111 @@ Allow HTTP Access to EC2 Instance Select your EC2 instnace, move to details, cli
 <li><em>Destination</em>: 0.0.0.0/0</li>
 </ul>
 
-        </section>
-        <div class="post-tags">
-          
-          
-          <nav class="nav tags">
-            <ul class="tags">
-              
-              <li><a href="/tags/aws">aws</a></li>
-              
-            </ul>
-          </nav>
-          
-          
-        </div>
-      </div>
+    
+  </div>
 
-      
-      
+  
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flexnowrap">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/aws-calculator/">
+                        Guide to AWS Calculator
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+            <div class="single-pagination-container-next">
+                <div class="single-pagination-text">
+                    <a href="/posts/aws-vpc-peering/">
+                        Guide to AWS VPC Peering
+                    </a>
+                </div>
+                <div class="single-pagination-text">→</div>
+            </div>
+            
+        </div>
+
     </div>
 
-    </article>
-</main>
-<footer>
-  <div style="display:flex"></div>
-  <div class="footer-info">
-    2025  <a
-      href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
   </div>
-</footer>
+  
 
 </div>
-    </body>
+
+
+    </main>
+  </div>
+
+  
+  
+
+
+
+
+
+    
+
+
+
+
+  <footer>
+    
+
+    
+    
+
+
+
+
+
+    
+
+
+
+
+    
+    
+    
+    <p>All content licensed under CC BY-SA 4.0 license unless otherwise stated. Copyright © 2025 Nadlir.</p>
+    
+
+
+  </footer>
+
+  
+</body>
+
+<script src="/js/theme-switch.js"></script>
+<script defer src="/js/copy-code.js"></script>
 </html>
