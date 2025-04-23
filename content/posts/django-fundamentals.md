@@ -1,7 +1,10 @@
 +++
 date = '2025-04-15T11:11:12+07:00'
 draft = false
+tags = ["django", "python"]
+showTags = true
 title = 'Django Fundamentals'
+toc = true
 +++
 
 ## Intro
@@ -30,7 +33,7 @@ In this example, I will use `uv` (you should try `uv` / 100x faster than `pip`).
    django-admin --help
    ```
 
-## Create Django Project
+## Create Django project
 
 1. Add project.
 
@@ -44,13 +47,6 @@ In this example, I will use `uv` (you should try `uv` / 100x faster than `pip`).
    tree
 
    .
-   ├── movies
-   │   ├── admin.py
-   │   ├── apps.py
-   │   ├── __init__.py
-   │   ├── models.py
-   │   ├── tests.py
-   │   └── views.py
    ├── main
    │   ├── asgi.py
    │   ├── __init__.py
@@ -73,7 +69,7 @@ In this example, I will use `uv` (you should try `uv` / 100x faster than `pip`).
 
 4. Visit [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
 
-## Create Your First Application
+## Create your first application
 
 1. Create app.
 
@@ -128,8 +124,165 @@ In this example, I will use `uv` (you should try `uv` / 100x faster than `pip`).
 
 6. Rerun the django dev.
 
-```bash
-py manage.py runserver
-```
+   ```bash
+   py manage.py runserver
+   ```
 
 7. Visit [http://127.0.0.1:8000/movies/](http://127.0.0.1:8000/movies/).
+
+## Rendering HTML template in Django
+
+1. Edit the file `movies/views.py`.
+
+   ```python
+   from django.shortcuts import render
+
+   def index(request):
+      return render(request, 'index.html')
+   ```
+
+2. Create a new directory and file.
+
+   ```bash
+   mkdir -p movies/templates/movies/
+   touch movies/templates/movies/index.html
+   ```
+
+3. Edit the `movies/templates/movies/index.html`.
+
+   ```html
+   <h1>Hello Django</h1>
+   ```
+
+4. Re-run the Django development server.
+
+   ```bash
+   py manage.py runserver
+   ```
+
+## Passing data to Django template
+
+1. Edit the `movies/views.py`.
+
+   ```python
+   ...
+   ...
+   def index(request):
+      # my test data
+      context = {
+         'name' : 'ndlrfz96',
+         'address' : 'Magelang',
+         'hobbies' : ['Reading', 'Watching Movies', 'Python', 'Linux']
+      }
+
+      return render(request, 'index.html', context)
+   ```
+
+2. Add to the `movies/templates/movies/index.html`.
+
+   ```html
+   <h1>Hello Django</h1>
+
+   <p> My name is {{ name }} and I'm from {{ address }} </p>
+   <br>
+   <p> My hobbies is: </p>
+   <ul>
+      {% for hobby in hobbies %}
+         <li>{{ hobby|title }}</li>
+      {% endfor %}
+   </ul>
+   ```
+
+3. Re-run the Django development server again.
+
+## Serving static files in Django
+
+1. Create a new directory within your root project directory `static/{css,js,img}`.
+
+   ```bash
+   cd ~/project/
+   mkdir -p static/{css,js,img}
+   ```
+
+2. Edit `main/settings.py`.
+
+   ```python
+   import os
+   ...
+   ...
+   # default static url => site.com/static/css/style.css
+   STATIC_URL = 'static'
+
+   # static root directory after collects
+   STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+   # additional static directories in list, you can add multiple
+   # for dev
+   STATICFILES_DIRS = [os.path.joinc(BASE_DIR, 'static')]
+   ```
+
+3. Add the CSS file `static/css/style.css`.
+
+   ```css
+   body {
+       background-color: lightblue;
+       font-family: Inter;
+   }
+   ```
+
+4. Add the JavaScript file `static/js/main.js`.
+
+   ```javascript
+   // refreshPage() to refresh current tab
+   function refreshPage() {
+     window.location.reload();
+   }
+
+   // openYoutube() in new tab
+   function openYoutube() {
+     window.open("https://www.youtube.com/watch?v=OJEqTnsLCEE", "_blank");
+   }
+   ```
+
+5. Add your image to `static/img/cat.png`.
+
+6. Edit the `movies/templates/movies/index.html`.
+
+   ```html
+   {% load static %}
+
+   <!DOCTYPE html>
+   <html lang="en">
+       <head>
+           <meta charset="UTF-8">
+           <meta name="viewport" content="width=device-width, initial-scale=1">
+           <title></title>
+           <link href="{% static 'css/style.css' %}" rel="stylesheet">
+       </head>
+       <body>
+       <h1>Hello Django</h1>
+       <p>My name is {{ name }}, and I'm from {{ address }}</p>
+       <p>My hobbies is:</p>
+           <ul>
+               {% for hobby in hobbies %}
+               <li>{{ hobby|title }}</li>
+               {% endfor %}
+           </ul>
+
+       <button type="submit" onClick="refreshPage()">Refresh this page</button>
+       <button type="submit" onClick="openYoutube()">Open Ant</button>
+       <br>
+       <br>
+       <img src="{% static 'img/cat.png' %}" alt="Cat profile">
+       <script src="{% static 'js/main.js' %}"></script>
+       </body>
+   </html>
+   ```
+
+   From the above template:
+
+   * Load static via `{% load static %}`.
+   * Add CSS, JS, and image file with the format `{% static 'css/style.css' %}`.
+   * Created two submit button with the JavaScript function `refreshPage()` and `openYoutube()`.
+
+7. Re-run the Django development server.

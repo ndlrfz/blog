@@ -29,7 +29,7 @@ _—German proverb_
 """
 
 # Collection to display on home
-homeCollectionTitle = 'Posts'
+homeCollectionTitle = 'ndlr@posts #~'
 homeCollection = 'posts'
 
 # Lists parameters

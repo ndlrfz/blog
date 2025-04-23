@@ -44,12 +44,14 @@
   <meta property="og:description" content="Intro # Django is a Python web framework for building web applications. MVT (Model, View, Template) Install Django # In this example, I will use uv (you should try uv / 100x faster than pip).
 Setup project directory and virtual env.
 mkdir -p ~/project; cd ~/project uv init uv venv source .venv/bin/activate Install Django
-uv add django django-admin --help Create Django Project # Add project.">
+uv add django django-admin --help Create Django project # Add project.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2025-04-15T11:11:12+07:00">
     <meta property="article:modified_time" content="2025-04-15T11:11:12+07:00">
+    <meta property="article:tag" content="Django">
+    <meta property="article:tag" content="Python">
 
 
 
@@ -179,7 +181,42 @@ uv add django django-admin --help Create Django Project # Add project.">
   
 
   
+  
 
+  <div class="single-tags">
+    
+    <span>
+      <a href="http://localhost:1313/tags/django/">#Django</a>
+    </span>
+    
+    
+    <span>
+      <a href="http://localhost:1313/tags/python/">#Python</a>
+    </span>
+    
+    
+  </div>
+
+  
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#intro">Intro</a></li>
+    <li><a href="#install-django">Install Django</a></li>
+    <li><a href="#create-django-project">Create Django project</a></li>
+    <li><a href="#create-your-first-application">Create your first application</a></li>
+    <li><a href="#rendering-html-template-in-django">Rendering HTML template in Django</a></li>
+    <li><a href="#passing-data-to-django-template">Passing data to Django template</a></li>
+    <li><a href="#serving-static-files-in-django">Serving static files in Django</a></li>
+  </ul>
+</nav>
+  </aside>
   
 
   
@@ -214,7 +251,7 @@ uv add django django-admin --help Create Django Project # Add project.">
 </span></span></code></pre></div></li>
 </ol>
 <h2 class="heading" id="create-django-project">
-  Create Django Project
+  Create Django project
   <a class="anchor" href="#create-django-project">#</a>
 </h2>
 <ol>
@@ -227,13 +264,6 @@ uv add django django-admin --help Create Django Project # Add project.">
 <div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tree
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>.
-</span></span><span style="display:flex;"><span>├── movies
-</span></span><span style="display:flex;"><span>│   ├── admin.py
-</span></span><span style="display:flex;"><span>│   ├── apps.py
-</span></span><span style="display:flex;"><span>│   ├── __init__.py
-</span></span><span style="display:flex;"><span>│   ├── models.py
-</span></span><span style="display:flex;"><span>│   ├── tests.py
-</span></span><span style="display:flex;"><span>│   └── views.py
 </span></span><span style="display:flex;"><span>├── main
 </span></span><span style="display:flex;"><span>│   ├── asgi.py
 </span></span><span style="display:flex;"><span>│   ├── __init__.py
@@ -256,7 +286,7 @@ uv add django django-admin --help Create Django Project # Add project.">
 </li>
 </ol>
 <h2 class="heading" id="create-your-first-application">
-  Create Your First Application
+  Create your first application
   <a class="anchor" href="#create-your-first-application">#</a>
 </h2>
 <ol>
@@ -303,11 +333,161 @@ uv add django django-admin --help Create Django Project # Add project.">
 </span></span></code></pre></div></li>
 <li>
 <p>Rerun the django dev.</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>py manage.py runserver
+</span></span></code></pre></div></li>
+<li>
+<p>Visit <a href="http://127.0.0.1:8000/movies/">http://127.0.0.1:8000/movies/</a>.</p>
 </li>
 </ol>
+<h2 class="heading" id="rendering-html-template-in-django">
+  Rendering HTML template in Django
+  <a class="anchor" href="#rendering-html-template-in-django">#</a>
+</h2>
+<ol>
+<li>
+<p>Edit the file <code>movies/views.py</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#c678dd">from</span> <span style="color:#76a9f9">django.shortcuts</span> <span style="color:#c678dd">import</span> <span style="color:#c1abea">render</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">def</span> <span style="color:#00b1f7">index</span>(<span style="color:#c1abea">request</span>):
+</span></span><span style="display:flex;"><span>   <span style="color:#c678dd">return</span> <span style="color:#c1abea">render</span>(<span style="color:#c1abea">request</span>, <span style="color:#98c379">&#39;index.html&#39;</span>)
+</span></span></code></pre></div></li>
+<li>
+<p>Create a new directory and file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p movies/templates/movies/
+</span></span><span style="display:flex;"><span>touch movies/templates/movies/index.html
+</span></span></code></pre></div></li>
+<li>
+<p>Edit the <code>movies/templates/movies/index.html</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#e06c75">h1</span>&gt;Hello Django&lt;/<span style="color:#e06c75">h1</span>&gt;
+</span></span></code></pre></div></li>
+<li>
+<p>Re-run the Django development server.</p>
 <div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>py manage.py runserver
-</span></span></code></pre></div><ol start="7">
-<li>Visit <a href="http://127.0.0.1:8000/movies/">http://127.0.0.1:8000/movies/</a>.</li>
+</span></span></code></pre></div></li>
+</ol>
+<h2 class="heading" id="passing-data-to-django-template">
+  Passing data to Django template
+  <a class="anchor" href="#passing-data-to-django-template">#</a>
+</h2>
+<ol>
+<li>
+<p>Edit the <code>movies/views.py</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#c7bf54">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">def</span> <span style="color:#00b1f7">index</span>(<span style="color:#c1abea">request</span>):
+</span></span><span style="display:flex;"><span>   <span style="color:#8a93a5;font-style:italic"># my test data</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#c1abea">context</span> <span style="color:#c7bf54">=</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#98c379">&#39;name&#39;</span> : <span style="color:#98c379">&#39;ndlrfz96&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#98c379">&#39;address&#39;</span> : <span style="color:#98c379">&#39;Magelang&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#98c379">&#39;hobbies&#39;</span> : [<span style="color:#98c379">&#39;Reading&#39;</span>, <span style="color:#98c379">&#39;Watching Movies&#39;</span>, <span style="color:#98c379">&#39;Python&#39;</span>, <span style="color:#98c379">&#39;Linux&#39;</span>]
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#c678dd">return</span> <span style="color:#c1abea">render</span>(<span style="color:#c1abea">request</span>, <span style="color:#98c379">&#39;index.html&#39;</span>, <span style="color:#c1abea">context</span>)
+</span></span></code></pre></div></li>
+<li>
+<p>Add to the <code>movies/templates/movies/index.html</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#e06c75">h1</span>&gt;Hello Django&lt;/<span style="color:#e06c75">h1</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#e06c75">p</span>&gt; My name is {{ name }} and I&#39;m from {{ address }} &lt;/<span style="color:#e06c75">p</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#e06c75">br</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#e06c75">p</span>&gt; My hobbies is: &lt;/<span style="color:#e06c75">p</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#e06c75">ul</span>&gt;
+</span></span><span style="display:flex;"><span>   {% for hobby in hobbies %}
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#e06c75">li</span>&gt;{{ hobby|title }}&lt;/<span style="color:#e06c75">li</span>&gt;
+</span></span><span style="display:flex;"><span>   {% endfor %}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#e06c75">ul</span>&gt;
+</span></span></code></pre></div></li>
+<li>
+<p>Re-run the Django development server again.</p>
+</li>
+</ol>
+<h2 class="heading" id="serving-static-files-in-django">
+  Serving static files in Django
+  <a class="anchor" href="#serving-static-files-in-django">#</a>
+</h2>
+<ol>
+<li>
+<p>Create a new directory within your root project directory <code>static/{css,js,img}</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ef8383">cd</span> ~/project/
+</span></span><span style="display:flex;"><span>mkdir -p static/<span style="color:#c7bf54">{</span>css,js,img<span style="color:#c7bf54">}</span>
+</span></span></code></pre></div></li>
+<li>
+<p>Edit <code>main/settings.py</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#c678dd">import</span> <span style="color:#76a9f9">os</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"># default static url =&gt; site.com/static/css/style.css</span>
+</span></span><span style="display:flex;"><span><span style="color:#c1abea">STATIC_URL</span> <span style="color:#c7bf54">=</span> <span style="color:#98c379">&#39;static&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"># static root directory after collects</span>
+</span></span><span style="display:flex;"><span><span style="color:#c1abea">STATIC_ROOT</span> <span style="color:#c7bf54">=</span> <span style="color:#c1abea">os</span><span style="color:#c7bf54">.</span><span style="color:#c1abea">path</span><span style="color:#c7bf54">.</span><span style="color:#c1abea">join</span>(<span style="color:#c1abea">BASE_DIR</span>, <span style="color:#98c379">&#39;staticfiles&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"># additional static directories in list, you can add multiple</span>
+</span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"># for dev</span>
+</span></span><span style="display:flex;"><span><span style="color:#c1abea">STATICFILES_DIRS</span> <span style="color:#c7bf54">=</span> [<span style="color:#c1abea">os</span><span style="color:#c7bf54">.</span><span style="color:#c1abea">path</span><span style="color:#c7bf54">.</span><span style="color:#c1abea">joinc</span>(<span style="color:#c1abea">BASE_DIR</span>, <span style="color:#98c379">&#39;static&#39;</span>)]
+</span></span></code></pre></div></li>
+<li>
+<p>Add the CSS file <code>static/css/style.css</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#e06c75">body</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">background-color</span>: <span style="color:#b756ff;font-weight:bold">lightblue</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">font-family</span>: <span style="color:#c1abea">Inter</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>
+<p>Add the JavaScript file <code>static/js/main.js</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic">// refreshPage() to refresh current tab
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span><span style="color:#c678dd">function</span> <span style="color:#c1abea">refreshPage</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#ef8383">window</span>.<span style="color:#c1abea">location</span>.<span style="color:#c1abea">reload</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic">// openYoutube() in new tab
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span><span style="color:#c678dd">function</span> <span style="color:#c1abea">openYoutube</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#ef8383">window</span>.<span style="color:#c1abea">open</span>(<span style="color:#63c381">&#34;https://www.youtube.com/watch?v=OJEqTnsLCEE&#34;</span>, <span style="color:#63c381">&#34;_blank&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>
+<p>Add your image to <code>static/img/cat.png</code>.</p>
+</li>
+<li>
+<p>Edit the <code>movies/templates/movies/index.html</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{% load static %}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#e06c75">html</span> <span style="color:#b3d23c">lang</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;en&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#e06c75">head</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#e06c75">meta</span> <span style="color:#b3d23c">charset</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;UTF-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#e06c75">meta</span> <span style="color:#b3d23c">name</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;viewport&#34;</span> <span style="color:#b3d23c">content</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;width=device-width, initial-scale=1&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#e06c75">title</span>&gt;&lt;/<span style="color:#e06c75">title</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#e06c75">link</span> <span style="color:#b3d23c">href</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;{% static &#39;css/style.css&#39; %}&#34;</span> <span style="color:#b3d23c">rel</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;stylesheet&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#e06c75">head</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#e06c75">body</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#e06c75">h1</span>&gt;Hello Django&lt;/<span style="color:#e06c75">h1</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#e06c75">p</span>&gt;My name is {{ name }}, and I&#39;m from {{ address }}&lt;/<span style="color:#e06c75">p</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#e06c75">p</span>&gt;My hobbies is:&lt;/<span style="color:#e06c75">p</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#e06c75">ul</span>&gt;
+</span></span><span style="display:flex;"><span>            {% for hobby in hobbies %}
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#e06c75">li</span>&gt;{{ hobby|title }}&lt;/<span style="color:#e06c75">li</span>&gt;
+</span></span><span style="display:flex;"><span>            {% endfor %}
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#e06c75">ul</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#e06c75">button</span> <span style="color:#b3d23c">type</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;submit&#34;</span> <span style="color:#b3d23c">onClick</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;refreshPage()&#34;</span>&gt;Refresh this page&lt;/<span style="color:#e06c75">button</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#e06c75">button</span> <span style="color:#b3d23c">type</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;submit&#34;</span> <span style="color:#b3d23c">onClick</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;openYoutube()&#34;</span>&gt;Open Ant&lt;/<span style="color:#e06c75">button</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#e06c75">br</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#e06c75">br</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#e06c75">img</span> <span style="color:#b3d23c">src</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;{% static &#39;img/cat.png&#39; %}&#34;</span> <span style="color:#b3d23c">alt</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;Cat profile&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#e06c75">script</span> <span style="color:#b3d23c">src</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;{% static &#39;js/main.js&#39; %}&#34;</span>&gt;&lt;/<span style="color:#e06c75">script</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#e06c75">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#e06c75">html</span>&gt;
+</span></span></code></pre></div><p>From the above template:</p>
+<ul>
+<li>Load static via <code>{% load static %}</code>.</li>
+<li>Add CSS, JS, and image file with the format <code>{% static 'css/style.css' %}</code>.</li>
+<li>Created two submit button with the JavaScript function <code>refreshPage()</code> and <code>openYoutube()</code>.</li>
+</ul>
+</li>
+<li>
+<p>Re-run the Django development server.</p>
+</li>
 </ol>
 
     

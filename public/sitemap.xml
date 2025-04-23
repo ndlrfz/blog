@@ -17,7 +17,13 @@
     <loc>http://localhost:1313/posts/vim-motions/</loc>
     <lastmod>2025-04-20T17:09:46+07:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/django/</loc>
+    <lastmod>2025-04-15T11:11:12+07:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/posts/django-fundamentals/</loc>
+    <lastmod>2025-04-15T11:11:12+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/python/</loc>
     <lastmod>2025-04-15T11:11:12+07:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/aws/</loc>
