@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+<link rel="icon" type="image/ico" href="https://ndlrfz.web.id/favicon.ico/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://ndlrfz.web.id/favicon.ico/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://ndlrfz.web.id/favicon.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://ndlrfz.web.id/favicon.ico/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://ndlrfz.web.id/favicon.ico/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+
+
+<title>
+    
+    Python Function Fundamentals | ndlr/fz/96 🦄
+    
+</title>
+
+<link rel="canonical" href="http://localhost:1313/posts/python-function-fundamentals/"/>
+
+<meta property="og:url" content="http://localhost:1313/posts/python-function-fundamentals/">
+  <meta property="og:site_name" content="ndlr/fz/96 🦄">
+  <meta property="og:title" content="Python Function Fundamentals">
+  <meta property="og:description" content="Basic function # How to create and call function in Python?
+# create function greet def greet(): print(&#34;Hello Python!&#34;) # call the greet() function greet() Function parameters and arguments # Function take parameters and arguments for flexibility and usability.
+# name =&gt; the parameter def greet(name): print(f&#34;Hell {name}&#34;) # call greet() function # with argument =&gt; &#34;ndlrfz&#34; greet(&#34;ndlrfz&#34;) Function with return value # Difference between print and return in Python:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-04-24T16:22:13+07:00">
+    <meta property="article:modified_time" content="2025-04-24T16:22:13+07:00">
+    <meta property="article:tag" content="Python">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.0f4f5c64ee7100cff28e7c7366d922b5499829f72c91a53b9b17f236d85ad7e7.css" media="all">
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+</head>
+
+
+
+
+
+
+
+<body class="auto">
+
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+
+    <h1 class="header-title">
+        <a href="http://localhost:1313/">ndlr/fz/96 🦄</a>
+    </h1>
+
+    <div class="flex">
+        
+
+        
+        
+      
+        <p class="small ">
+            <a href="/" >
+                /home
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/posts" >
+                /posts
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/tags" >
+                /tags
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/contact-me" >
+                /contact-me
+            </a>
+        </p>
+        
+        
+    </div>
+
+    
+
+</div>
+
+    </header>
+
+    <main class="main">
+      
+
+
+
+
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title">Python Function Fundamentals</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2025-04-24T16:22:13&#43;07:00">April 24, 2025</time>
+      
+
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#basic-function">Basic function</a></li>
+    <li><a href="#function-parameters-and-arguments">Function parameters and arguments</a></li>
+    <li><a href="#function-with-return-value">Function with return value</a></li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <h2 class="heading" id="basic-function">
+  Basic function
+  <a class="anchor" href="#basic-function">#</a>
+</h2>
+<p>How to create and call function in Python?</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"># create function greet</span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">def</span> <span style="color:#00b1f7">greet</span>():
+</span></span><span style="display:flex;"><span>   <span style="color:#ef8383">print</span>(<span style="color:#63c381">&#34;Hello Python!&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"># call the greet() function</span>
+</span></span><span style="display:flex;"><span><span style="color:#c1abea">greet</span>()
+</span></span></code></pre></div><h2 class="heading" id="function-parameters-and-arguments">
+  Function parameters and arguments
+  <a class="anchor" href="#function-parameters-and-arguments">#</a>
+</h2>
+<p>Function take parameters and arguments for flexibility and usability.</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"># name =&gt; the parameter</span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">def</span> <span style="color:#00b1f7">greet</span>(<span style="color:#c1abea">name</span>):
+</span></span><span style="display:flex;"><span>   <span style="color:#ef8383">print</span>(<span style="color:#98c379">f</span><span style="color:#63c381">&#34;Hell </span><span style="color:#98c379">{</span><span style="color:#c1abea">name</span><span style="color:#98c379">}</span><span style="color:#63c381">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"># call greet() function</span>
+</span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"># with argument =&gt; &#34;ndlrfz&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#c1abea">greet</span>(<span style="color:#63c381">&#34;ndlrfz&#34;</span>)
+</span></span></code></pre></div><h2 class="heading" id="function-with-return-value">
+  Function with return value
+  <a class="anchor" href="#function-with-return-value">#</a>
+</h2>
+<p>Difference between <code>print</code> and <code>return</code> in Python:</p>
+<ul>
+<li><code>print</code>: Display information to the console for users to see.</li>
+<li><code>return</code>: Instead of printing, you can pass the <strong>output</strong> to the caller, or use <code>return</code> to exit a function or return value.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"># function with print()</span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">def</span> <span style="color:#00b1f7">jumlah</span>(<span style="color:#c1abea">a</span>, <span style="color:#c1abea">b</span>):
+</span></span><span style="display:flex;"><span>   <span style="color:#ef8383">print</span>(<span style="color:#c1abea">a</span> <span style="color:#c7bf54">+</span> <span style="color:#c1abea">b</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">def</span> <span style="color:#00b1f7">new_jumlah</span>(<span style="color:#c1abea">a</span>, <span style="color:#c1abea">b</span>):
+</span></span><span style="display:flex;"><span>   <span style="color:#c678dd">return</span> <span style="color:#c1abea">a</span> <span style="color:#c7bf54">+</span> <span style="color:#c1abea">b</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c1abea">test_print</span> <span style="color:#c7bf54">=</span> <span style="color:#c1abea">jumlah</span>(<span style="color:#d19a66">5</span>, <span style="color:#d19a66">10</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c1abea">new_jumlah</span>(<span style="color:#c1abea">test_print</span>, <span style="color:#d19a66">5</span>)
+</span></span></code></pre></div>
+    
+  </div>
+
+  
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flexnowrap">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/vim-motions/">
+                        Vim Motions Tips
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  
+  
+
+
+
+
+
+    
+
+
+
+
+  <footer>
+    
+
+    
+    
+
+
+
+
+
+    
+
+
+
+
+    
+    
+    
+    <p>All content licensed under CC BY-SA 4.0 license unless otherwise stated. Copyright © 2025 Nadlir.</p>
+    
+
+
+  </footer>
+
+  
+</body>
+
+<script src="/js/theme-switch.js"></script>
+<script defer src="/js/copy-code.js"></script>
+</html>
