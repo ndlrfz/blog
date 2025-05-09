@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+<link rel="icon" type="image/ico" href="https://ndlrfz.web.id/favicon.ico/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://ndlrfz.web.id/favicon.ico/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://ndlrfz.web.id/favicon.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://ndlrfz.web.id/favicon.ico/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://ndlrfz.web.id/favicon.ico/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+
+
+<title>
+    
+    Boostrap Grid, Breakpoints, Gutters, and Spacing | ndlr/fz/96 🦄
+    
+</title>
+
+<link rel="canonical" href="http://localhost:1313/posts/bootstrap-grid/"/>
+
+<meta property="og:url" content="http://localhost:1313/posts/bootstrap-grid/">
+  <meta property="og:site_name" content="ndlr/fz/96 🦄">
+  <meta property="og:title" content="Boostrap Grid, Breakpoints, Gutters, and Spacing">
+  <meta property="og:description" content="Grid is a system for building fully responsive layout in Bootstrap.
+You can create layout with Grid via the following classes:
+container or container-fluid (width 100%). row as row inside the container. cols as column inside the row. Example:
+&lt;div class=&#34;container&#34;&gt; &lt;div class=&#34;row&#34;&gt; &lt;div class=&#34;col&#34;&gt; &lt;div&gt; Col 1 &lt;/div&gt; &lt;/div&gt; &lt;div class=&#34;col&#34;&gt; &lt;div&gt; Col 2 &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; 6 Grid System for Responsive Layout # There are 6 grid system in Bootstrap:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-05-09T12:30:40+07:00">
+    <meta property="article:modified_time" content="2025-05-09T12:30:40+07:00">
+    <meta property="article:tag" content="Bootstrap5">
+    <meta property="article:tag" content="Webdev">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.0f4f5c64ee7100cff28e7c7366d922b5499829f72c91a53b9b17f236d85ad7e7.css" media="all">
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+</head>
+
+
+
+
+
+
+
+<body class="auto">
+
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+
+    <h1 class="header-title">
+        <a href="http://localhost:1313/">ndlr/fz/96 🦄</a>
+    </h1>
+
+    <div class="flex">
+        
+
+        
+        
+      
+        <p class="small ">
+            <a href="/" >
+                /home
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/posts" >
+                /posts
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/tags" >
+                /tags
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/contact-me" >
+                /contact-me
+            </a>
+        </p>
+        
+        
+    </div>
+
+    
+
+</div>
+
+    </header>
+
+    <main class="main">
+      
+
+
+
+
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title">Boostrap Grid, Breakpoints, Gutters, and Spacing</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2025-05-09T12:30:40&#43;07:00">May 9, 2025</time>
+      
+
+      
+    </p>
+
+  </div>
+
+  
+
+  
+  
+
+  <div class="single-tags">
+    
+    <span>
+      <a href="http://localhost:1313/tags/bootstrap5/">#Bootstrap5</a>
+    </span>
+    
+    
+    <span>
+      <a href="http://localhost:1313/tags/webdev/">#Webdev</a>
+    </span>
+    
+    
+  </div>
+
+  
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#6-grid-system-for-responsive-layout">6 Grid System for Responsive Layout</a>
+      <ul>
+        <li><a href="#how-to-create-two-columns-with-the-same-width">How to create two columns with the same width?</a></li>
+        <li><a href="#how-to-create-two-columns-with-the-different-width">How to create two columns with the different width?</a></li>
+      </ul>
+    </li>
+    <li><a href="#breakpoint">Breakpoint</a>
+      <ul>
+        <li><a href="#how-breakpoint-and-grid-works">How Breakpoint and Grid works?</a></li>
+      </ul>
+    </li>
+    <li><a href="#how-to-arrange-columns-on-different-viewport">How to arrange columns on different viewport?</a></li>
+    <li><a href="#what-is-gutters">What is Gutters?</a></li>
+    <li><a href="#spacing-in-bootstrap">Spacing in Bootstrap</a></li>
+    <li><a href="#how-to-create-responsive-layout-without-overflow">How to create Responsive Layout without Overflow?</a></li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <p>Grid is a system for building fully responsive layout in Bootstrap.</p>
+<p>You can create layout with <strong>Grid</strong> via the following classes:</p>
+<ol>
+<li><code>container</code> or <code>container-fluid</code> (width 100%).</li>
+<li><code>row</code> as row inside the <code>container</code>.</li>
+<li><code>cols</code> as column inside the <code>row</code>.</li>
+</ol>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#e06c75">div</span> <span style="color:#b3d23c">class</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;container&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;<span style="color:#e06c75">div</span> <span style="color:#b3d23c">class</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;row&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#e06c75">div</span> <span style="color:#b3d23c">class</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;col&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>         &lt;<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>            Col 1
+</span></span><span style="display:flex;"><span>         &lt;/<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#e06c75">div</span> <span style="color:#b3d23c">class</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;col&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>         &lt;<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>            Col 2
+</span></span><span style="display:flex;"><span>         &lt;/<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;/<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#e06c75">div</span>&gt;
+</span></span></code></pre></div><h2 class="heading" id="6-grid-system-for-responsive-layout">
+  6 Grid System for Responsive Layout
+  <a class="anchor" href="#6-grid-system-for-responsive-layout">#</a>
+</h2>
+<p>There are 6 grid system in Bootstrap:</p>
+<ol>
+<li>Extra small with class <code>col-*</code> with the <em>width</em> auto or <strong>&lt;576</strong>.</li>
+<li>Small with class <code>col-sm-*</code> with the <em>width</em> <strong>576px to 767px</strong>.</li>
+<li>Medium with class <code>col-md-*</code> with the <em>width</em> <strong>768px to 991px</strong>.</li>
+<li>Large with class <code>col-lg-*</code> with the <em>width</em> <strong>992px to 1200px</strong>.</li>
+<li>Extra large with class <code>col-xl-*</code> with the <em>width</em> <strong>1200px to 1400px</strong>.</li>
+<li>Extra extra large with class <code>col-xxl-*</code> with the <em>width</em> <strong>&gt;=1400px</strong>.</li>
+</ol>
+<blockquote>
+<p>Keep in mind that the <code>*</code> in column represent number between <strong>1 to 12</strong>. And <strong>12</strong> is max of column number that you can have.</p></blockquote>
+<p>So..</p>
+<h3 class="heading" id="how-to-create-two-columns-with-the-same-width">
+  How to create two columns with the same width?
+  <a class="anchor" href="#how-to-create-two-columns-with-the-same-width">#</a>
+</h3>
+<p><strong>Answer</strong>: Create <em>two</em> columns with the class <code>col-6</code> (<strong>6 + 6 = 12</strong>).</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>      &lt;<span style="color:#e06c75">div</span> <span style="color:#b3d23c">class</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;col-6&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>         &lt;<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>            Col 1
+</span></span><span style="display:flex;"><span>         &lt;/<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#e06c75">div</span> <span style="color:#b3d23c">class</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;col-6&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>         &lt;<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>            Col 2
+</span></span><span style="display:flex;"><span>         &lt;/<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#e06c75">div</span>&gt;
+</span></span></code></pre></div><h3 class="heading" id="how-to-create-two-columns-with-the-different-width">
+  How to create two columns with the different width?
+  <a class="anchor" href="#how-to-create-two-columns-with-the-different-width">#</a>
+</h3>
+<p><strong>Answer</strong>: Create <em>two</em> columns with the <code>col-8</code> and <code>col-4</code> (<strong>8 + 4 = 12</strong>).</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>      &lt;<span style="color:#e06c75">div</span> <span style="color:#b3d23c">class</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;col-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>         &lt;<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>            Col 1
+</span></span><span style="display:flex;"><span>         &lt;/<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#e06c75">div</span> <span style="color:#b3d23c">class</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;col-4&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>         &lt;<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>            Col 2
+</span></span><span style="display:flex;"><span>         &lt;/<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#e06c75">div</span>&gt;
+</span></span></code></pre></div><blockquote>
+<p>Keep in mind that you can create columns max <strong>12</strong> or <strong>sum</strong> of <code>col-*</code> classes up to <strong>12</strong>.</p></blockquote>
+<h2 class="heading" id="breakpoint">
+  Breakpoint
+  <a class="anchor" href="#breakpoint">#</a>
+</h2>
+<blockquote>
+<p>Breakpoint is the controller for reponsive design in Bootstrap.
+It determine <strong>when</strong> container adapt to the device viewport or width.</p></blockquote>
+<p>As you know there are <strong>6 Grid System</strong>. So when container reached the <em>breakpoint</em> of the <em>grid</em>, the container will adapt and columns will change.</p>
+<h3 class="heading" id="how-breakpoint-and-grid-works">
+  How Breakpoint and Grid works?
+  <a class="anchor" href="#how-breakpoint-and-grid-works">#</a>
+</h3>
+<ul>
+<li>Breakpoint works to the top.</li>
+</ul>
+<p>When you define a single grid column such as <code>col-md-4</code>:</p>
+<ol>
+<li>The size will become <strong>bigger</strong> on <em>Large, Extra Large, and Extra Extra Large</em>.</li>
+<li>Columns will be stacked when viewport reached the breakpoint of <em>Small</em> and <em>Extra Small</em> viewport.</li>
+</ol>
+<p><em>Example</em>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>      &lt;<span style="color:#e06c75">div</span> <span style="color:#b3d23c">class</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;row&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#e06c75">div</span> <span style="color:#b3d23c">class</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;col-md-4 bg-primary text-white&#34;</span>&gt;Column A&lt;/<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#e06c75">div</span> <span style="color:#b3d23c">class</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;col-md-4 bg-info text-white&#34;</span>&gt;Column B&lt;/<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#e06c75">div</span> <span style="color:#b3d23c">class</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;col-md-4 bg-success text-white&#34;</span>&gt;Column C&lt;/<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#e06c75">div</span>&gt;
+</span></span></code></pre></div><p>Explanation from the above script:</p>
+<ul>
+<li>Each column will become <strong>bigger</strong> on <em>Large, Extra Large, and Extra Extra Large</em> viewport.
+<ul>
+<li>On screen <code>&gt;=768</code>, columns bigger.</li>
+</ul>
+</li>
+<li>Each column will be <strong>stacked</strong> on <em>Small and Extra Small</em> viewport.
+<ul>
+<li>On screen <code>&lt;=767</code>, columns will be stacked.</li>
+</ul>
+</li>
+</ul>
+<h2 class="heading" id="how-to-arrange-columns-on-different-viewport">
+  How to arrange columns on different viewport?
+  <a class="anchor" href="#how-to-arrange-columns-on-different-viewport">#</a>
+</h2>
+<p><strong>Answer</strong>: Use multiple grid system on your class.</p>
+<p><em>Example</em>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>      &lt;<span style="color:#e06c75">div</span> <span style="color:#b3d23c">class</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;row&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#e06c75">div</span> <span style="color:#b3d23c">class</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;col-lg-6 col-md-4 col-sm-12 bg-primary text-white&#34;</span>&gt;Column A&lt;/<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#e06c75">div</span> <span style="color:#b3d23c">class</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;col-lg-3 col-md-4 col-sm-6 bg-info text-white&#34;</span>&gt;Column B&lt;/<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#e06c75">div</span> <span style="color:#b3d23c">class</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;col-lg-3 col-md-4 col-sm 6 bg-success text-white&#34;</span>&gt;Column C&lt;/<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#e06c75">div</span>&gt;
+</span></span></code></pre></div><p>Explanation of the script above:</p>
+<ul>
+<li>On <em>lg, xl, and xxl</em> <em>Column A</em> will be bigger <code>col-lg-6</code> than <em>Column B</em> and <em>C</em> <code>col-lg-3</code>.</li>
+<li>On <em>md</em> viewport, all columns will have the same size <code>col-md-4</code>.</li>
+<li>On <em>sm</em> viewport, <em>Column A</em> will be full width <code>col-sm-12</code>, then <em>Column B</em> and <em>C</em> at the bottom with the same size <code>col-sm-6</code>.</li>
+<li>On <em>xs</em> viewport, all columns will be stacked.</li>
+</ul>
+<h2 class="heading" id="what-is-gutters">
+  What is Gutters?
+  <a class="anchor" href="#what-is-gutters">#</a>
+</h2>
+<p>Gutters is padding and provides spacing between your columns.</p>
+<p>There are two gutters in Bootstrap:</p>
+<ol>
+<li><strong>Horizontal</strong> for spacing <em>left and right</em> <code>gx-*</code>.</li>
+<li><strong>Vertical</strong> for spacing <em>top and bottom</em> <code>gy-*</code>.</li>
+</ol>
+<blockquote>
+<p>The value <code>*</code> for Gutters is between <strong>1-5</strong>. You can use <code>g-*</code> to set up Gutters for both <em>Horizontal and Vertical</em>.</p></blockquote>
+<h2 class="heading" id="spacing-in-bootstrap">
+  Spacing in Bootstrap
+  <a class="anchor" href="#spacing-in-bootstrap">#</a>
+</h2>
+<p>It is <strong>Padding</strong> and <strong>Margin</strong> on Bootstrap.</p>
+<p>Here the classes:</p>
+<ul>
+<li><code>p-*</code> for padding</li>
+<li><code>m-*</code> for margin</li>
+</ul>
+<p>How about <em>top, bottom, left, and right</em>? Sure:</p>
+<ul>
+<li><code>t</code> for top</li>
+<li><code>b</code> for bottom</li>
+<li><code>s</code> or start
+<ul>
+<li><strong>LTR</strong>: margin left or padding left</li>
+<li><strong>RTL</strong>: margin right or padding right</li>
+</ul>
+</li>
+<li><code>e</code> or end
+<ul>
+<li><strong>LTR</strong>: margin right or padding right</li>
+<li><strong>RTL</strong>: margin left or padding left</li>
+</ul>
+</li>
+<li><code>x</code> for horizontal <em>left and right</em></li>
+<li><code>y</code> for vertical <em>top and bottom</em></li>
+</ul>
+<p>Now you can use something like this:</p>
+<ul>
+<li><code>pt-3</code> means <em>Padding top is set to 3</em>.</li>
+<li><code>pt-md-2</code> means <em>Padding top will become 2 on <strong>md</strong> viewport</em>.</li>
+</ul>
+<blockquote>
+<p>Keep in your mind that the <code>*</code> is value between <strong>0-5</strong> or <em>auto</em>.</p></blockquote>
+<h2 class="heading" id="how-to-create-responsive-layout-without-overflow">
+  How to create Responsive Layout without Overflow?
+  <a class="anchor" href="#how-to-create-responsive-layout-without-overflow">#</a>
+</h2>
+<p>Most people struggle for this with bootstrap (<em>because so many questions about this on Stackoverflow and others</em>), espcially when combining with gutters and spacing.</p>
+<p><strong>Answer</strong>: Here the step-by-step:</p>
+<ol>
+<li>Create <code>container</code> or <code>container-fluid</code> and expand the horizontal padding <code>px-2</code> or <code>px-0</code> to get full width.</li>
+<li>On your <code>row</code> class, add the gutters <code>g-2</code> for spacing between columns.</li>
+<li>Wrap your the column content with new <code>div</code>.</li>
+<li><em>Optional</em>, add <code>py-2</code> for padding top and bottom on your content <code>div</code>.</li>
+</ol>
+<p><em>Example</em>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>    &lt;<span style="color:#e06c75">div</span> <span style="color:#b3d23c">class</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;container-fluid px-0 text-center text-white&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#e06c75">div</span> <span style="color:#b3d23c">class</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;row g-2&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#e06c75">div</span> <span style="color:#b3d23c">class</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;col-lg-6 col-md-4 col-sm-12&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#e06c75">div</span> <span style="color:#b3d23c">class</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;bg-primary py-2&#34;</span>&gt;Column A&lt;/<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#e06c75">div</span> <span style="color:#b3d23c">class</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;col-lg-3 col-md-4 col-sm-6&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#e06c75">div</span> <span style="color:#b3d23c">class</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;bg-info py-2&#34;</span>&gt;Column B&lt;/<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#e06c75">div</span> <span style="color:#b3d23c">class</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;col-lg-3 col-md-4 col-sm-6&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#e06c75">div</span> <span style="color:#b3d23c">class</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;bg-success py-2&#34;</span>&gt;Column C&lt;/<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#e06c75">div</span>&gt;
+</span></span></code></pre></div><blockquote>
+<p>I believe this is the most important concept in Bootstrap for creating responsive layout. You can implement this tips on every <code>containers</code>.</p></blockquote>
+<p>bye.</p>
+
+    
+  </div>
+
+  
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flexnowrap">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/python-function-fundamentals/">
+                        Python Function Fundamentals
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  
+  
+
+
+
+
+
+    
+
+
+
+
+  <footer>
+    
+
+    
+    
+
+
+
+
+
+    
+
+
+
+
+    
+    
+    
+    <p>All content licensed under CC BY-SA 4.0 license unless otherwise stated. Copyright © 2025 Nadlir.</p>
+    
+
+
+  </footer>
+
+  
+</body>
+
+<script src="/js/theme-switch.js"></script>
+<script defer src="/js/copy-code.js"></script>
+</html>

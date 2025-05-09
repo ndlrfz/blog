@@ -26,7 +26,7 @@ Function take parameters and arguments for flexibility and usability.
 ```python
 # name => the parameter
 def greet(name):
-   print(f"Hell {name}")
+   print(f"Hello {name}")
 
 # call greet() function
 # with argument => "ndlrfz"
