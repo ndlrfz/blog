@@ -2,66 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on ndlr/fz/96 🦄</title>
-    <link>http://localhost:35063/tags/</link>
+    <link>https://ndlrfz.web.id/tags/</link>
     <description>Recent content in Tags on ndlr/fz/96 🦄</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 09 May 2025 12:30:40 +0700</lastBuildDate>
-    <atom:link href="http://localhost:35063/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ndlrfz.web.id/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bootstrap5</title>
-      <link>http://localhost:35063/tags/bootstrap5/</link>
+      <link>https://ndlrfz.web.id/tags/bootstrap5/</link>
       <pubDate>Fri, 09 May 2025 12:30:40 +0700</pubDate>
-      <guid>http://localhost:35063/tags/bootstrap5/</guid>
+      <guid>https://ndlrfz.web.id/tags/bootstrap5/</guid>
       <description></description>
     </item>
     <item>
       <title>Webdev</title>
-      <link>http://localhost:35063/tags/webdev/</link>
+      <link>https://ndlrfz.web.id/tags/webdev/</link>
       <pubDate>Fri, 09 May 2025 12:30:40 +0700</pubDate>
-      <guid>http://localhost:35063/tags/webdev/</guid>
+      <guid>https://ndlrfz.web.id/tags/webdev/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
-      <link>http://localhost:35063/tags/python/</link>
+      <link>https://ndlrfz.web.id/tags/python/</link>
       <pubDate>Thu, 24 Apr 2025 16:22:13 +0700</pubDate>
-      <guid>http://localhost:35063/tags/python/</guid>
+      <guid>https://ndlrfz.web.id/tags/python/</guid>
       <description></description>
     </item>
     <item>
       <title>Neovim</title>
-      <link>http://localhost:35063/tags/neovim/</link>
+      <link>https://ndlrfz.web.id/tags/neovim/</link>
       <pubDate>Sun, 20 Apr 2025 17:09:46 +0700</pubDate>
-      <guid>http://localhost:35063/tags/neovim/</guid>
+      <guid>https://ndlrfz.web.id/tags/neovim/</guid>
       <description></description>
     </item>
     <item>
       <title>Django</title>
-      <link>http://localhost:35063/tags/django/</link>
+      <link>https://ndlrfz.web.id/tags/django/</link>
       <pubDate>Tue, 15 Apr 2025 11:11:12 +0700</pubDate>
-      <guid>http://localhost:35063/tags/django/</guid>
+      <guid>https://ndlrfz.web.id/tags/django/</guid>
       <description></description>
     </item>
     <item>
       <title>Aws</title>
-      <link>http://localhost:35063/tags/aws/</link>
+      <link>https://ndlrfz.web.id/tags/aws/</link>
       <pubDate>Fri, 21 Mar 2025 21:30:12 +0700</pubDate>
-      <guid>http://localhost:35063/tags/aws/</guid>
+      <guid>https://ndlrfz.web.id/tags/aws/</guid>
       <description></description>
     </item>
     <item>
       <title>Php</title>
-      <link>http://localhost:35063/tags/php/</link>
+      <link>https://ndlrfz.web.id/tags/php/</link>
       <pubDate>Tue, 04 Mar 2025 05:10:43 +0700</pubDate>
-      <guid>http://localhost:35063/tags/php/</guid>
+      <guid>https://ndlrfz.web.id/tags/php/</guid>
       <description></description>
     </item>
     <item>
       <title>Sysadmin</title>
-      <link>http://localhost:35063/tags/sysadmin/</link>
+      <link>https://ndlrfz.web.id/tags/sysadmin/</link>
       <pubDate>Tue, 04 Mar 2025 05:10:43 +0700</pubDate>
-      <guid>http://localhost:35063/tags/sysadmin/</guid>
+      <guid>https://ndlrfz.web.id/tags/sysadmin/</guid>
       <description></description>
     </item>
   </channel>

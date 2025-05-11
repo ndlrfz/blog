@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Neovim on ndlr/fz/96 🦄</title>
-    <link>http://localhost:35063/tags/neovim/</link>
+    <link>https://ndlrfz.web.id/tags/neovim/</link>
     <description>Recent content in Neovim on ndlr/fz/96 🦄</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 20 Apr 2025 17:09:46 +0700</lastBuildDate>
-    <atom:link href="http://localhost:35063/tags/neovim/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ndlrfz.web.id/tags/neovim/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Vim Motions Tips</title>
-      <link>http://localhost:35063/posts/vim-motions/</link>
+      <link>https://ndlrfz.web.id/posts/vim-motions/</link>
       <pubDate>Sun, 20 Apr 2025 17:09:46 +0700</pubDate>
-      <guid>http://localhost:35063/posts/vim-motions/</guid>
+      <guid>https://ndlrfz.web.id/posts/vim-motions/</guid>
       <description>&lt;h2 class=&#34;heading&#34; id=&#34;exit-like-a-pro&#34;&gt;&#xA;  Exit like a pro&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#exit-like-a-pro&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Save and exit =&amp;gt; &lt;code&gt;ZZ&lt;/code&gt;.&lt;/li&gt;&#xA;&lt;li&gt;Save without saving =&amp;gt; &lt;code&gt;ZQ&lt;/code&gt;.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 class=&#34;heading&#34; id=&#34;select-inside--bracket-and--curly-bracket&#34;&gt;&#xA;  Select inside () (Bracket) and {} (Curly Bracket)&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#select-inside--bracket-and--curly-bracket&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Select within &lt;code&gt;()&lt;/code&gt; =&amp;gt; &lt;code&gt;vib&lt;/code&gt;.&lt;/li&gt;&#xA;&lt;li&gt;Select within &lt;code&gt;{}&lt;/code&gt; =&amp;gt; &lt;code&gt;viB&lt;/code&gt;.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 class=&#34;heading&#34; id=&#34;edit-multiple-lines-at-once&#34;&gt;&#xA;  Edit multiple lines at once&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#edit-multiple-lines-at-once&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Step by step to insert at the beginning of the line:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;code&gt;Ctrl+v&lt;/code&gt; to get visual mode.&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;I&lt;/code&gt; to insert mode.&lt;/li&gt;&#xA;&lt;li&gt;Enter your HTML tag &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt;.&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;ESC&lt;/code&gt;.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Step by step to insert at the end of the line:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Neovim Multiple Configs</title>
-      <link>http://localhost:35063/posts/neovim-multiple-configs/</link>
+      <link>https://ndlrfz.web.id/posts/neovim-multiple-configs/</link>
       <pubDate>Tue, 04 Feb 2025 17:41:12 +0700</pubDate>
-      <guid>http://localhost:35063/posts/neovim-multiple-configs/</guid>
+      <guid>https://ndlrfz.web.id/posts/neovim-multiple-configs/</guid>
       <description>&lt;h2 class=&#34;heading&#34; id=&#34;intro&#34;&gt;&#xA;  Intro&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#intro&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;If you&amp;rsquo;re Neovim fan, it is important to have multiple configs. You can configure like this:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;~/.config/nvim&lt;/code&gt;: Your main configuration. When you&amp;rsquo;re working on your project, this is the configuration that will be loaded.&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;~/.config/nvim-alt&lt;/code&gt;: Your secondary Neovim configuration where you can implement new things.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;So now, let&amp;rsquo;s configure it.&lt;/p&gt;&#xA;&lt;h2 class=&#34;heading&#34; id=&#34;setup-neovim-playground&#34;&gt;&#xA;  Setup Neovim Playground&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#setup-neovim-playground&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Assuming that your main Neovim configured, let&amp;rsquo;s configure the alternate Neovim configuration.&lt;/p&gt;</description>
     </item>
   </channel>
