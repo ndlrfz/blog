@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+<link rel="icon" type="image/ico" href="https://ndlrfz.web.id/favicon.ico/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://ndlrfz.web.id/favicon.ico/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://ndlrfz.web.id/favicon.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://ndlrfz.web.id/favicon.ico/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://ndlrfz.web.id/favicon.ico/apple-touch-icon.png">
+
+<meta name="description" content=""/>
+
+
+
+<title>
+    
+    How to Center Element Problem in Web Design | ndlr/fz/96 🦄
+    
+</title>
+
+<link rel="canonical" href="https://ndlrfz.web.id/posts/center-element-problem/"/>
+
+<meta property="og:url" content="https://ndlrfz.web.id/posts/center-element-problem/">
+  <meta property="og:site_name" content="ndlr/fz/96 🦄">
+  <meta property="og:title" content="How to Center Element Problem in Web Design">
+  <meta property="og:description" content="How to center my div/element? Why I can’t center my div/element?
+The classic webdev question for everyone. I always struggle with this.
+How to solve this?
+The Answer: Restructure your HTML elements.
+Let’s take a look.
+This is the common HTML structure that I always use:
+... &lt;body&gt; &lt;header&gt; &lt;/header&gt; &lt;main&gt; &lt;/main&gt; &lt;footer&gt; &lt;/footer&gt; &lt;/body&gt; I will creater header element like this:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-05-31T06:27:45+07:00">
+    <meta property="article:modified_time" content="2025-05-31T06:27:45+07:00">
+    <meta property="article:tag" content="Webdev">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.50ce41bb79b4f4e847deca2eaed68e35a9edb3b82be6ea9104596f33d98c415f.css" media="all">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+</head>
+
+
+
+
+
+
+
+<body class="auto">
+
+  <div class="content">
+    <header>
+      
+
+<div class="header">
+
+    
+
+    <h1 class="header-title">
+        <a href="https://ndlrfz.web.id/">ndlr/fz/96 🦄</a>
+    </h1>
+
+    <div class="flex">
+        
+
+        
+        
+      
+        <p class="small ">
+            <a href="/" >
+                /home
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/posts" >
+                /posts
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/tags" >
+                /tags
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/contact-me" >
+                /contact-me
+            </a>
+        </p>
+        
+        
+    </div>
+
+    
+
+</div>
+
+    </header>
+
+    <main class="main">
+      
+
+
+
+
+
+
+
+<div >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title">How to Center Element Problem in Web Design</h1>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2025-05-31T06:27:45&#43;07:00">May 31, 2025</time>
+      
+
+      
+    </p>
+
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  <div class="single-content">
+    <blockquote>
+<p>How to center my div/element? Why I can&rsquo;t center my div/element?</p></blockquote>
+<p>The classic webdev question for everyone. I always struggle with this.</p>
+<p>How to solve this?</p>
+<p><strong>The Answer</strong>: Restructure your HTML elements.</p>
+<p>Let&rsquo;s take a look.</p>
+<p>This is the common HTML structure that I always use:</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#e06c75">body</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#e06c75">header</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#e06c75">header</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#e06c75">main</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#e06c75">main</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#e06c75">footer</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#e06c75">footer</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#e06c75">body</span>&gt;
+</span></span></code></pre></div><p>I will creater header element like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic">&lt;!-- root element --&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#e06c75">header</span> <span style="color:#b3d23c">class</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;w-full mt-5&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#8a93a5;font-style:italic">&lt;!-- div to create container --&gt;</span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#e06c75">div</span> <span style="color:#b3d23c">class</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;container mx-auto&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#8a93a5;font-style:italic">&lt;!-- nav with flex --&gt;</span>
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#e06c75">nav</span> <span style="color:#b3d23c">class</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;flex flex-row items-center justify-between&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            <span style="color:#8a93a5;font-style:italic">&lt;!-- logo --&gt;</span>
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>                &lt;<span style="color:#e06c75">img</span> <span style="color:#b3d23c">src</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;&#34;</span> <span style="color:#b3d23c">alt</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;Logo&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;/<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>            <span style="color:#8a93a5;font-style:italic">&lt;!-- menu --&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#8a93a5;font-style:italic">&lt;!-- div and span to create hamburger icon menu --&gt;</span>
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>                &lt;<span style="color:#e06c75">span</span>&gt;&lt;/<span style="color:#e06c75">span</span>&gt;
+</span></span><span style="display:flex;"><span>                &lt;<span style="color:#e06c75">span</span>&gt;&lt;/<span style="color:#e06c75">span</span>&gt;
+</span></span><span style="display:flex;"><span>                &lt;<span style="color:#e06c75">span</span>&gt;&lt;/<span style="color:#e06c75">span</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;/<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#e06c75">ul</span>&gt;
+</span></span><span style="display:flex;"><span>                &lt;<span style="color:#e06c75">li</span>&gt;&lt;<span style="color:#e06c75">a</span> <span style="color:#b3d23c">href-</span>&#34;#&#34;&gt;Menu&lt;/<span style="color:#e06c75">a</span>&gt;&lt;/<span style="color:#e06c75">li</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;/<span style="color:#e06c75">ul</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#e06c75">nav</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#e06c75">header</span>&gt;
+</span></span></code></pre></div><p>For the main content:</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#e06c75">main</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#8a93a5;font-style:italic">&lt;!-- section --&gt;</span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#e06c75">section</span>&gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#8a93a5;font-style:italic">&lt;!-- div for container --&gt;</span>
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#e06c75">div</span> <span style="color:#b3d23c">class</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;container mx-auto&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            <span style="color:#8a93a5;font-style:italic">&lt;!-- div for flex --&gt;</span>
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#e06c75">div</span> <span style="color:#b3d23c">class</span><span style="color:#c7bf54">=</span><span style="color:#98c379">&#34;flex flex-row&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>                <span style="color:#8a93a5;font-style:italic">&lt;!-- div for content --&gt;</span>
+</span></span><span style="display:flex;"><span>                &lt;<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>                    &lt;<span style="color:#e06c75">h3</span>&gt;Content&lt;/<span style="color:#e06c75">h3</span>&gt;
+</span></span><span style="display:flex;"><span>                &lt;/<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>                <span style="color:#8a93a5;font-style:italic">&lt;!-- another div for content --&gt;</span>
+</span></span><span style="display:flex;"><span>                &lt;<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>                    &lt;<span style="color:#e06c75">h3</span>&gt;Content&lt;/<span style="color:#e06c75">h3</span>&gt;
+</span></span><span style="display:flex;"><span>                &lt;/<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;/<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#e06c75">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#e06c75">section</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#e06c75">main</span>&gt;
+</span></span></code></pre></div><p>Did you see the pattern?</p>
+<p>This way, I can set up <code>padding</code> and <code>margin</code> for each <code>container</code> box to make sure every elements inside is alignment with each other. So no more question about <em>how to center my element?</em>.</p>
+
+    
+  </div>
+
+  
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flexnowrap">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/bootstrap-responsive-layout/">
+                        Boostrap Grid, Breakpoints, Gutters, and Spacing
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+    </main>
+  </div>
+
+  
+  
+
+
+
+
+
+    
+
+
+
+
+  <footer>
+    
+
+    
+    
+
+
+
+
+
+    
+
+
+
+
+    
+    
+    
+    <p>All content licensed under CC BY-SA 4.0 license unless otherwise stated. Copyright © 2025 Nadlir.</p>
+    
+
+
+  </footer>
+
+  
+</body>
+
+<script src="/js/theme-switch.js"></script>
+<script defer src="/js/copy-code.js"></script>
+</html>
