@@ -1,8 +1,9 @@
 +++
 date = '2025-05-31T06:27:45+07:00'
 draft = false
-title = 'How to Center Element Problem in Web Design'
+title = 'How to Center Element Problem in webdev'
 tags = ['webdev']
+showTags = true
 +++
 
 > How to center my div/element? Why I can't center my div/element?
